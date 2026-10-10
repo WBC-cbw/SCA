@@ -1,0 +1,97 @@
+{
+  "experiment_id": "E0",
+  "experiment_name": "ASCAD fixed-key Source Only 最小端到端实验",
+  "level": "formal (single seed)",
+  "owner": "WBC-cbw",
+  "run_date": "2026-10-10",
+  "run_commands": [
+    "python experiments/00_common_e0/scripts/train_e0_torch.py --config experiments/00_common_e0/configs/e0_source_only_fixed_official.py",
+    "python experiments/cdan-sca-diagnosis/scripts/evaluate_ascad.py --predictions outputs/results/00_common_e0/predictions_attack.npy --dataset <ASCAD.h5> --step 100 --out-dir experiments/00_common_e0/results/eval",
+    "python experiments/00_common_e0/scripts/finalize_e0.py"
+  ],
+  "seed": 42,
+  "git_commit_at_run": "0bca9516c0a3c6d4c44aad1686ff09a7d5a51f6b",
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "os": "Windows-11-10.0.26300-SP0"
+  },
+  "software": {
+    "python": "3.12.14",
+    "torch": "2.9.1+cu128",
+    "h5py": "3.14.0"
+  },
+  "config_file": "experiments/00_common_e0/configs/e0_source_only_fixed_official.py",
+  "data": {
+    "dataset_file": "D:/sca_project/ASCAD_data/ASCAD.h5",
+    "dataset_sha256": "f56625977fb6db8075ab620b1f3ef49a2a349ae75511097505855376e9684f91",
+    "source_train": "Profiling_traces[0:45000]",
+    "source_val": "Profiling_traces[45000:50000]",
+    "target_adapt": "none (Source Only)",
+    "target_attack": "Attack_traces[0:10000]",
+    "adapt_traces_counted_in_attack_cost": false,
+    "target_byte": 2,
+    "label": "Sbox[pt[2] XOR key[2]] (verified on all traces)",
+    "preprocessing": "raw int8, no normalization"
+  },
+  "training": {
+    "optimizer": "RMSprop",
+    "lr": 1e-05,
+    "batch_size": 200,
+    "epochs": 75,
+    "wall_time_seconds": 1170
+  },
+  "metrics": {
+    "ntge": 800,
+    "ge_at_10000": 0,
+    "sr_at_1000": 1,
+    "sr_at_10000": 1,
+    "n_attack_at_ge1": 800,
+    "n_total_at_ge1": 800,
+    "final_train_loss": 3.4904,
+    "final_val_accuracy": 0.0078
+  },
+  "outputs_in_git": [
+    {
+      "path": "sca_repo/experiments/00_common_e0/results/e0_metrics.csv",
+      "size_bytes": 2315,
+      "sha256": "b05cd372f482fba552447446222c2954f3b90b80969a2019022f73b63b05aeac"
+    },
+    {
+      "path": "sca_repo/experiments/00_common_e0/results/eval/summary.json",
+      "size_bytes": 7988,
+      "sha256": "f6dcff3b72839043494e23f2a8af925486f0151df99d82186c23a8804342eb11"
+    },
+    {
+      "path": "sca_repo/experiments/00_common_e0/results/history.json",
+      "size_bytes": 10976,
+      "sha256": "3c7de133065e102474cfc4c8d848b91aafd438cf44eae5e34460bffe39ec3dc5"
+    },
+    {
+      "path": "sca_repo/experiments/00_common_e0/figures/e0_ge_curve.png",
+      "size_bytes": 46292,
+      "sha256": "a3cf2117d51f0768e6c28a2f7c0c772e827d43ff5b17ae931ca3316c1e71ee4f"
+    },
+    {
+      "path": "sca_repo/experiments/00_common_e0/figures/e0_training_dynamics.png",
+      "size_bytes": 65979,
+      "sha256": "660d8a8554617005dd86710970fc270c8f40588278ed42e8450b97a38dc61b47"
+    },
+    {
+      "path": "sca_repo/experiments/00_common_e0/logs/e0_train.log",
+      "size_bytes": 6172,
+      "sha256": "423b7d8e9543b1c5cb10d166b54840b6841592f23e4b962be720074493cb5c04"
+    }
+  ],
+  "large_files_local_only": [
+    {
+      "path": "sca_repo/outputs/results/00_common_e0/predictions_attack.npy",
+      "size_bytes": 10240128,
+      "sha256": "f7903fee745192d6f08ef1ed124b84030fa08deac6cfcb3747c3a49022397c12"
+    },
+    {
+      "path": "sca_repo/outputs/models/00_common_e0/e0_model_torch.pt",
+      "size_bytes": 266616525,
+      "sha256": "002c7a7d3f517af93a7036a23fd6d17d8188b0b477d41cb665bc727d928b34b6"
+    }
+  ]
+}
