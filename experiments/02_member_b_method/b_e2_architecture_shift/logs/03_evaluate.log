@@ -1,0 +1,36 @@
+command: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\02_member_b_method\b_e2_architecture_shift\scripts\evaluate_b_e2.py
+started: 2026-11-10T16:04:00+08:00
+duration_seconds: 1.4
+returncode: 0
+
+--- stdout ---
+fixed     cnn_s42        NTGE=1000  GE@10000=0    SR@10000=1 acc=0.0052
+fixed     cnn_s43        NTGE=700   GE@10000=0    SR@10000=1 acc=0.0059
+fixed     cnn_s44        NTGE=2600  GE@10000=0    SR@10000=1 acc=0.0071
+fixed     mlp_s42        NTGE=None  GE@10000=153  SR@10000=0 acc=0.0034
+fixed     mlp_s43        NTGE=700   GE@10000=51   SR@10000=0 acc=0.0043
+fixed     mlp_s44        NTGE=None  GE@10000=59   SR@10000=0 acc=0.0040
+fixed     resnet1d_s42   NTGE=None  GE@10000=163  SR@10000=0 acc=0.0030
+fixed     resnet1d_s43   NTGE=None  GE@10000=205  SR@10000=0 acc=0.0032
+fixed     resnet1d_s44   NTGE=None  GE@10000=146  SR@10000=0 acc=0.0030
+desync50  cnn_s42        NTGE=None  GE@10000=32   SR@10000=0 acc=0.0039
+desync50  cnn_s43        NTGE=None  GE@10000=10   SR@10000=0 acc=0.0045
+desync50  cnn_s44        NTGE=None  GE@10000=26   SR@10000=0 acc=0.0035
+desync50  mlp_s42        NTGE=None  GE@10000=89   SR@10000=0 acc=0.0040
+desync50  mlp_s43        NTGE=None  GE@10000=52   SR@10000=0 acc=0.0039
+desync50  mlp_s44        NTGE=None  GE@10000=107  SR@10000=0 acc=0.0038
+desync50  resnet1d_s42   NTGE=None  GE@10000=209  SR@10000=0 acc=0.0036
+desync50  resnet1d_s43   NTGE=None  GE@10000=212  SR@10000=0 acc=0.0029
+desync50  resnet1d_s44   NTGE=None  GE@10000=194  SR@10000=0 acc=0.0034
+desync100 cnn_s42        NTGE=800   GE@10000=15   SR@10000=0 acc=0.0041
+desync100 cnn_s43        NTGE=300   GE@10000=19   SR@10000=0 acc=0.0052
+desync100 cnn_s44        NTGE=None  GE@10000=35   SR@10000=0 acc=0.0047
+desync100 mlp_s42        NTGE=100   GE@10000=215  SR@10000=0 acc=0.0042
+desync100 mlp_s43        NTGE=None  GE@10000=196  SR@10000=0 acc=0.0036
+desync100 mlp_s44        NTGE=None  GE@10000=114  SR@10000=0 acc=0.0042
+desync100 resnet1d_s42   NTGE=None  GE@10000=228  SR@10000=0 acc=0.0031
+desync100 resnet1d_s43   NTGE=None  GE@10000=235  SR@10000=0 acc=0.0033
+desync100 resnet1d_s44   NTGE=None  GE@10000=209  SR@10000=0 acc=0.0031
+wrote 27 evaluations -> D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\02_member_b_method\b_e2_architecture_shift\results\eval
+
+--- stderr ---

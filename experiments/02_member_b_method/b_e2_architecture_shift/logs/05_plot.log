@@ -1,0 +1,9 @@
+command: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\02_member_b_method\b_e2_architecture_shift\scripts\plot_b_e2_ge.py
+started: 2026-11-10T16:04:02+08:00
+duration_seconds: 2.3
+returncode: 0
+
+--- stdout ---
+figures written to D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\02_member_b_method\b_e2_architecture_shift\figures
+
+--- stderr ---

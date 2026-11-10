@@ -1,0 +1,58 @@
+{
+  "experiment": "B-E2",
+  "title": "Architecture sensitivity to temporal desynchronization (Source Only, zero adaptation)",
+  "level": "formal",
+  "date_created": "2026-11-10",
+  "repository_commit_base": "23dfc0e",
+  "datasets": {
+    "fixed": "D:/sca_project/ASCAD_data/ASCAD.h5",
+    "desync50": "D:/sca_project/ASCAD_data/ASCAD_desync50.h5",
+    "desync100": "D:/sca_project/ASCAD_data/ASCAD_desync100.h5"
+  },
+  "split": {
+    "source_train": "ASCAD.h5 / Profiling_traces[0:45000]",
+    "source_val": "ASCAD.h5 / Profiling_traces[45000:50000]",
+    "target_adapt": "none (zero-adaptation experiment)",
+    "target_attack": "Attack_traces[0:10000] of each shift dataset"
+  },
+  "target_byte": 2,
+  "label_formula": "Sbox[plaintext[:,2] ^ key[0,2]]",
+  "architectures": [
+    "cnn",
+    "resnet1d",
+    "mlp"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "training": {
+    "source": "reuse B-E1 checkpoints (outputs/models/b_e1/<run>/ckpt.pt); no retraining",
+    "optimizer": "RMSprop",
+    "lr": 0.00001,
+    "batch_size": 200,
+    "epochs": 75,
+    "input": "raw int8 amplitudes cast to float32, no normalization"
+  },
+  "inference": {
+    "batch_size": 2000,
+    "dtype": "float32",
+    "output": "softmax probabilities, 256 classes"
+  },
+  "evaluation": {
+    "ge_step": 100,
+    "ntge_definitions": [
+      "first GE=0",
+      "stable GE=0 to 10k"
+    ],
+    "censoring": 10000
+  },
+  "adaptation_traces": 0,
+  "cost_note": "N_total@GE=1 equals N_attack@GE=1 because no adaptation traces are used",
+  "freeze_decision": {
+    "backbone": "cnn",
+    "decided_in": "8.1.13",
+    "basis": "mean GE@10000 and cross-shift stability, not accuracy"
+  }
+}

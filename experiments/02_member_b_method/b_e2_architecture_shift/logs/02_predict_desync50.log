@@ -1,0 +1,18 @@
+command: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\02_member_b_method\b_e2_architecture_shift\scripts\predict_b_e2.py --shift desync50
+started: 2026-11-10T16:03:41+08:00
+duration_seconds: 9.6
+returncode: 0
+
+--- stdout ---
+{"run": "cnn_s42", "arch": "cnn", "seed": 42, "shift": "desync50", "dataset": "D:\\sca_project\\ASCAD_data\\ASCAD_desync50.h5", "n_traces": 10000, "inference_seconds": 1.04, "attack_accuracy": 0.0039, "mean_max_softmax": 0.523975, "mean_entropy_nats": 1.776395, "ckpt": "outputs\\models\\b_e1\\cnn_s42\\ckpt.pt"}
+{"run": "cnn_s43", "arch": "cnn", "seed": 43, "shift": "desync50", "dataset": "D:\\sca_project\\ASCAD_data\\ASCAD_desync50.h5", "n_traces": 10000, "inference_seconds": 0.92, "attack_accuracy": 0.0045, "mean_max_softmax": 0.520792, "mean_entropy_nats": 1.770382, "ckpt": "outputs\\models\\b_e1\\cnn_s43\\ckpt.pt"}
+{"run": "cnn_s44", "arch": "cnn", "seed": 44, "shift": "desync50", "dataset": "D:\\sca_project\\ASCAD_data\\ASCAD_desync50.h5", "n_traces": 10000, "inference_seconds": 0.87, "attack_accuracy": 0.0035, "mean_max_softmax": 0.63643, "mean_entropy_nats": 1.318106, "ckpt": "outputs\\models\\b_e1\\cnn_s44\\ckpt.pt"}
+{"run": "mlp_s42", "arch": "mlp", "seed": 42, "shift": "desync50", "dataset": "D:\\sca_project\\ASCAD_data\\ASCAD_desync50.h5", "n_traces": 10000, "inference_seconds": 0.01, "attack_accuracy": 0.004, "mean_max_softmax": 0.318322, "mean_entropy_nats": 3.054482, "ckpt": "outputs\\models\\b_e1\\mlp_s42\\ckpt.pt"}
+{"run": "mlp_s43", "arch": "mlp", "seed": 43, "shift": "desync50", "dataset": "D:\\sca_project\\ASCAD_data\\ASCAD_desync50.h5", "n_traces": 10000, "inference_seconds": 0.01, "attack_accuracy": 0.0039, "mean_max_softmax": 0.257866, "mean_entropy_nats": 3.221891, "ckpt": "outputs\\models\\b_e1\\mlp_s43\\ckpt.pt"}
+{"run": "mlp_s44", "arch": "mlp", "seed": 44, "shift": "desync50", "dataset": "D:\\sca_project\\ASCAD_data\\ASCAD_desync50.h5", "n_traces": 10000, "inference_seconds": 0.01, "attack_accuracy": 0.0038, "mean_max_softmax": 0.257649, "mean_entropy_nats": 3.323233, "ckpt": "outputs\\models\\b_e1\\mlp_s44\\ckpt.pt"}
+{"run": "resnet1d_s42", "arch": "resnet1d", "seed": 42, "shift": "desync50", "dataset": "D:\\sca_project\\ASCAD_data\\ASCAD_desync50.h5", "n_traces": 10000, "inference_seconds": 0.79, "attack_accuracy": 0.0036, "mean_max_softmax": 0.006003, "mean_entropy_nats": 5.533461, "ckpt": "outputs\\models\\b_e1\\resnet1d_s42\\ckpt.pt"}
+{"run": "resnet1d_s43", "arch": "resnet1d", "seed": 43, "shift": "desync50", "dataset": "D:\\sca_project\\ASCAD_data\\ASCAD_desync50.h5", "n_traces": 10000, "inference_seconds": 0.78, "attack_accuracy": 0.0029, "mean_max_softmax": 0.005862, "mean_entropy_nats": 5.533201, "ckpt": "outputs\\models\\b_e1\\resnet1d_s43\\ckpt.pt"}
+{"run": "resnet1d_s44", "arch": "resnet1d", "seed": 44, "shift": "desync50", "dataset": "D:\\sca_project\\ASCAD_data\\ASCAD_desync50.h5", "n_traces": 10000, "inference_seconds": 0.78, "attack_accuracy": 0.0034, "mean_max_softmax": 0.005461, "mean_entropy_nats": 5.536766, "ckpt": "outputs\\models\\b_e1\\resnet1d_s44\\ckpt.pt"}
+wrote 9 prediction files -> D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\02_member_b_method\b_e2_architecture_shift\results\predictions\desync50
+
+--- stderr ---

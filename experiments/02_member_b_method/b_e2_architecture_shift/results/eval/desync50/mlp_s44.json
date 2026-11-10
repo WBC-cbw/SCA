@@ -1,0 +1,424 @@
+{
+  "run": "mlp_s44",
+  "arch": "mlp",
+  "seed": 44,
+  "shift": "desync50",
+  "dataset": "D:\\sca_project\\ASCAD_data\\ASCAD_desync50.h5",
+  "predictions": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\02_member_b_method\\b_e2_architecture_shift\\results\\predictions\\desync50\\mlp_s44.npy",
+  "n_attack_traces": 10000,
+  "step": 100,
+  "target_byte": 2,
+  "real_key_byte": 224,
+  "ntge": null,
+  "n_total_at_ge1": null,
+  "ge_at_1000": 105,
+  "ge_at_5000": 31,
+  "ge_at_10000": 107,
+  "sr_at_1000": 0,
+  "sr_at_10000": 0,
+  "attack_accuracy": 0.0038,
+  "mean_max_softmax": 0.257649,
+  "mean_entropy_nats": 3.323233,
+  "ge_curve": [
+    {
+      "traces": 100,
+      "ge": 114
+    },
+    {
+      "traces": 200,
+      "ge": 174
+    },
+    {
+      "traces": 300,
+      "ge": 116
+    },
+    {
+      "traces": 400,
+      "ge": 76
+    },
+    {
+      "traces": 500,
+      "ge": 104
+    },
+    {
+      "traces": 600,
+      "ge": 65
+    },
+    {
+      "traces": 700,
+      "ge": 64
+    },
+    {
+      "traces": 800,
+      "ge": 33
+    },
+    {
+      "traces": 900,
+      "ge": 72
+    },
+    {
+      "traces": 1000,
+      "ge": 105
+    },
+    {
+      "traces": 1100,
+      "ge": 87
+    },
+    {
+      "traces": 1200,
+      "ge": 48
+    },
+    {
+      "traces": 1300,
+      "ge": 48
+    },
+    {
+      "traces": 1400,
+      "ge": 70
+    },
+    {
+      "traces": 1500,
+      "ge": 83
+    },
+    {
+      "traces": 1600,
+      "ge": 82
+    },
+    {
+      "traces": 1700,
+      "ge": 110
+    },
+    {
+      "traces": 1800,
+      "ge": 120
+    },
+    {
+      "traces": 1900,
+      "ge": 129
+    },
+    {
+      "traces": 2000,
+      "ge": 79
+    },
+    {
+      "traces": 2100,
+      "ge": 51
+    },
+    {
+      "traces": 2200,
+      "ge": 39
+    },
+    {
+      "traces": 2300,
+      "ge": 89
+    },
+    {
+      "traces": 2400,
+      "ge": 102
+    },
+    {
+      "traces": 2500,
+      "ge": 93
+    },
+    {
+      "traces": 2600,
+      "ge": 94
+    },
+    {
+      "traces": 2700,
+      "ge": 83
+    },
+    {
+      "traces": 2800,
+      "ge": 83
+    },
+    {
+      "traces": 2900,
+      "ge": 93
+    },
+    {
+      "traces": 3000,
+      "ge": 108
+    },
+    {
+      "traces": 3100,
+      "ge": 134
+    },
+    {
+      "traces": 3200,
+      "ge": 95
+    },
+    {
+      "traces": 3300,
+      "ge": 97
+    },
+    {
+      "traces": 3400,
+      "ge": 91
+    },
+    {
+      "traces": 3500,
+      "ge": 63
+    },
+    {
+      "traces": 3600,
+      "ge": 61
+    },
+    {
+      "traces": 3700,
+      "ge": 51
+    },
+    {
+      "traces": 3800,
+      "ge": 50
+    },
+    {
+      "traces": 3900,
+      "ge": 47
+    },
+    {
+      "traces": 4000,
+      "ge": 35
+    },
+    {
+      "traces": 4100,
+      "ge": 34
+    },
+    {
+      "traces": 4200,
+      "ge": 29
+    },
+    {
+      "traces": 4300,
+      "ge": 29
+    },
+    {
+      "traces": 4400,
+      "ge": 22
+    },
+    {
+      "traces": 4500,
+      "ge": 36
+    },
+    {
+      "traces": 4600,
+      "ge": 29
+    },
+    {
+      "traces": 4700,
+      "ge": 30
+    },
+    {
+      "traces": 4800,
+      "ge": 25
+    },
+    {
+      "traces": 4900,
+      "ge": 24
+    },
+    {
+      "traces": 5000,
+      "ge": 31
+    },
+    {
+      "traces": 5100,
+      "ge": 33
+    },
+    {
+      "traces": 5200,
+      "ge": 41
+    },
+    {
+      "traces": 5300,
+      "ge": 42
+    },
+    {
+      "traces": 5400,
+      "ge": 44
+    },
+    {
+      "traces": 5500,
+      "ge": 44
+    },
+    {
+      "traces": 5600,
+      "ge": 43
+    },
+    {
+      "traces": 5700,
+      "ge": 46
+    },
+    {
+      "traces": 5800,
+      "ge": 40
+    },
+    {
+      "traces": 5900,
+      "ge": 47
+    },
+    {
+      "traces": 6000,
+      "ge": 45
+    },
+    {
+      "traces": 6100,
+      "ge": 40
+    },
+    {
+      "traces": 6200,
+      "ge": 49
+    },
+    {
+      "traces": 6300,
+      "ge": 37
+    },
+    {
+      "traces": 6400,
+      "ge": 40
+    },
+    {
+      "traces": 6500,
+      "ge": 38
+    },
+    {
+      "traces": 6600,
+      "ge": 41
+    },
+    {
+      "traces": 6700,
+      "ge": 51
+    },
+    {
+      "traces": 6800,
+      "ge": 37
+    },
+    {
+      "traces": 6900,
+      "ge": 34
+    },
+    {
+      "traces": 7000,
+      "ge": 43
+    },
+    {
+      "traces": 7100,
+      "ge": 38
+    },
+    {
+      "traces": 7200,
+      "ge": 39
+    },
+    {
+      "traces": 7300,
+      "ge": 56
+    },
+    {
+      "traces": 7400,
+      "ge": 63
+    },
+    {
+      "traces": 7500,
+      "ge": 69
+    },
+    {
+      "traces": 7600,
+      "ge": 73
+    },
+    {
+      "traces": 7700,
+      "ge": 69
+    },
+    {
+      "traces": 7800,
+      "ge": 72
+    },
+    {
+      "traces": 7900,
+      "ge": 73
+    },
+    {
+      "traces": 8000,
+      "ge": 92
+    },
+    {
+      "traces": 8100,
+      "ge": 108
+    },
+    {
+      "traces": 8200,
+      "ge": 127
+    },
+    {
+      "traces": 8300,
+      "ge": 115
+    },
+    {
+      "traces": 8400,
+      "ge": 117
+    },
+    {
+      "traces": 8500,
+      "ge": 131
+    },
+    {
+      "traces": 8600,
+      "ge": 110
+    },
+    {
+      "traces": 8700,
+      "ge": 107
+    },
+    {
+      "traces": 8800,
+      "ge": 114
+    },
+    {
+      "traces": 8900,
+      "ge": 111
+    },
+    {
+      "traces": 9000,
+      "ge": 91
+    },
+    {
+      "traces": 9100,
+      "ge": 93
+    },
+    {
+      "traces": 9200,
+      "ge": 89
+    },
+    {
+      "traces": 9300,
+      "ge": 90
+    },
+    {
+      "traces": 9400,
+      "ge": 107
+    },
+    {
+      "traces": 9500,
+      "ge": 107
+    },
+    {
+      "traces": 9600,
+      "ge": 109
+    },
+    {
+      "traces": 9700,
+      "ge": 121
+    },
+    {
+      "traces": 9800,
+      "ge": 114
+    },
+    {
+      "traces": 9900,
+      "ge": 118
+    },
+    {
+      "traces": 10000,
+      "ge": 107
+    }
+  ]
+}

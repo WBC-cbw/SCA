@@ -1,0 +1,460 @@
+{
+  "experiment": "B-E2",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "target_byte": 2,
+  "ntge_censor_traces": 10000,
+  "metrics": {
+    "cnn": {
+      "fixed": {
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "ntge_first": [
+          1000,
+          700,
+          2600
+        ],
+        "ntge_first_reached": 3,
+        "ntge_first_censored_mean": 1433.3,
+        "ntge_first_censored_std": 1021.4,
+        "ntge_stable": [
+          1000,
+          700,
+          null
+        ],
+        "ntge_stable_reached": 2,
+        "ntge_stable_censored_mean": 3900.0,
+        "ntge_stable_censored_std": 5284.9,
+        "ge_at_10000": [
+          0,
+          0,
+          0
+        ],
+        "ge_at_10000_mean": 0.0,
+        "ge_at_10000_std": 0.0,
+        "ge_at_1000_mean": 2.7,
+        "ge_min_mean": 0.0,
+        "sr_at_10000_mean": 1.0,
+        "zero_points_mean": 86.3,
+        "attack_accuracy_mean": 0.006067,
+        "attack_accuracy_std": 0.000961,
+        "mean_max_softmax_mean": 0.2127,
+        "mean_entropy_nats_mean": 3.5314
+      },
+      "desync50": {
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "ntge_first": [
+          null,
+          null,
+          null
+        ],
+        "ntge_first_reached": 0,
+        "ntge_first_censored_mean": 10000.0,
+        "ntge_first_censored_std": 0.0,
+        "ntge_stable": [
+          null,
+          null,
+          null
+        ],
+        "ntge_stable_reached": 0,
+        "ntge_stable_censored_mean": 10000.0,
+        "ntge_stable_censored_std": 0.0,
+        "ge_at_10000": [
+          32,
+          10,
+          26
+        ],
+        "ge_at_10000_mean": 22.7,
+        "ge_at_10000_std": 11.37,
+        "ge_at_1000_mean": 96.3,
+        "ge_min_mean": 17.0,
+        "sr_at_10000_mean": 0.0,
+        "zero_points_mean": 0.0,
+        "attack_accuracy_mean": 0.003967,
+        "attack_accuracy_std": 0.000503,
+        "mean_max_softmax_mean": 0.5604,
+        "mean_entropy_nats_mean": 1.6216
+      },
+      "desync100": {
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "ntge_first": [
+          800,
+          300,
+          null
+        ],
+        "ntge_first_reached": 2,
+        "ntge_first_censored_mean": 3700.0,
+        "ntge_first_censored_std": 5461.7,
+        "ntge_stable": [
+          null,
+          null,
+          null
+        ],
+        "ntge_stable_reached": 0,
+        "ntge_stable_censored_mean": 10000.0,
+        "ntge_stable_censored_std": 0.0,
+        "ge_at_10000": [
+          15,
+          19,
+          35
+        ],
+        "ge_at_10000_mean": 23.0,
+        "ge_at_10000_std": 10.58,
+        "ge_at_1000_mean": 3.0,
+        "ge_min_mean": 0.3,
+        "sr_at_10000_mean": 0.0,
+        "zero_points_mean": 1.0,
+        "attack_accuracy_mean": 0.004667,
+        "attack_accuracy_std": 0.000551,
+        "mean_max_softmax_mean": 0.7084,
+        "mean_entropy_nats_mean": 1.0001
+      }
+    },
+    "resnet1d": {
+      "fixed": {
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "ntge_first": [
+          null,
+          null,
+          null
+        ],
+        "ntge_first_reached": 0,
+        "ntge_first_censored_mean": 10000.0,
+        "ntge_first_censored_std": 0.0,
+        "ntge_stable": [
+          null,
+          null,
+          null
+        ],
+        "ntge_stable_reached": 0,
+        "ntge_stable_censored_mean": 10000.0,
+        "ntge_stable_censored_std": 0.0,
+        "ge_at_10000": [
+          163,
+          205,
+          146
+        ],
+        "ge_at_10000_mean": 171.3,
+        "ge_at_10000_std": 30.37,
+        "ge_at_1000_mean": 75.3,
+        "ge_min_mean": 72.3,
+        "sr_at_10000_mean": 0.0,
+        "zero_points_mean": 0.0,
+        "attack_accuracy_mean": 0.003067,
+        "attack_accuracy_std": 0.000115,
+        "mean_max_softmax_mean": 0.0053,
+        "mean_entropy_nats_mean": 5.54
+      },
+      "desync50": {
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "ntge_first": [
+          null,
+          null,
+          null
+        ],
+        "ntge_first_reached": 0,
+        "ntge_first_censored_mean": 10000.0,
+        "ntge_first_censored_std": 0.0,
+        "ntge_stable": [
+          null,
+          null,
+          null
+        ],
+        "ntge_stable_reached": 0,
+        "ntge_stable_censored_mean": 10000.0,
+        "ntge_stable_censored_std": 0.0,
+        "ge_at_10000": [
+          209,
+          212,
+          194
+        ],
+        "ge_at_10000_mean": 205.0,
+        "ge_at_10000_std": 9.64,
+        "ge_at_1000_mean": 217.3,
+        "ge_min_mean": 138.3,
+        "sr_at_10000_mean": 0.0,
+        "zero_points_mean": 0.0,
+        "attack_accuracy_mean": 0.0033,
+        "attack_accuracy_std": 0.000361,
+        "mean_max_softmax_mean": 0.0058,
+        "mean_entropy_nats_mean": 5.5345
+      },
+      "desync100": {
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "ntge_first": [
+          null,
+          null,
+          null
+        ],
+        "ntge_first_reached": 0,
+        "ntge_first_censored_mean": 10000.0,
+        "ntge_first_censored_std": 0.0,
+        "ntge_stable": [
+          null,
+          null,
+          null
+        ],
+        "ntge_stable_reached": 0,
+        "ntge_stable_censored_mean": 10000.0,
+        "ntge_stable_censored_std": 0.0,
+        "ge_at_10000": [
+          228,
+          235,
+          209
+        ],
+        "ge_at_10000_mean": 224.0,
+        "ge_at_10000_std": 13.45,
+        "ge_at_1000_mean": 192.7,
+        "ge_min_mean": 84.7,
+        "sr_at_10000_mean": 0.0,
+        "zero_points_mean": 0.0,
+        "attack_accuracy_mean": 0.003167,
+        "attack_accuracy_std": 0.000115,
+        "mean_max_softmax_mean": 0.0058,
+        "mean_entropy_nats_mean": 5.5342
+      }
+    },
+    "mlp": {
+      "fixed": {
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "ntge_first": [
+          null,
+          700,
+          null
+        ],
+        "ntge_first_reached": 1,
+        "ntge_first_censored_mean": 6900.0,
+        "ntge_first_censored_std": 5369.4,
+        "ntge_stable": [
+          null,
+          null,
+          null
+        ],
+        "ntge_stable_reached": 0,
+        "ntge_stable_censored_mean": 10000.0,
+        "ntge_stable_censored_std": 0.0,
+        "ge_at_10000": [
+          153,
+          51,
+          59
+        ],
+        "ge_at_10000_mean": 87.7,
+        "ge_at_10000_std": 56.72,
+        "ge_at_1000_mean": 72.0,
+        "ge_min_mean": 30.3,
+        "sr_at_10000_mean": 0.0,
+        "zero_points_mean": 1.0,
+        "attack_accuracy_mean": 0.0039,
+        "attack_accuracy_std": 0.000458,
+        "mean_max_softmax_mean": 0.0067,
+        "mean_entropy_nats_mean": 5.5244
+      },
+      "desync50": {
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "ntge_first": [
+          null,
+          null,
+          null
+        ],
+        "ntge_first_reached": 0,
+        "ntge_first_censored_mean": 10000.0,
+        "ntge_first_censored_std": 0.0,
+        "ntge_stable": [
+          null,
+          null,
+          null
+        ],
+        "ntge_stable_reached": 0,
+        "ntge_stable_censored_mean": 10000.0,
+        "ntge_stable_censored_std": 0.0,
+        "ge_at_10000": [
+          89,
+          52,
+          107
+        ],
+        "ge_at_10000_mean": 82.7,
+        "ge_at_10000_std": 28.04,
+        "ge_at_1000_mean": 61.7,
+        "ge_min_mean": 11.0,
+        "sr_at_10000_mean": 0.0,
+        "zero_points_mean": 0.0,
+        "attack_accuracy_mean": 0.0039,
+        "attack_accuracy_std": 0.0001,
+        "mean_max_softmax_mean": 0.2779,
+        "mean_entropy_nats_mean": 3.1999
+      },
+      "desync100": {
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "ntge_first": [
+          100,
+          null,
+          null
+        ],
+        "ntge_first_reached": 1,
+        "ntge_first_censored_mean": 6700.0,
+        "ntge_first_censored_std": 5715.8,
+        "ntge_stable": [
+          null,
+          null,
+          null
+        ],
+        "ntge_stable_reached": 0,
+        "ntge_stable_censored_mean": 10000.0,
+        "ntge_stable_censored_std": 0.0,
+        "ge_at_10000": [
+          215,
+          196,
+          114
+        ],
+        "ge_at_10000_mean": 175.0,
+        "ge_at_10000_std": 53.67,
+        "ge_at_1000_mean": 95.0,
+        "ge_min_mean": 5.7,
+        "sr_at_10000_mean": 0.0,
+        "zero_points_mean": 0.7,
+        "attack_accuracy_mean": 0.004,
+        "attack_accuracy_std": 0.000346,
+        "mean_max_softmax_mean": 0.2809,
+        "mean_entropy_nats_mean": 3.2169
+      }
+    }
+  },
+  "matrix": {
+    "cnn": {
+      "fixed": {
+        "ntge_stable_censored_mean": 3900.0,
+        "ntge_stable_reached": 2,
+        "ge_at_10000_mean": 0.0,
+        "attack_accuracy_mean": 0.006067
+      },
+      "desync50": {
+        "ntge_stable_censored_mean": 10000.0,
+        "ntge_stable_reached": 0,
+        "ge_at_10000_mean": 22.7,
+        "attack_accuracy_mean": 0.003967
+      },
+      "desync100": {
+        "ntge_stable_censored_mean": 10000.0,
+        "ntge_stable_reached": 0,
+        "ge_at_10000_mean": 23.0,
+        "attack_accuracy_mean": 0.004667
+      }
+    },
+    "resnet1d": {
+      "fixed": {
+        "ntge_stable_censored_mean": 10000.0,
+        "ntge_stable_reached": 0,
+        "ge_at_10000_mean": 171.3,
+        "attack_accuracy_mean": 0.003067
+      },
+      "desync50": {
+        "ntge_stable_censored_mean": 10000.0,
+        "ntge_stable_reached": 0,
+        "ge_at_10000_mean": 205.0,
+        "attack_accuracy_mean": 0.0033
+      },
+      "desync100": {
+        "ntge_stable_censored_mean": 10000.0,
+        "ntge_stable_reached": 0,
+        "ge_at_10000_mean": 224.0,
+        "attack_accuracy_mean": 0.003167
+      }
+    },
+    "mlp": {
+      "fixed": {
+        "ntge_stable_censored_mean": 10000.0,
+        "ntge_stable_reached": 0,
+        "ge_at_10000_mean": 87.7,
+        "attack_accuracy_mean": 0.0039
+      },
+      "desync50": {
+        "ntge_stable_censored_mean": 10000.0,
+        "ntge_stable_reached": 0,
+        "ge_at_10000_mean": 82.7,
+        "attack_accuracy_mean": 0.0039
+      },
+      "desync100": {
+        "ntge_stable_censored_mean": 10000.0,
+        "ntge_stable_reached": 0,
+        "ge_at_10000_mean": 175.0,
+        "attack_accuracy_mean": 0.004
+      }
+    }
+  },
+  "paired_delta_ge10000": {
+    "cnn": {
+      "desync50": [
+        32,
+        10,
+        26
+      ],
+      "desync100": [
+        15,
+        19,
+        35
+      ]
+    },
+    "resnet1d": {
+      "desync50": [
+        46,
+        7,
+        48
+      ],
+      "desync100": [
+        65,
+        30,
+        63
+      ]
+    },
+    "mlp": {
+      "desync50": [
+        -64,
+        1,
+        48
+      ],
+      "desync100": [
+        62,
+        145,
+        55
+      ]
+    }
+  }
+}
