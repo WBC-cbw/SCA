@@ -1,0 +1,19 @@
+desync50  source_only s42 NTGE=None   stable=None   GE@10k=32   GE@1k=109  acc=0.0039
+desync50  dann       s42 NTGE=7500   stable=7500   GE@10k=0    GE@1k=30   acc=0.0050
+desync50  cdan       s42 NTGE=None   stable=None   GE@10k=2    GE@1k=9    acc=0.0041
+desync50  source_only s43 NTGE=None   stable=None   GE@10k=10   GE@1k=117  acc=0.0045
+desync50  dann       s43 NTGE=None   stable=None   GE@10k=10   GE@1k=127  acc=0.0055
+desync50  cdan       s43 NTGE=None   stable=None   GE@10k=13   GE@1k=14   acc=0.0047
+desync50  source_only s44 NTGE=None   stable=None   GE@10k=26   GE@1k=63   acc=0.0035
+desync50  dann       s44 NTGE=None   stable=None   GE@10k=2    GE@1k=49   acc=0.0047
+desync50  cdan       s44 NTGE=None   stable=None   GE@10k=13   GE@1k=22   acc=0.0039
+desync100 source_only s42 NTGE=800    stable=None   GE@10k=15   GE@1k=0    acc=0.0041
+desync100 dann       s42 NTGE=4900   stable=None   GE@10k=7    GE@1k=2    acc=0.0047
+desync100 cdan       s42 NTGE=9000   stable=9000   GE@10k=0    GE@1k=12   acc=0.0046
+desync100 source_only s43 NTGE=300    stable=None   GE@10k=19   GE@1k=5    acc=0.0052
+desync100 dann       s43 NTGE=None   stable=None   GE@10k=8    GE@1k=27   acc=0.0040
+desync100 cdan       s43 NTGE=700    stable=None   GE@10k=26   GE@1k=0    acc=0.0035
+desync100 source_only s44 NTGE=None   stable=None   GE@10k=35   GE@1k=4    acc=0.0047
+desync100 dann       s44 NTGE=None   stable=None   GE@10k=18   GE@1k=28   acc=0.0038
+desync100 cdan       s44 NTGE=None   stable=None   GE@10k=15   GE@1k=77   acc=0.0034
+wrote 18 evaluations -> D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\01_member_a_baselines\a_e2_uda_baselines\results\eval

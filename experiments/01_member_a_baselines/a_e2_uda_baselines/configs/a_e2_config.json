@@ -1,0 +1,121 @@
+{
+  "experiment": "A-E2: DANN / CDAN unified UDA baselines on ASCAD fixed -> desync50/100",
+  "created": "2026-11-10",
+  "owner": "member A (baselines)",
+  "code": {
+    "trainer": "experiments/01_member_a_baselines/a_e2_uda_baselines/scripts/train_uda.py",
+    "common": "experiments/01_member_a_baselines/a_e2_uda_baselines/scripts/uda_common.py",
+    "orchestrator": "experiments/01_member_a_baselines/a_e2_uda_baselines/scripts/run_all.py",
+    "evaluator": "experiments/01_member_a_baselines/a_e2_uda_baselines/scripts/evaluate_uda.py",
+    "aggregator": "experiments/01_member_a_baselines/a_e2_uda_baselines/scripts/aggregate_uda.py",
+    "plotter": "experiments/01_member_a_baselines/a_e2_uda_baselines/scripts/plot_uda_ge.py",
+    "ge_reference": "experiments/cdan-sca-diagnosis/scripts/evaluate_ascad.py::ranks",
+    "controls": "experiments/01_member_a_baselines/a_e2_uda_baselines/scripts/run_controls.py",
+    "controls_eval": "experiments/01_member_a_baselines/a_e2_uda_baselines/scripts/evaluate_controls.py",
+    "controls_compare": "experiments/01_member_a_baselines/a_e2_uda_baselines/scripts/compare_controls.py",
+    "confidence": "experiments/01_member_a_baselines/a_e2_uda_baselines/scripts/analyze_confidence.py",
+    "dynamics_plot": "experiments/01_member_a_baselines/a_e2_uda_baselines/scripts/plot_training_dynamics.py",
+    "domain_plot": "experiments/01_member_a_baselines/a_e2_uda_baselines/scripts/plot_domain_diag.py"
+  },
+  "datasets": {
+    "source": "D:/sca_project/ASCAD_data/ASCAD.h5",
+    "target": {
+      "desync50": "D:/sca_project/ASCAD_data/ASCAD_desync50.h5",
+      "desync100": "D:/sca_project/ASCAD_data/ASCAD_desync100.h5"
+    },
+    "target_byte": 2,
+    "label_rule": "Sbox[plaintext[2] xor key[2]] (verified: 50000/50000 profiling labels, 256 attack classes)"
+  },
+  "splits": {
+    "source_train": "fixed Profiling_traces[0:45000]",
+    "source_val": "fixed Profiling_traces[45000:50000]",
+    "target_adapt": "target Profiling_traces[0:45000] (unlabeled, used in adversarial loss only)",
+    "target_domain_val": "target Profiling_traces[45000:50000] (diagnostic only, never trained on)",
+    "target_attack": "target Attack_traces[0:10000]"
+  },
+  "architecture": {
+    "name": "OfficialCNN (frozen by B-E2)",
+    "init": "outputs/models/b_e1/cnn_s<seed>/ckpt.pt (same-seed initialization)",
+    "feature_extractor": "convs 64/128/256/512/512 + fc1 + fc2 -> penultimate 4096-d",
+    "classifier": "fc3 4096 -> 256",
+    "discriminator": "Linear(4096|1024 -> 1024) ReLU Linear(-> 512) ReLU Linear(-> 1)",
+    "note": "architecture frozen; weights continue training from B-E1 with official recipe (adversarial training requires gradient flow into features)"
+  },
+  "optimization": {
+    "optimizer": "RMSprop",
+    "lr": 0.00001,
+    "alpha": 0.99,
+    "eps": 1e-8,
+    "weight_decay": 0,
+    "batch_size": 200,
+    "epochs": 75,
+    "lambda_adv": 0.1,
+    "lambda_application": "gradient reversal layer on feature (DANN) / conditional representation (CDAN); discriminator updated with unweighted domain loss",
+    "discriminator_lr": "same optimizer as classifier (no separate lr)",
+    "tf32": true,
+    "input": "raw int8, no normalization"
+  },
+  "cdan": {
+    "representation": "T(f,g) = (Rf^T f_unit * sqrt(d_f)) * (Rg^T g), g = softmax(logits)",
+    "proj_dim": 1024,
+    "map_seed": "seed + 1000",
+    "entropy_weighting": false
+  },
+  "dann": {
+    "representation": "f_unit * sqrt(4096) (fixed L2 scaling, norm 64)"
+  },
+  "evaluation": {
+    "ge_step": 100,
+    "ntge_definitions": [
+      "ntge_first (first GE=0)",
+      "ntge_stable (GE=0 until 10k)"
+    ],
+    "censoring": 10000,
+    "n_attack_at_ge1": "attack traces only",
+    "n_total_at_ge1": "attack traces + 45000 target_adapt traces (DANN/CDAN); Source Only has no adaptation traces",
+    "auxiliary": [
+      "attack_accuracy",
+      "mean_max_softmax",
+      "mean_entropy",
+      "domain_balanced_acc before/after"
+    ]
+  },
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "runs": [
+    "dann_desync50_s42",
+    "dann_desync50_s43",
+    "dann_desync50_s44",
+    "dann_desync100_s42",
+    "dann_desync100_s43",
+    "dann_desync100_s44",
+    "cdan_desync50_s42",
+    "cdan_desync50_s43",
+    "cdan_desync50_s44",
+    "cdan_desync100_s42",
+    "cdan_desync100_s43",
+    "cdan_desync100_s44"
+  ],
+  "controls": {
+    "purpose": "attribution control: separate extra 75 epochs + target forward pass from adversarial alignment",
+    "design": "DANN code path with lambda_adv=0; features/classifier receive only CE gradient, discriminator still trained but cannot affect features",
+    "tag": "lam0",
+    "seeds": [
+      42
+    ],
+    "shifts": [
+      "desync50",
+      "desync100"
+    ],
+    "epochs": 75,
+    "level": "pilot (not part of the 12-run main matrix)",
+    "script": "scripts/run_controls.py"
+  },
+  "pilot_runs": [
+    "dann_desync50_s42_lam0",
+    "dann_desync100_s42_lam0"
+  ]
+}

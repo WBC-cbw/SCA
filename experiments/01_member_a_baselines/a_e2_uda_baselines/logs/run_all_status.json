@@ -1,0 +1,182 @@
+{
+  "started_at": "2026-11-10 16:29:01",
+  "epochs": 75,
+  "python": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\venv_exp\\Scripts\\python.exe",
+  "runs": {
+    "dann_desync50_s42": {
+      "state": "done",
+      "command": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\venv_exp\\Scripts\\python.exe D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\scripts\\train_uda.py --method dann --shift desync50 --seed 42 --epochs 75",
+      "log": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\logs\\dann_desync50_s42.log",
+      "started_at": "2026-11-10 16:29:01",
+      "returncode": 0,
+      "seconds": 1982.5,
+      "finished_at": "2026-11-10 17:02:03",
+      "epochs_done": 75,
+      "sec_per_epoch_mean": 26.15303704579671,
+      "final_attack_acc": 0.005
+    },
+    "dann_desync50_s43": {
+      "state": "done",
+      "command": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\venv_exp\\Scripts\\python.exe D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\scripts\\train_uda.py --method dann --shift desync50 --seed 43 --epochs 75",
+      "log": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\logs\\dann_desync50_s43.log",
+      "started_at": "2026-11-10 17:02:03",
+      "returncode": 0,
+      "seconds": 2016.8,
+      "finished_at": "2026-11-10 17:35:40",
+      "epochs_done": 75,
+      "sec_per_epoch_mean": 26.58904004732768,
+      "final_attack_acc": 0.0055
+    },
+    "dann_desync50_s44": {
+      "state": "done",
+      "command": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\venv_exp\\Scripts\\python.exe D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\scripts\\train_uda.py --method dann --shift desync50 --seed 44 --epochs 75",
+      "log": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\logs\\dann_desync50_s44.log",
+      "started_at": "2026-11-10 17:35:40",
+      "returncode": 0,
+      "seconds": 1992.3,
+      "finished_at": "2026-11-10 18:08:52",
+      "epochs_done": 75,
+      "sec_per_epoch_mean": 26.25689118385315,
+      "final_attack_acc": 0.0047
+    },
+    "dann_desync100_s42": {
+      "state": "done",
+      "command": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\venv_exp\\Scripts\\python.exe D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\scripts\\train_uda.py --method dann --shift desync100 --seed 42 --epochs 75",
+      "log": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\logs\\dann_desync100_s42.log",
+      "started_at": "2026-11-10 18:08:52",
+      "returncode": 0,
+      "seconds": 2036.9,
+      "finished_at": "2026-11-10 18:42:49",
+      "epochs_done": 75,
+      "sec_per_epoch_mean": 26.84749341964722,
+      "final_attack_acc": 0.0047
+    },
+    "dann_desync100_s43": {
+      "state": "done",
+      "command": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\venv_exp\\Scripts\\python.exe D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\scripts\\train_uda.py --method dann --shift desync100 --seed 43 --epochs 75",
+      "log": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\logs\\dann_desync100_s43.log",
+      "started_at": "2026-11-10 18:42:49",
+      "returncode": 0,
+      "seconds": 1977.3,
+      "finished_at": "2026-11-10 19:15:47",
+      "epochs_done": 75,
+      "sec_per_epoch_mean": 26.065705833435057,
+      "final_attack_acc": 0.004
+    },
+    "dann_desync100_s44": {
+      "state": "done",
+      "command": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\venv_exp\\Scripts\\python.exe D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\scripts\\train_uda.py --method dann --shift desync100 --seed 44 --epochs 75",
+      "log": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\logs\\dann_desync100_s44.log",
+      "started_at": "2026-11-10 19:15:47",
+      "returncode": 0,
+      "seconds": 1892.8,
+      "finished_at": "2026-11-10 19:47:19",
+      "epochs_done": 75,
+      "sec_per_epoch_mean": 24.9363738377889,
+      "final_attack_acc": 0.0038
+    },
+    "cdan_desync50_s42": {
+      "state": "done",
+      "command": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\venv_exp\\Scripts\\python.exe D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\scripts\\train_uda.py --method cdan --shift desync50 --seed 42 --epochs 75",
+      "log": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\logs\\cdan_desync50_s42.log",
+      "started_at": "2026-11-10 19:47:19",
+      "returncode": 0,
+      "seconds": 1923.0,
+      "finished_at": "2026-11-10 20:19:23",
+      "epochs_done": 75,
+      "sec_per_epoch_mean": 25.299951537450156,
+      "final_attack_acc": 0.0041
+    },
+    "cdan_desync50_s43": {
+      "state": "done",
+      "command": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\venv_exp\\Scripts\\python.exe D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\scripts\\train_uda.py --method cdan --shift desync50 --seed 43 --epochs 75",
+      "log": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\logs\\cdan_desync50_s43.log",
+      "started_at": "2026-11-10 20:19:23",
+      "returncode": 0,
+      "seconds": 1916.1,
+      "finished_at": "2026-11-10 20:51:19",
+      "epochs_done": 75,
+      "sec_per_epoch_mean": 25.210515089035034,
+      "final_attack_acc": 0.0047
+    },
+    "cdan_desync50_s44": {
+      "state": "done",
+      "command": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\venv_exp\\Scripts\\python.exe D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\scripts\\train_uda.py --method cdan --shift desync50 --seed 44 --epochs 75",
+      "log": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\logs\\cdan_desync50_s44.log",
+      "started_at": "2026-11-10 20:51:19",
+      "returncode": 0,
+      "seconds": 1844.9,
+      "finished_at": "2026-11-10 21:22:04",
+      "epochs_done": 75,
+      "sec_per_epoch_mean": 24.289160979588825,
+      "final_attack_acc": 0.0039
+    },
+    "cdan_desync100_s42": {
+      "state": "done",
+      "command": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\venv_exp\\Scripts\\python.exe D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\scripts\\train_uda.py --method cdan --shift desync100 --seed 42 --epochs 75",
+      "log": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\logs\\cdan_desync100_s42.log",
+      "started_at": "2026-11-10 21:22:04",
+      "returncode": 0,
+      "seconds": 1809.4,
+      "finished_at": "2026-11-10 21:52:13",
+      "epochs_done": 75,
+      "sec_per_epoch_mean": 23.722349281311036,
+      "final_attack_acc": 0.0046
+    },
+    "cdan_desync100_s43": {
+      "state": "done",
+      "command": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\venv_exp\\Scripts\\python.exe D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\scripts\\train_uda.py --method cdan --shift desync100 --seed 43 --epochs 75",
+      "log": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\logs\\cdan_desync100_s43.log",
+      "started_at": "2026-11-10 21:52:13",
+      "returncode": 0,
+      "seconds": 1804.4,
+      "finished_at": "2026-11-10 22:22:17",
+      "epochs_done": 75,
+      "sec_per_epoch_mean": 23.761179733276368,
+      "final_attack_acc": 0.0035
+    },
+    "cdan_desync100_s44": {
+      "state": "done",
+      "command": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\venv_exp\\Scripts\\python.exe D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\scripts\\train_uda.py --method cdan --shift desync100 --seed 44 --epochs 75",
+      "log": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\logs\\cdan_desync100_s44.log",
+      "started_at": "2026-11-10 22:22:17",
+      "returncode": 0,
+      "seconds": 1785.9,
+      "finished_at": "2026-11-10 22:52:03",
+      "epochs_done": 75,
+      "sec_per_epoch_mean": 23.521008491516113,
+      "final_attack_acc": 0.0034
+    }
+  },
+  "state": "complete",
+  "order": [
+    "dann_desync50_s42",
+    "dann_desync50_s43",
+    "dann_desync50_s44",
+    "dann_desync100_s42",
+    "dann_desync100_s43",
+    "dann_desync100_s44",
+    "cdan_desync50_s42",
+    "cdan_desync50_s43",
+    "cdan_desync50_s44",
+    "cdan_desync100_s42",
+    "cdan_desync100_s43",
+    "cdan_desync100_s44"
+  ],
+  "finished_at": "2026-11-10 22:52:06",
+  "failures": [],
+  "post": {
+    "evaluate_uda.py": {
+      "returncode": 0,
+      "log": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\logs\\post_evaluate_uda.log"
+    },
+    "aggregate_uda.py": {
+      "returncode": 0,
+      "log": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\logs\\post_aggregate_uda.log"
+    },
+    "plot_uda_ge.py": {
+      "returncode": 0,
+      "log": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e2_uda_baselines\\logs\\post_plot_uda_ge.log"
+    }
+  }
+}

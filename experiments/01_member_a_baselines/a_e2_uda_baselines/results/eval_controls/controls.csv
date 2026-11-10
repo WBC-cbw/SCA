@@ -1,0 +1,3 @@
+run,method,shift,seed,tag,ntge_first,ntge_stable,n_total_at_ge1,ge_at_1000,ge_at_10000,min_ge,transient_only,attack_accuracy,mean_max_softmax,mean_entropy_nats,domain_balanced_before,domain_balanced_after
+dann_desync100_s42_lam0,dann,desync100,42,lam0,400,,45400,1,2,0,True,0.0038,0.908493161201477,0.24647101759910583,0.4165,0.9924
+dann_desync50_s42_lam0,dann,desync50,42,lam0,,,,39,34,21,False,0.0052,0.8503584265708923,0.4115305542945862,0.4377,0.9827

@@ -1,0 +1,8 @@
+method       shift      NTGE(first)     GE@10k      reached  transient  acc
+source_only  desync50    10000¡À0        22.7¡À11.4   0/3      0        0.0040
+source_only  desync100    3700¡À5462     23.0¡À10.6   2/3      2        0.0047
+dann         desync50     9167¡À1443      4.0¡À5.3    1/3      0        0.0051
+dann         desync100    8300¡À2944     11.0¡À6.1    1/3      1        0.0042
+cdan         desync50    10000¡À0         9.3¡À6.4    0/3      0        0.0042
+cdan         desync100    6567¡À5105     13.7¡À13.1   2/3      1        0.0038
+paired delta GE@10k: {'dann': {'desync50': -18.7, 'desync100': -12.0}, 'cdan': {'desync50': -13.3, 'desync100': -9.3}}

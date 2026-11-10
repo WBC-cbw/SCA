@@ -1,0 +1,345 @@
+{
+  "experiment": "A-E2 DANN/CDAN baselines",
+  "protocol": {
+    "source_train": "ASCAD fixed Profiling[0:45000]",
+    "source_val": "ASCAD fixed Profiling[45000:50000]",
+    "target_adapt": "desync Profiling[0:45000] (unlabeled)",
+    "target_domain_val": "desync Profiling[45000:50000] (diagnostic only)",
+    "target_attack": "desync Attack_traces[0:10000]",
+    "target_byte": 2,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "step": 100,
+    "ntge_censoring": 10000,
+    "n_adapt": 45000
+  },
+  "metrics": {
+    "source_only": {
+      "desync50": {
+        "n_runs": 3,
+        "ntge_first_values": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_first_mean": 10000.0,
+        "ntge_first_std": 0.0,
+        "ntge_first_reached": 0,
+        "ntge_stable_values": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_stable_mean": 10000.0,
+        "ntge_stable_std": 0.0,
+        "ntge_stable_reached": 0,
+        "transient_runs": 0,
+        "ge_at_1000_mean": 96.33333333333333,
+        "ge_at_1000_std": 29.143323992525858,
+        "ge_at_10000_values": [
+          32,
+          10,
+          26
+        ],
+        "ge_at_10000_mean": 22.666666666666668,
+        "ge_at_10000_std": 11.372481406154654,
+        "sr_at_10000_mean": 0.0,
+        "attack_accuracy_mean": 0.003966666666666666,
+        "attack_accuracy_std": 0.0005033222956847165,
+        "mean_max_softmax_mean": 0.560399,
+        "mean_entropy_mean": 1.6216276666666667,
+        "domain_balanced_before_mean": null,
+        "domain_balanced_after_mean": null,
+        "n_adapt": 0,
+        "n_total_at_ge1_mean": 10000.0
+      },
+      "desync100": {
+        "n_runs": 3,
+        "ntge_first_values": [
+          800,
+          300,
+          10000.0
+        ],
+        "ntge_first_mean": 3700.0,
+        "ntge_first_std": 5461.68472176855,
+        "ntge_first_reached": 2,
+        "ntge_stable_values": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_stable_mean": 10000.0,
+        "ntge_stable_std": 0.0,
+        "ntge_stable_reached": 0,
+        "transient_runs": 2,
+        "ge_at_1000_mean": 3.0,
+        "ge_at_1000_std": 2.6457513110645907,
+        "ge_at_10000_values": [
+          15,
+          19,
+          35
+        ],
+        "ge_at_10000_mean": 23.0,
+        "ge_at_10000_std": 10.583005244258363,
+        "sr_at_10000_mean": 0.0,
+        "attack_accuracy_mean": 0.004666666666666666,
+        "attack_accuracy_std": 0.0005507570547286099,
+        "mean_max_softmax_mean": 0.7084006666666666,
+        "mean_entropy_mean": 1.000136,
+        "domain_balanced_before_mean": null,
+        "domain_balanced_after_mean": null,
+        "n_adapt": 0,
+        "n_total_at_ge1_mean": 3700.0
+      }
+    },
+    "dann": {
+      "desync50": {
+        "n_runs": 3,
+        "ntge_first_values": [
+          7500,
+          10000.0,
+          10000.0
+        ],
+        "ntge_first_mean": 9166.666666666666,
+        "ntge_first_std": 1443.3756729740644,
+        "ntge_first_reached": 1,
+        "ntge_stable_values": [
+          7500,
+          10000.0,
+          10000.0
+        ],
+        "ntge_stable_mean": 9166.666666666666,
+        "ntge_stable_std": 1443.3756729740644,
+        "ntge_stable_reached": 1,
+        "transient_runs": 0,
+        "ge_at_1000_mean": 68.66666666666667,
+        "ge_at_1000_std": 51.403631518924165,
+        "ge_at_10000_values": [
+          0,
+          10,
+          2
+        ],
+        "ge_at_10000_mean": 4.0,
+        "ge_at_10000_std": 5.291502622129181,
+        "sr_at_10000_mean": 0.3333333333333333,
+        "attack_accuracy_mean": 0.005066666666666666,
+        "attack_accuracy_std": 0.0004041451884327378,
+        "mean_max_softmax_mean": 0.8270006666666667,
+        "mean_entropy_mean": 0.4946176666666667,
+        "domain_balanced_before_mean": 0.4455333333333333,
+        "domain_balanced_after_mean": 0.8714000000000001,
+        "n_adapt": 45000,
+        "n_total_at_ge1_mean": 54166.666666666664
+      },
+      "desync100": {
+        "n_runs": 3,
+        "ntge_first_values": [
+          4900,
+          10000.0,
+          10000.0
+        ],
+        "ntge_first_mean": 8300.0,
+        "ntge_first_std": 2944.486372867091,
+        "ntge_first_reached": 1,
+        "ntge_stable_values": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_stable_mean": 10000.0,
+        "ntge_stable_std": 0.0,
+        "ntge_stable_reached": 0,
+        "transient_runs": 1,
+        "ge_at_1000_mean": 19.0,
+        "ge_at_1000_std": 14.730919862656235,
+        "ge_at_10000_values": [
+          7,
+          8,
+          18
+        ],
+        "ge_at_10000_mean": 11.0,
+        "ge_at_10000_std": 6.082762530298219,
+        "sr_at_10000_mean": 0.0,
+        "attack_accuracy_mean": 0.004166666666666667,
+        "attack_accuracy_std": 0.0004725815626252609,
+        "mean_max_softmax_mean": 0.892669,
+        "mean_entropy_mean": 0.29397466666666666,
+        "domain_balanced_before_mean": 0.4422333333333333,
+        "domain_balanced_after_mean": 0.9148666666666667,
+        "n_adapt": 45000,
+        "n_total_at_ge1_mean": 53300.0
+      }
+    },
+    "cdan": {
+      "desync50": {
+        "n_runs": 3,
+        "ntge_first_values": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_first_mean": 10000.0,
+        "ntge_first_std": 0.0,
+        "ntge_first_reached": 0,
+        "ntge_stable_values": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_stable_mean": 10000.0,
+        "ntge_stable_std": 0.0,
+        "ntge_stable_reached": 0,
+        "transient_runs": 0,
+        "ge_at_1000_mean": 15.0,
+        "ge_at_1000_std": 6.557438524302,
+        "ge_at_10000_values": [
+          2,
+          13,
+          13
+        ],
+        "ge_at_10000_mean": 9.333333333333334,
+        "ge_at_10000_std": 6.3508529610858835,
+        "sr_at_10000_mean": 0.0,
+        "attack_accuracy_mean": 0.004233333333333333,
+        "attack_accuracy_std": 0.00041633319989322666,
+        "mean_max_softmax_mean": 0.850318,
+        "mean_entropy_mean": 0.4245916666666667,
+        "domain_balanced_before_mean": 0.5161333333333333,
+        "domain_balanced_after_mean": 0.7315666666666667,
+        "n_adapt": 45000,
+        "n_total_at_ge1_mean": 55000.0
+      },
+      "desync100": {
+        "n_runs": 3,
+        "ntge_first_values": [
+          9000,
+          700,
+          10000.0
+        ],
+        "ntge_first_mean": 6566.666666666667,
+        "ntge_first_std": 5105.226080530943,
+        "ntge_first_reached": 2,
+        "ntge_stable_values": [
+          9000,
+          10000.0,
+          10000.0
+        ],
+        "ntge_stable_mean": 9666.666666666666,
+        "ntge_stable_std": 577.3502691896257,
+        "ntge_stable_reached": 1,
+        "transient_runs": 1,
+        "ge_at_1000_mean": 29.666666666666668,
+        "ge_at_1000_std": 41.42865353029631,
+        "ge_at_10000_values": [
+          0,
+          26,
+          15
+        ],
+        "ge_at_10000_mean": 13.666666666666666,
+        "ge_at_10000_std": 13.051181300301263,
+        "sr_at_10000_mean": 0.3333333333333333,
+        "attack_accuracy_mean": 0.003833333333333333,
+        "attack_accuracy_std": 0.0006658328118479393,
+        "mean_max_softmax_mean": 0.9474056666666666,
+        "mean_entropy_mean": 0.147533,
+        "domain_balanced_before_mean": 0.5277666666666666,
+        "domain_balanced_after_mean": 0.6488999999999999,
+        "n_adapt": 45000,
+        "n_total_at_ge1_mean": 51566.666666666664
+      }
+    }
+  },
+  "paired_delta_vs_source_only": {
+    "dann": {
+      "desync50": {
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "delta_ge_at_10000": [
+          -32,
+          0,
+          -24
+        ],
+        "delta_ge_at_10000_mean": -18.666666666666668,
+        "delta_ntge_first": [
+          -2500.0,
+          0.0,
+          0.0
+        ],
+        "delta_ntge_first_mean": -833.3333333333334,
+        "improved_ge": 2,
+        "worsened_ge": 0
+      },
+      "desync100": {
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "delta_ge_at_10000": [
+          -8,
+          -11,
+          -17
+        ],
+        "delta_ge_at_10000_mean": -12.0,
+        "delta_ntge_first": [
+          4100,
+          9700.0,
+          0.0
+        ],
+        "delta_ntge_first_mean": 4600.0,
+        "improved_ge": 3,
+        "worsened_ge": 0
+      }
+    },
+    "cdan": {
+      "desync50": {
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "delta_ge_at_10000": [
+          -30,
+          3,
+          -13
+        ],
+        "delta_ge_at_10000_mean": -13.333333333333334,
+        "delta_ntge_first": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "delta_ntge_first_mean": 0.0,
+        "improved_ge": 2,
+        "worsened_ge": 1
+      },
+      "desync100": {
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "delta_ge_at_10000": [
+          -15,
+          7,
+          -20
+        ],
+        "delta_ge_at_10000_mean": -9.333333333333334,
+        "delta_ntge_first": [
+          8200,
+          400,
+          0.0
+        ],
+        "delta_ntge_first_mean": 2866.6666666666665,
+        "improved_ge": 2,
+        "worsened_ge": 1
+      }
+    }
+  }
+}
