@@ -1,9 +1,9 @@
 {
   "experiment_id": "B-E1",
-  "experiment_name": "ASCAD fixed-key 同域结构筛选：MLP / Official CNN / ResNet1D",
+  "experiment_name": "ASCAD fixed-key \u540c\u57df\u7ed3\u6784\u7b5b\u9009\uff1aMLP / Official CNN / ResNet1D",
   "owner": "WBC-cbw",
-  "created_utc": "2026-11-10T07:25:32+00:00",
-  "git_commit": "23dfc0e85de045f35bf7378ce52fd03cb96d40b9",
+  "created_utc": "2026-11-10T07:26:05+00:00",
+  "git_commit": "0e6f38ad6c779a5f2a1d50dba06d5d719d0c8d2c",
   "git_branch": "main",
   "run_commands": [
     "bash experiments/02_member_b_method/b_e1_architecture_same_domain/scripts/run_b_e1_all.sh",
@@ -49,8 +49,8 @@
       "cnn": {
         "n_params": 66652544,
         "epochs_done": {
-          "mean": 75,
-          "std": 0,
+          "mean": 75.0,
+          "std": 0.0,
           "values": [
             75,
             75,
@@ -112,8 +112,8 @@
           ]
         },
         "ge_at_10000": {
-          "mean": 0,
-          "std": 0,
+          "mean": 0.0,
+          "std": 0.0,
           "values": [
             0,
             0,
@@ -130,8 +130,8 @@
           ]
         },
         "sr_at_10000": {
-          "mean": 1,
-          "std": 0,
+          "mean": 1.0,
+          "std": 0.0,
           "values": [
             1,
             1,
@@ -142,8 +142,8 @@
       "mlp": {
         "n_params": 752896,
         "epochs_done": {
-          "mean": 75,
-          "std": 0,
+          "mean": 75.0,
+          "std": 0.0,
           "values": [
             75,
             75,
@@ -179,7 +179,7 @@
         },
         "final_train_acc": {
           "mean": 0.007,
-          "std": 0,
+          "std": 0.0,
           "values": [
             0.006888888888888889,
             0.007533333333333334,
@@ -187,14 +187,14 @@
           ]
         },
         "ntge": {
-          "mean": 700,
-          "std": 0,
+          "mean": 700.0,
+          "std": 0.0,
           "values": [
             700
           ]
         },
         "ge_at_1000": {
-          "mean": 72,
+          "mean": 72.0,
           "std": 83.108,
           "values": [
             165,
@@ -212,8 +212,8 @@
           ]
         },
         "sr_at_1000": {
-          "mean": 0,
-          "std": 0,
+          "mean": 0.0,
+          "std": 0.0,
           "values": [
             0,
             0,
@@ -221,8 +221,8 @@
           ]
         },
         "sr_at_10000": {
-          "mean": 0,
-          "std": 0,
+          "mean": 0.0,
+          "std": 0.0,
           "values": [
             0,
             0,
@@ -233,8 +233,8 @@
       "resnet1d": {
         "n_params": 1505600,
         "epochs_done": {
-          "mean": 75,
-          "std": 0,
+          "mean": 75.0,
+          "std": 0.0,
           "values": [
             75,
             75,
@@ -261,7 +261,7 @@
         },
         "final_val_acc": {
           "mean": 0.004,
-          "std": 0,
+          "std": 0.0,
           "values": [
             0.00419999985024333,
             0.00419999985024333,
@@ -270,7 +270,7 @@
         },
         "final_train_acc": {
           "mean": 0.005,
-          "std": 0,
+          "std": 0.0,
           "values": [
             0.004955555555555556,
             0.005266666666666667,
@@ -297,8 +297,8 @@
           ]
         },
         "sr_at_1000": {
-          "mean": 0,
-          "std": 0,
+          "mean": 0.0,
+          "std": 0.0,
           "values": [
             0,
             0,
@@ -306,8 +306,8 @@
           ]
         },
         "sr_at_10000": {
-          "mean": 0,
-          "std": 0,
+          "mean": 0.0,
+          "std": 0.0,
           "values": [
             0,
             0,
@@ -525,10 +525,8 @@
     }
   ],
   "notes": {
-    "large_files": "ckpt.pt 已归档到 outputs/models/b_e1/<run>/ckpt.pt（不入 Git）；attack 集预测 predictions_attack.npy 留在 results/<run>/（*.npy 由 .gitignore 排除）",
-    "pilot": "results_pilot/ 与 results_pilot/aborted_paging_resnet1d_s42/ 为补充诊断与事故残骸，不进入主结果",
-    "git_commit": "git_commit 是训练运行时的 HEAD（实验代码基线 23dfc0e）；包含本实验产物的提交是它的子提交",
-    "gitignore": "*.npy / *.pt / *.h5 / .mplconfig/ / __pycache__/ 由仓库 .gitignore 排除；本目录 99 个文件里只有 <1 MB 的文本与小图会入库"
+    "large_files": "ckpt.pt \u5df2\u5f52\u6863\u5230 outputs/models/b_e1/<run>/ckpt.pt\uff08\u4e0d\u5165 Git\uff09\uff1battack \u96c6\u9884\u6d4b predictions_attack.npy \u7559\u5728 results/<run>/\uff08*.npy \u7531 .gitignore \u6392\u9664\uff09",
+    "pilot": "results_pilot/ \u4e0e results_pilot/aborted_paging_resnet1d_s42/ \u4e3a\u8865\u5145\u8bca\u65ad\u4e0e\u4e8b\u6545\u6b8b\u9ab8\uff0c\u4e0d\u8fdb\u5165\u4e3b\u7ed3\u679c"
   },
   "files": [
     {
@@ -628,13 +626,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 19944,
-      "sha256": "a551f502a31ad16aa7a6e0d5d90a037b2f436a861a7fca9c722776e25e74b2b3"
+      "bytes": 20012,
+      "sha256": "656ff03f106f614f2064b50757389efd0f5e3365b94c87f81fb00b1a825d42e2"
     },
     {
       "path": "reports/b_e1_report.md",
-      "bytes": 18728,
-      "sha256": "80d2d45d7bb6c3301b57c0518bcc7ce04daa1bec706be31dfba81f53ba1a8c08"
+      "bytes": 18796,
+      "sha256": "b1d58030a095b9946a49d9e1e52b12732a0e74ccf2e6540a40cc440a15d4ad86"
     },
     {
       "path": "results/cnn_s42/history.json",
@@ -1027,6 +1025,6 @@
       "sha256": "207e611a82874f2ce48bd0f3f9538b67adef39336981c0a0ec8124c728dee985"
     }
   ],
-  "total_bytes": 135773447,
+  "total_bytes": 135773583,
   "archived_models_total_bytes": 833002826
 }
