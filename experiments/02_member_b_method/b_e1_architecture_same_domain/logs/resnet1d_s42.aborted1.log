@@ -1,0 +1,17 @@
+{"start": {"run": "resnet1d_s42", "arch": "resnet1d", "seed": 42, "epochs_planned": 75, "batch_size": 200, "learning_rate": 1e-05, "optimizer": "rmsprop", "normalize": "none", "input_shape": [1, 700], "num_classes": 256, "n_params": 1505600, "train_size": 45000, "val_size": 5000, "attack_size": 10000, "target_byte": 2, "real_key_byte": 224, "dataset": "D:/sca_project/ASCAD_data/ASCAD.h5", "device": "NVIDIA GeForce RTX 5060 Laptop GPU", "torch": "2.9.1+cu128", "numpy": "2.5.3", "train_limit": 45000}}
+{"epoch": 1, "loss": 5.5822, "acc": 0.004, "val_acc": 0.0062, "ge_probe": 167, "sec": 16.9}
+{"epoch": 2, "loss": 5.5489, "acc": 0.0039, "val_acc": 0.0062, "ge_probe": 92, "sec": 26.0}
+{"epoch": 3, "loss": 5.5468, "acc": 0.0042, "val_acc": 0.0036, "ge_probe": null, "sec": 23.4}
+{"epoch": 4, "loss": 5.5461, "acc": 0.004, "val_acc": 0.0038, "ge_probe": 182, "sec": 22.9}
+{"epoch": 5, "loss": 5.5455, "acc": 0.0048, "val_acc": 0.0064, "ge_probe": null, "sec": 27.4}
+{"epoch": 6, "loss": 5.5451, "acc": 0.0047, "val_acc": 0.0038, "ge_probe": 157, "sec": 25.5}
+{"epoch": 7, "loss": 5.5449, "acc": 0.0048, "val_acc": 0.0038, "ge_probe": null, "sec": 23.4}
+{"epoch": 8, "loss": 5.5448, "acc": 0.0048, "val_acc": 0.0038, "ge_probe": 157, "sec": 79.0}
+{"epoch": 9, "loss": 5.5446, "acc": 0.0046, "val_acc": 0.0038, "ge_probe": null, "sec": 197.2}
+{"epoch": 10, "loss": 5.5445, "acc": 0.0043, "val_acc": 0.0034, "ge_probe": 203, "sec": 118.6}
+{"epoch": 11, "loss": 5.5441, "acc": 0.005, "val_acc": 0.0052, "ge_probe": null, "sec": 276.9}
+{"epoch": 12, "loss": 5.5441, "acc": 0.0042, "val_acc": 0.0038, "ge_probe": 205, "sec": 126.4}
+{"epoch": 13, "loss": 5.5439, "acc": 0.0047, "val_acc": 0.0038, "ge_probe": null, "sec": 126.2}
+{"epoch": 14, "loss": 5.5437, "acc": 0.0048, "val_acc": 0.0036, "ge_probe": 183, "sec": 124.0}
+{"epoch": 15, "loss": 5.5437, "acc": 0.005, "val_acc": 0.0038, "ge_probe": null, "sec": 130.2}
+{"epoch": 16, "loss": 5.5435, "acc": 0.0047, "val_acc": 0.0034, "ge_probe": 189, "sec": 166.8}

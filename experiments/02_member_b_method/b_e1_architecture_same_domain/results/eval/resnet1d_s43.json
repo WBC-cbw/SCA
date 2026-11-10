@@ -1,0 +1,416 @@
+{
+  "run": "resnet1d_s43",
+  "predictions": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\02_member_b_method\\b_e1_architecture_same_domain\\results\\resnet1d_s43\\predictions_attack.npy",
+  "n_attack_traces": 10000,
+  "step": 100,
+  "target_byte": 2,
+  "ntge": null,
+  "n_total_at_ge1": null,
+  "ge_at_1000": 84,
+  "ge_at_5000": 211,
+  "ge_at_10000": 205,
+  "sr_at_1000": 0,
+  "sr_at_10000": 0,
+  "ge_curve": [
+    {
+      "traces": 100,
+      "ge": 175
+    },
+    {
+      "traces": 200,
+      "ge": 158
+    },
+    {
+      "traces": 300,
+      "ge": 187
+    },
+    {
+      "traces": 400,
+      "ge": 128
+    },
+    {
+      "traces": 500,
+      "ge": 144
+    },
+    {
+      "traces": 600,
+      "ge": 118
+    },
+    {
+      "traces": 700,
+      "ge": 114
+    },
+    {
+      "traces": 800,
+      "ge": 75
+    },
+    {
+      "traces": 900,
+      "ge": 93
+    },
+    {
+      "traces": 1000,
+      "ge": 84
+    },
+    {
+      "traces": 1100,
+      "ge": 123
+    },
+    {
+      "traces": 1200,
+      "ge": 163
+    },
+    {
+      "traces": 1300,
+      "ge": 196
+    },
+    {
+      "traces": 1400,
+      "ge": 214
+    },
+    {
+      "traces": 1500,
+      "ge": 196
+    },
+    {
+      "traces": 1600,
+      "ge": 171
+    },
+    {
+      "traces": 1700,
+      "ge": 165
+    },
+    {
+      "traces": 1800,
+      "ge": 191
+    },
+    {
+      "traces": 1900,
+      "ge": 180
+    },
+    {
+      "traces": 2000,
+      "ge": 220
+    },
+    {
+      "traces": 2100,
+      "ge": 221
+    },
+    {
+      "traces": 2200,
+      "ge": 235
+    },
+    {
+      "traces": 2300,
+      "ge": 226
+    },
+    {
+      "traces": 2400,
+      "ge": 218
+    },
+    {
+      "traces": 2500,
+      "ge": 214
+    },
+    {
+      "traces": 2600,
+      "ge": 213
+    },
+    {
+      "traces": 2700,
+      "ge": 217
+    },
+    {
+      "traces": 2800,
+      "ge": 234
+    },
+    {
+      "traces": 2900,
+      "ge": 238
+    },
+    {
+      "traces": 3000,
+      "ge": 231
+    },
+    {
+      "traces": 3100,
+      "ge": 240
+    },
+    {
+      "traces": 3200,
+      "ge": 227
+    },
+    {
+      "traces": 3300,
+      "ge": 218
+    },
+    {
+      "traces": 3400,
+      "ge": 205
+    },
+    {
+      "traces": 3500,
+      "ge": 209
+    },
+    {
+      "traces": 3600,
+      "ge": 211
+    },
+    {
+      "traces": 3700,
+      "ge": 223
+    },
+    {
+      "traces": 3800,
+      "ge": 207
+    },
+    {
+      "traces": 3900,
+      "ge": 222
+    },
+    {
+      "traces": 4000,
+      "ge": 184
+    },
+    {
+      "traces": 4100,
+      "ge": 170
+    },
+    {
+      "traces": 4200,
+      "ge": 166
+    },
+    {
+      "traces": 4300,
+      "ge": 195
+    },
+    {
+      "traces": 4400,
+      "ge": 175
+    },
+    {
+      "traces": 4500,
+      "ge": 177
+    },
+    {
+      "traces": 4600,
+      "ge": 184
+    },
+    {
+      "traces": 4700,
+      "ge": 203
+    },
+    {
+      "traces": 4800,
+      "ge": 210
+    },
+    {
+      "traces": 4900,
+      "ge": 208
+    },
+    {
+      "traces": 5000,
+      "ge": 211
+    },
+    {
+      "traces": 5100,
+      "ge": 227
+    },
+    {
+      "traces": 5200,
+      "ge": 225
+    },
+    {
+      "traces": 5300,
+      "ge": 235
+    },
+    {
+      "traces": 5400,
+      "ge": 223
+    },
+    {
+      "traces": 5500,
+      "ge": 219
+    },
+    {
+      "traces": 5600,
+      "ge": 209
+    },
+    {
+      "traces": 5700,
+      "ge": 195
+    },
+    {
+      "traces": 5800,
+      "ge": 187
+    },
+    {
+      "traces": 5900,
+      "ge": 183
+    },
+    {
+      "traces": 6000,
+      "ge": 182
+    },
+    {
+      "traces": 6100,
+      "ge": 178
+    },
+    {
+      "traces": 6200,
+      "ge": 166
+    },
+    {
+      "traces": 6300,
+      "ge": 168
+    },
+    {
+      "traces": 6400,
+      "ge": 162
+    },
+    {
+      "traces": 6500,
+      "ge": 160
+    },
+    {
+      "traces": 6600,
+      "ge": 168
+    },
+    {
+      "traces": 6700,
+      "ge": 154
+    },
+    {
+      "traces": 6800,
+      "ge": 174
+    },
+    {
+      "traces": 6900,
+      "ge": 172
+    },
+    {
+      "traces": 7000,
+      "ge": 170
+    },
+    {
+      "traces": 7100,
+      "ge": 178
+    },
+    {
+      "traces": 7200,
+      "ge": 164
+    },
+    {
+      "traces": 7300,
+      "ge": 165
+    },
+    {
+      "traces": 7400,
+      "ge": 178
+    },
+    {
+      "traces": 7500,
+      "ge": 156
+    },
+    {
+      "traces": 7600,
+      "ge": 156
+    },
+    {
+      "traces": 7700,
+      "ge": 164
+    },
+    {
+      "traces": 7800,
+      "ge": 141
+    },
+    {
+      "traces": 7900,
+      "ge": 159
+    },
+    {
+      "traces": 8000,
+      "ge": 153
+    },
+    {
+      "traces": 8100,
+      "ge": 157
+    },
+    {
+      "traces": 8200,
+      "ge": 178
+    },
+    {
+      "traces": 8300,
+      "ge": 163
+    },
+    {
+      "traces": 8400,
+      "ge": 170
+    },
+    {
+      "traces": 8500,
+      "ge": 179
+    },
+    {
+      "traces": 8600,
+      "ge": 178
+    },
+    {
+      "traces": 8700,
+      "ge": 194
+    },
+    {
+      "traces": 8800,
+      "ge": 200
+    },
+    {
+      "traces": 8900,
+      "ge": 187
+    },
+    {
+      "traces": 9000,
+      "ge": 193
+    },
+    {
+      "traces": 9100,
+      "ge": 196
+    },
+    {
+      "traces": 9200,
+      "ge": 205
+    },
+    {
+      "traces": 9300,
+      "ge": 200
+    },
+    {
+      "traces": 9400,
+      "ge": 201
+    },
+    {
+      "traces": 9500,
+      "ge": 196
+    },
+    {
+      "traces": 9600,
+      "ge": 208
+    },
+    {
+      "traces": 9700,
+      "ge": 205
+    },
+    {
+      "traces": 9800,
+      "ge": 194
+    },
+    {
+      "traces": 9900,
+      "ge": 194
+    },
+    {
+      "traces": 10000,
+      "ge": 205
+    }
+  ]
+}

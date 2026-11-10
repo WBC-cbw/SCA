@@ -1,0 +1,26 @@
+{
+  "run": "resnet1d_s42",
+  "arch": "resnet1d",
+  "seed": 42,
+  "epochs_planned": 75,
+  "batch_size": 200,
+  "learning_rate": 1e-05,
+  "optimizer": "rmsprop",
+  "normalize": "none",
+  "input_shape": [
+    1,
+    700
+  ],
+  "num_classes": 256,
+  "n_params": 1505600,
+  "train_size": 45000,
+  "val_size": 5000,
+  "attack_size": 10000,
+  "target_byte": 2,
+  "real_key_byte": 224,
+  "dataset": "D:/sca_project/ASCAD_data/ASCAD.h5",
+  "device": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "torch": "2.9.1+cu128",
+  "numpy": "2.5.3",
+  "train_limit": 45000
+}
