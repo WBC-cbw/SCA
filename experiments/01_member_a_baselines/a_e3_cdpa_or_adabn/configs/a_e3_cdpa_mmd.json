@@ -1,0 +1,97 @@
+{
+  "experiment_id": "A-E3",
+  "method": "CDPA-MMD",
+  "backbone": "Official CNN (B-E1 frozen architecture)",
+  "pretrained_init": "outputs/models/b_e1/cnn_s<seed>/ckpt.pt",
+  "data": {
+    "fixed": "D:/sca_project/ASCAD_data/ASCAD.h5",
+    "desync50": "D:/sca_project/ASCAD_data/ASCAD_desync50.h5",
+    "desync100": "D:/sca_project/ASCAD_data/ASCAD_desync100.h5",
+    "splits": {
+      "source_train": "Profiling[0:45000]",
+      "source_val": "Profiling[45000:50000]",
+      "target_adapt": "target Profiling[0:45000] (unlabeled)",
+      "target_domain_val": "target Profiling[45000:50000] (diagnostic only)",
+      "target_attack": "target Attack[0:10000]"
+    },
+    "target_byte": 2
+  },
+  "training": {
+    "optimizer": "RMSprop",
+    "lr": 0.00001,
+    "alpha": 0.99,
+    "eps": 1e-8,
+    "weight_decay": 0,
+    "batch_size": 200,
+    "epochs": 75,
+    "raw_int8_input": true,
+    "lambda_mmd": 0.1,
+    "mmd_layers": [
+      "conv",
+      "fc1",
+      "fc2"
+    ],
+    "mmd_kernel": {
+      "type": "rbf",
+      "kernel_num": 5,
+      "kernel_mul": 2,
+      "fix_sigma": null
+    },
+    "adapt_traces": 45000,
+    "seed_list": [
+      42,
+      43,
+      44
+    ],
+    "tf32": true
+  },
+  "official_reference": {
+    "notebook": "sca_repo/baselines/cdpa/CDPA/Cross-Device-Profiled-Attack-main/Different_Implementations/ASCAD_addDesync100_Demo.ipynb",
+    "optimizer": "Adam lr=1e-3",
+    "pretrain_epochs": 100,
+    "finetune_epochs": 15,
+    "target_finetune_num": 200,
+    "backbone": "3xConv1d+3xLinear(20)",
+    "deviations": [
+      "backbone replaced by Official CNN (project-frozen structure)",
+      "RMSprop lr=1e-5 instead of Adam 1e-3 (project-frozen official SCA recipe)",
+      "75 finetune epochs instead of 15 (control variable parity)",
+      "45000 target_adapt traces instead of 200 cached traces",
+      "no BN to freeze (Official CNN has no BatchNorm)",
+      "pretrain reuses B-E1 same-seed 75-epoch checkpoint instead of 100-epoch from scratch"
+    ]
+  },
+  "evaluation": {
+    "script": "scripts/evaluate_a_e3.py",
+    "ge_step": 100,
+    "byte": 2,
+    "ntge_definition": "first traces where GE reaches 0; stable variant requires 0 to the end",
+    "censor": 10000,
+    "n_total_formula": "n_attack_at_ge1 + 45000 (adapted methods only)"
+  },
+  "matrix": {
+    "methods": [
+      "source_only",
+      "dann",
+      "cdan",
+      "cdpa_mmd"
+    ],
+    "shifts": [
+      "desync50",
+      "desync100"
+    ],
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "runs": [
+      "cdpa_desync50_s42",
+      "cdpa_desync50_s43",
+      "cdpa_desync50_s44",
+      "cdpa_desync100_s42",
+      "cdpa_desync100_s43",
+      "cdpa_desync100_s44"
+    ]
+  }
+}

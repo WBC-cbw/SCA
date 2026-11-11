@@ -1,0 +1,25 @@
+method,label,shift,seed,run,ntge_first,ntge_stable,ge_at_1000,ge_at_10000,sr_at_1000,sr_at_10000,attack_accuracy,n_attack_at_ge1,n_total_at_ge1,train_seconds,lambda_mmd,final_mmd_loss
+source_only,Source Only,desync50,42,source_only_desync50_s42,,,109,32,0,0,0.0039,,,,,
+source_only,Source Only,desync50,43,source_only_desync50_s43,,,117,10,0,0,0.0045,,,,,
+source_only,Source Only,desync50,44,source_only_desync50_s44,,,63,26,0,0,0.0035,,,,,
+source_only,Source Only,desync100,42,source_only_desync100_s42,800,,0,15,1,0,0.0041,800,800,,,
+source_only,Source Only,desync100,43,source_only_desync100_s43,300,,5,19,0,0,0.0052,300,300,,,
+source_only,Source Only,desync100,44,source_only_desync100_s44,,,4,35,0,0,0.0047,,,,,
+dann,DANN,desync50,42,dann_desync50_s42,7500,7500,30,0,0,1,0.005,7500,52500,1961.4777784347534,,
+dann,DANN,desync50,43,dann_desync50_s43,,,127,10,0,0,0.0055,,,1994.1780035495758,,
+dann,DANN,desync50,44,dann_desync50_s44,,,49,2,0,0,0.0047,,,1969.2668387889862,,
+dann,DANN,desync100,42,dann_desync100_s42,4900,,2,7,0,0,0.0047,4900,49900,2013.5620064735413,,
+dann,DANN,desync100,43,dann_desync100_s43,,,27,8,0,0,0.004,,,1954.9279375076294,,
+dann,DANN,desync100,44,dann_desync100_s44,,,28,18,0,0,0.0038,,,1870.2280378341675,,
+cdan,CDAN,desync50,42,cdan_desync50_s42,,,9,2,0,0,0.0041,,,1897.4963653087616,,
+cdan,CDAN,desync50,43,cdan_desync50_s43,,,14,13,0,0,0.0047,,,1890.7886316776276,,
+cdan,CDAN,desync50,44,cdan_desync50_s44,,,22,13,0,0,0.0039,,,1821.687073469162,,
+cdan,CDAN,desync100,42,cdan_desync100_s42,9000,9000,12,0,0,1,0.0046,9000,54000,1779.1761960983276,,
+cdan,CDAN,desync100,43,cdan_desync100_s43,700,,0,26,1,0,0.0035,700,45700,1782.0884799957275,,
+cdan,CDAN,desync100,44,cdan_desync100_s44,,,77,15,0,0,0.0034,,,1764.0756368637085,,
+cdpa_mmd,CDPA-MMD,desync50,42,cdpa_desync50_s42,6400,8000,25,0,0,1,0.0046,6400,51400,1932.1879105567932,0.1,0.8001464994748434
+cdpa_mmd,CDPA-MMD,desync50,43,cdpa_desync50_s43,5200,5500,17,0,0,1,0.0046,5200,50200,1866.7149682044983,0.1,0.8106482903162638
+cdpa_mmd,CDPA-MMD,desync50,44,cdpa_desync50_s44,5500,5500,50,0,0,1,0.0037,5500,50500,1898.9316520690918,0.1,0.8931054825252956
+cdpa_mmd,CDPA-MMD,desync100,42,cdpa_desync100_s42,300,7700,0,0,1,1,0.0034,300,45300,1950.9031174182892,0.1,1.2308794408374362
+cdpa_mmd,CDPA-MMD,desync100,43,cdpa_desync100_s43,800,,0,9,1,0,0.0043,800,45800,1864.146183013916,0.1,1.303354679743449
+cdpa_mmd,CDPA-MMD,desync100,44,cdpa_desync100_s44,,,38,3,0,0,0.0043,,,1725.9264726638794,0.1,1.4399632199605306
