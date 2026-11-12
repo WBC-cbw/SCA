@@ -1,0 +1,37 @@
+method,label,shift,seed,run,ntge_first,ntge_stable,ge_at_1000,ge_at_10000,sr_at_1000,sr_at_10000,attack_accuracy,n_attack_at_ge1,n_total_at_ge1,train_seconds,mean_entropy_nats,max_top1_share,collapse_epochs,entropy_weighting,conditional_input
+source_only,Source Only,desync50,42,source_only_desync50_s42,,,109,32,0,0,0.0039,,,,1.776395,,,,
+source_only,Source Only,desync50,43,source_only_desync50_s43,,,117,10,0,0,0.0045,,,,1.770382,,,,
+source_only,Source Only,desync50,44,source_only_desync50_s44,,,63,26,0,0,0.0035,,,,1.318106,,,,
+source_only,Source Only,desync100,42,source_only_desync100_s42,800,,0,15,1,0,0.0041,800,800,,1.115518,,,,
+source_only,Source Only,desync100,43,source_only_desync100_s43,300,,5,19,0,0,0.0052,300,300,,1.132727,,,,
+source_only,Source Only,desync100,44,source_only_desync100_s44,,,4,35,0,0,0.0047,,,,0.752163,,,,
+dann,DANN,desync50,42,dann_desync50_s42,7500,7500,30,0,0,1,0.005,7500,52500,1961.4777784347534,0.525123,,,False,
+dann,DANN,desync50,43,dann_desync50_s43,,,127,10,0,0,0.0055,,,1994.1780035495758,0.545792,,,False,
+dann,DANN,desync50,44,dann_desync50_s44,,,49,2,0,0,0.0047,,,1969.2668387889862,0.412938,,,False,
+dann,DANN,desync100,42,dann_desync100_s42,4900,,2,7,0,0,0.0047,4900,49900,2013.5620064735413,0.320297,,,False,
+dann,DANN,desync100,43,dann_desync100_s43,,,27,8,0,0,0.004,,,1954.9279375076294,0.318206,,,False,
+dann,DANN,desync100,44,dann_desync100_s44,,,28,18,0,0,0.0038,,,1870.2280378341675,0.243421,,,False,
+cdan,CDAN,desync50,42,cdan_desync50_s42,,,9,2,0,0,0.0041,,,1897.4963653087616,0.417894,,,False,
+cdan,CDAN,desync50,43,cdan_desync50_s43,,,14,13,0,0,0.0047,,,1890.7886316776276,0.440063,,,False,
+cdan,CDAN,desync50,44,cdan_desync50_s44,,,22,13,0,0,0.0039,,,1821.687073469162,0.415818,,,False,
+cdan,CDAN,desync100,42,cdan_desync100_s42,9000,9000,12,0,0,1,0.0046,9000,54000,1779.1761960983276,0.14241,,,False,
+cdan,CDAN,desync100,43,cdan_desync100_s43,700,,0,26,1,0,0.0035,700,45700,1782.0884799957275,0.139082,,,False,
+cdan,CDAN,desync100,44,cdan_desync100_s44,,,77,15,0,0,0.0034,,,1764.0756368637085,0.161107,,,False,
+cdpa_mmd,CDPA-MMD,desync50,42,cdpa_desync50_s42,6400,8000,25,0,0,1,0.0046,6400,51400,1932.1879105567932,0.841212,,,,
+cdpa_mmd,CDPA-MMD,desync50,43,cdpa_desync50_s43,5200,5500,17,0,0,1,0.0046,5200,50200,1866.7149682044983,0.836755,,,,
+cdpa_mmd,CDPA-MMD,desync50,44,cdpa_desync50_s44,5500,5500,50,0,0,1,0.0037,5500,50500,1898.9316520690918,0.874222,,,,
+cdpa_mmd,CDPA-MMD,desync100,42,cdpa_desync100_s42,300,7700,0,0,1,1,0.0034,300,45300,1950.9031174182892,0.815408,,,,
+cdpa_mmd,CDPA-MMD,desync100,43,cdpa_desync100_s43,800,,0,9,1,0,0.0043,800,45800,1864.146183013916,0.778526,,,,
+cdpa_mmd,CDPA-MMD,desync100,44,cdpa_desync100_s44,,,38,3,0,0,0.0043,,,1725.9264726638794,0.804955,,,,
+cdan_sca_full,CDAN-SCA full,desync50,42,cdan_sca_full_desync50_s42,800,2000,3,0,0,1,0.0035,800,45800,1791.5963940620422,0.374568,0.6135,1,True,True
+cdan_sca_full,CDAN-SCA full,desync50,43,cdan_sca_full_desync50_s43,7200,,26,3,0,0,0.0049,7200,52200,1815.5362722873688,0.389802,0.535,2,True,True
+cdan_sca_full,CDAN-SCA full,desync50,44,cdan_sca_full_desync50_s44,,,104,20,0,0,0.0041,,,1836.047823190689,0.326348,0.6825,14,True,True
+cdan_sca_full,CDAN-SCA full,desync100,42,cdan_sca_full_desync100_s42,7000,,3,6,0,0,0.0048,7000,52000,1854.9396278858185,0.124283,0.7755,30,True,True
+cdan_sca_full,CDAN-SCA full,desync100,43,cdan_sca_full_desync100_s43,1000,,0,5,1,0,0.0041,1000,46000,1911.696581363678,0.138323,0.782,35,True,True
+cdan_sca_full,CDAN-SCA full,desync100,44,cdan_sca_full_desync100_s44,,,151,15,0,0,0.0042,,,1890.1547286510468,0.157431,0.8155,41,True,True
+cdan_sca_marg,Abl.1 marginal+w,desync50,42,cdan_sca_marg_desync50_s42,2600,,17,5,0,0,0.0035,2600,47600,1934.1623454093933,0.600779,0.121,0,True,False
+cdan_sca_marg,Abl.1 marginal+w,desync50,43,cdan_sca_marg_desync50_s43,,,46,2,0,0,0.005,,,1895.3540897369385,0.586733,0.1335,0,True,False
+cdan_sca_marg,Abl.1 marginal+w,desync50,44,cdan_sca_marg_desync50_s44,,,14,7,0,0,0.0048,,,1920.559193611145,0.487547,0.2295,0,True,False
+cdan_sca_marg,Abl.1 marginal+w,desync100,42,cdan_sca_marg_desync100_s42,3000,,2,1,0,0,0.0061,3000,48000,1906.0760271549225,0.365216,0.4745,0,True,False
+cdan_sca_marg,Abl.1 marginal+w,desync100,43,cdan_sca_marg_desync100_s43,,,3,48,0,0,0.0054,,,1909.069718837738,0.358615,0.2555,0,True,False
+cdan_sca_marg,Abl.1 marginal+w,desync100,44,cdan_sca_marg_desync100_s44,800,,1,5,0,0,0.0043,800,45800,1966.379881620407,0.216568,0.5465,2,True,False

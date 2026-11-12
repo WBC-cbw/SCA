@@ -1,0 +1,25 @@
+[queue] START full desync50 s42 2026/11/12 周四 10:18:09.73 
+[queue] END full desync50 s42 exit=0 2026/11/12 周四 10:48:25.24 
+[queue] START full desync50 s43 2026/11/12 周四 10:48:25.24 
+[queue] END full desync50 s43 exit=0 2026/11/12 周四 11:19:03.48 
+[queue] START full desync50 s44 2026/11/12 周四 11:19:03.48 
+[queue] END full desync50 s44 exit=0 2026/11/12 周四 11:49:59.47 
+[queue] START full desync100 s42 2026/11/12 周四 11:49:59.47 
+[queue] END full desync100 s42 exit=0 2026/11/12 周四 12:21:16.28 
+[queue] START full desync100 s43 2026/11/12 周四 12:21:16.29 
+[queue] END full desync100 s43 exit=0 2026/11/12 周四 12:53:30.02 
+[queue] START full desync100 s44 2026/11/12 周四 12:53:30.02 
+[queue] END full desync100 s44 exit=0 2026/11/12 周四 13:25:21.74 
+[queue] START marginal desync50 s42 2026/11/12 周四 13:25:21.74 
+[queue] START cdan_sca_marg_desync50_s42 2026/11/12 周四 18:02:12.69 
+[queue] END cdan_sca_marg_desync50_s42 exit=0 2026/11/12 周四 18:24:11.61 
+[queue] START cdan_sca_marg_desync50_s43 2026/11/12 周四 18:24:11.61 
+[queue] END cdan_sca_marg_desync50_s43 exit=0 2026/11/12 周四 18:56:12.81 
+[queue] START cdan_sca_marg_desync50_s44 2026/11/12 周四 18:56:12.81 
+[queue] END cdan_sca_marg_desync50_s44 exit=0 2026/11/12 周四 19:28:42.67 
+[queue] START cdan_sca_marg_desync100_s42 2026/11/12 周四 19:28:42.67 
+[queue] END cdan_sca_marg_desync100_s42 exit=0 2026/11/12 周四 20:00:54.76 
+[queue] START cdan_sca_marg_desync100_s43 2026/11/12 周四 20:00:54.77 
+[queue] END cdan_sca_marg_desync100_s43 exit=0 2026/11/12 周四 20:33:20.38 
+[queue] START cdan_sca_marg_desync100_s44 2026/11/12 周四 20:33:20.38 
+[queue] END cdan_sca_marg_desync100_s44 exit=0 2026/11/12 周四 21:06:34.38 

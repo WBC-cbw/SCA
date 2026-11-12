@@ -1,0 +1,207 @@
+{
+  "n_perm": 10,
+  "step": 100,
+  "runs": [
+    {
+      "run": "cdan_sca_full_desync50_s42",
+      "shift": "desync50",
+      "method": "cdan_sca_full",
+      "seed": 42,
+      "ntge_original": 800,
+      "perm_ntge": [
+        2800,
+        3600,
+        3800,
+        1500,
+        400,
+        2700,
+        900,
+        800,
+        2000,
+        4600
+      ],
+      "perm_mean": 2310.0,
+      "perm_std": 1421.6187955988764,
+      "perm_min": 400,
+      "perm_max": 4600
+    },
+    {
+      "run": "cdan_sca_full_desync50_s43",
+      "shift": "desync50",
+      "method": "cdan_sca_full",
+      "seed": 43,
+      "ntge_original": 7200,
+      "perm_ntge": [
+        3600,
+        10000,
+        10000,
+        10000,
+        1800,
+        7400,
+        10000,
+        2600,
+        9200,
+        5000
+      ],
+      "perm_mean": 6960.0,
+      "perm_std": 3382.0440893374266,
+      "perm_min": 1800,
+      "perm_max": 10000
+    },
+    {
+      "run": "cdan_sca_full_desync50_s44",
+      "shift": "desync50",
+      "method": "cdan_sca_full",
+      "seed": 44,
+      "ntge_original": null,
+      "note": "no GE=0 in 10k, permutation skipped"
+    },
+    {
+      "run": "cdan_sca_marg_desync50_s42",
+      "shift": "desync50",
+      "method": "cdan_sca_marg",
+      "seed": 42,
+      "ntge_original": 2600,
+      "perm_ntge": [
+        10000,
+        10000,
+        6200,
+        10000,
+        10000,
+        10000,
+        10000,
+        10000,
+        10000,
+        300
+      ],
+      "perm_mean": 8650.0,
+      "perm_std": 3167.63143198335,
+      "perm_min": 300,
+      "perm_max": 10000
+    },
+    {
+      "run": "cdan_sca_marg_desync50_s43",
+      "shift": "desync50",
+      "method": "cdan_sca_marg",
+      "seed": 43,
+      "ntge_original": null,
+      "note": "no GE=0 in 10k, permutation skipped"
+    },
+    {
+      "run": "cdan_sca_marg_desync50_s44",
+      "shift": "desync50",
+      "method": "cdan_sca_marg",
+      "seed": 44,
+      "ntge_original": null,
+      "note": "no GE=0 in 10k, permutation skipped"
+    },
+    {
+      "run": "cdan_sca_full_desync100_s42",
+      "shift": "desync100",
+      "method": "cdan_sca_full",
+      "seed": 42,
+      "ntge_original": 7000,
+      "perm_ntge": [
+        10000,
+        3200,
+        10000,
+        400,
+        10000,
+        10000,
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "perm_mean": 8360.0,
+      "perm_std": 3519.8484815874294,
+      "perm_min": 400,
+      "perm_max": 10000
+    },
+    {
+      "run": "cdan_sca_full_desync100_s43",
+      "shift": "desync100",
+      "method": "cdan_sca_full",
+      "seed": 43,
+      "ntge_original": 1000,
+      "perm_ntge": [
+        1900,
+        1700,
+        10000,
+        10000,
+        10000,
+        1000,
+        10000,
+        10000,
+        10000,
+        2500
+      ],
+      "perm_mean": 6710.0,
+      "perm_std": 4262.354591850221,
+      "perm_min": 1000,
+      "perm_max": 10000
+    },
+    {
+      "run": "cdan_sca_full_desync100_s44",
+      "shift": "desync100",
+      "method": "cdan_sca_full",
+      "seed": 44,
+      "ntge_original": null,
+      "note": "no GE=0 in 10k, permutation skipped"
+    },
+    {
+      "run": "cdan_sca_marg_desync100_s42",
+      "shift": "desync100",
+      "method": "cdan_sca_marg",
+      "seed": 42,
+      "ntge_original": 3000,
+      "perm_ntge": [
+        10000,
+        5100,
+        7300,
+        3900,
+        5600,
+        5500,
+        2200,
+        10000,
+        10000,
+        10000
+      ],
+      "perm_mean": 6960.0,
+      "perm_std": 2916.3142644250274,
+      "perm_min": 2200,
+      "perm_max": 10000
+    },
+    {
+      "run": "cdan_sca_marg_desync100_s43",
+      "shift": "desync100",
+      "method": "cdan_sca_marg",
+      "seed": 43,
+      "ntge_original": null,
+      "note": "no GE=0 in 10k, permutation skipped"
+    },
+    {
+      "run": "cdan_sca_marg_desync100_s44",
+      "shift": "desync100",
+      "method": "cdan_sca_marg",
+      "seed": 44,
+      "ntge_original": 800,
+      "perm_ntge": [
+        10000,
+        6600,
+        10000,
+        10000,
+        10000,
+        5000,
+        2700,
+        10000,
+        10000,
+        10000
+      ],
+      "perm_mean": 8430.0,
+      "perm_std": 2691.5712057375627,
+      "perm_min": 2700,
+      "perm_max": 10000
+    }
+  ]
+}

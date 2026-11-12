@@ -1,0 +1,749 @@
+{
+  "metrics": {
+    "source_only": {
+      "desync50": {
+        "n_runs": 3,
+        "method": "source_only",
+        "label": "Source Only",
+        "shift": "desync50",
+        "ntge_first_values": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_first_mean": 10000.0,
+        "ntge_first_std": 0.0,
+        "ntge_first_reached": 0,
+        "ntge_stable_values": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_stable_mean": 10000.0,
+        "ntge_stable_std": 0.0,
+        "ntge_stable_reached": 0,
+        "ge_at_1000_mean": 96.33333333333333,
+        "ge_at_10000_values": [
+          32,
+          10,
+          26
+        ],
+        "ge_at_10000_mean": 22.666666666666668,
+        "ge_at_10000_std": 11.372481406154654,
+        "sr_at_1000_mean": 0.0,
+        "sr_at_10000_mean": 0.0,
+        "attack_accuracy_mean": 0.003966666666666666,
+        "mean_entropy_mean": 1.6216276666666667,
+        "n_adapt": 0,
+        "n_attack_at_ge1_mean": 10000.0,
+        "n_total_at_ge1_mean": 10000.0,
+        "n_total_at_ge1_std": 0.0,
+        "train_seconds_mean": null,
+        "max_top1_share_mean": 0.0,
+        "collapse_epochs_mean": 0.0,
+        "verdict": "baseline"
+      },
+      "desync100": {
+        "n_runs": 3,
+        "method": "source_only",
+        "label": "Source Only",
+        "shift": "desync100",
+        "ntge_first_values": [
+          800.0,
+          300.0,
+          10000.0
+        ],
+        "ntge_first_mean": 3700.0,
+        "ntge_first_std": 5461.68472176855,
+        "ntge_first_reached": 2,
+        "ntge_stable_values": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_stable_mean": 10000.0,
+        "ntge_stable_std": 0.0,
+        "ntge_stable_reached": 0,
+        "ge_at_1000_mean": 3.0,
+        "ge_at_10000_values": [
+          15,
+          19,
+          35
+        ],
+        "ge_at_10000_mean": 23.0,
+        "ge_at_10000_std": 10.583005244258363,
+        "sr_at_1000_mean": 0.3333333333333333,
+        "sr_at_10000_mean": 0.0,
+        "attack_accuracy_mean": 0.004666666666666666,
+        "mean_entropy_mean": 1.000136,
+        "n_adapt": 0,
+        "n_attack_at_ge1_mean": 3700.0,
+        "n_total_at_ge1_mean": 3700.0,
+        "n_total_at_ge1_std": 5461.68472176855,
+        "train_seconds_mean": null,
+        "max_top1_share_mean": 0.0,
+        "collapse_epochs_mean": 0.0,
+        "verdict": "baseline"
+      }
+    },
+    "dann": {
+      "desync50": {
+        "n_runs": 3,
+        "method": "dann",
+        "label": "DANN",
+        "shift": "desync50",
+        "ntge_first_values": [
+          7500.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_first_mean": 9166.666666666666,
+        "ntge_first_std": 1443.3756729740644,
+        "ntge_first_reached": 1,
+        "ntge_stable_values": [
+          7500.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_stable_mean": 9166.666666666666,
+        "ntge_stable_std": 1443.3756729740644,
+        "ntge_stable_reached": 1,
+        "ge_at_1000_mean": 68.66666666666667,
+        "ge_at_10000_values": [
+          0,
+          10,
+          2
+        ],
+        "ge_at_10000_mean": 4.0,
+        "ge_at_10000_std": 5.291502622129181,
+        "sr_at_1000_mean": 0.0,
+        "sr_at_10000_mean": 0.3333333333333333,
+        "attack_accuracy_mean": 0.005066666666666666,
+        "mean_entropy_mean": 0.4946176666666667,
+        "n_adapt": 45000,
+        "n_attack_at_ge1_mean": 9166.666666666666,
+        "n_total_at_ge1_mean": 54166.666666666664,
+        "n_total_at_ge1_std": 1443.3756729740644,
+        "train_seconds_mean": 1974.9742069244385,
+        "max_top1_share_mean": 0.0,
+        "collapse_epochs_mean": 0.0,
+        "verdict": "not-win"
+      },
+      "desync100": {
+        "n_runs": 3,
+        "method": "dann",
+        "label": "DANN",
+        "shift": "desync100",
+        "ntge_first_values": [
+          4900.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_first_mean": 8300.0,
+        "ntge_first_std": 2944.486372867091,
+        "ntge_first_reached": 1,
+        "ntge_stable_values": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_stable_mean": 10000.0,
+        "ntge_stable_std": 0.0,
+        "ntge_stable_reached": 0,
+        "ge_at_1000_mean": 19.0,
+        "ge_at_10000_values": [
+          7,
+          8,
+          18
+        ],
+        "ge_at_10000_mean": 11.0,
+        "ge_at_10000_std": 6.082762530298219,
+        "sr_at_1000_mean": 0.0,
+        "sr_at_10000_mean": 0.0,
+        "attack_accuracy_mean": 0.004166666666666667,
+        "mean_entropy_mean": 0.29397466666666666,
+        "n_adapt": 45000,
+        "n_attack_at_ge1_mean": 8300.0,
+        "n_total_at_ge1_mean": 53300.0,
+        "n_total_at_ge1_std": 2944.486372867091,
+        "train_seconds_mean": 1946.2393272717793,
+        "max_top1_share_mean": 0.0,
+        "collapse_epochs_mean": 0.0,
+        "verdict": "not-win"
+      }
+    },
+    "cdan": {
+      "desync50": {
+        "n_runs": 3,
+        "method": "cdan",
+        "label": "CDAN",
+        "shift": "desync50",
+        "ntge_first_values": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_first_mean": 10000.0,
+        "ntge_first_std": 0.0,
+        "ntge_first_reached": 0,
+        "ntge_stable_values": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_stable_mean": 10000.0,
+        "ntge_stable_std": 0.0,
+        "ntge_stable_reached": 0,
+        "ge_at_1000_mean": 15.0,
+        "ge_at_10000_values": [
+          2,
+          13,
+          13
+        ],
+        "ge_at_10000_mean": 9.333333333333334,
+        "ge_at_10000_std": 6.3508529610858835,
+        "sr_at_1000_mean": 0.0,
+        "sr_at_10000_mean": 0.0,
+        "attack_accuracy_mean": 0.004233333333333333,
+        "mean_entropy_mean": 0.4245916666666667,
+        "n_adapt": 45000,
+        "n_attack_at_ge1_mean": 10000.0,
+        "n_total_at_ge1_mean": 55000.0,
+        "n_total_at_ge1_std": 0.0,
+        "train_seconds_mean": 1869.9906901518505,
+        "max_top1_share_mean": 0.0,
+        "collapse_epochs_mean": 0.0,
+        "verdict": "not-win"
+      },
+      "desync100": {
+        "n_runs": 3,
+        "method": "cdan",
+        "label": "CDAN",
+        "shift": "desync100",
+        "ntge_first_values": [
+          9000.0,
+          700.0,
+          10000.0
+        ],
+        "ntge_first_mean": 6566.666666666667,
+        "ntge_first_std": 5105.226080530943,
+        "ntge_first_reached": 2,
+        "ntge_stable_values": [
+          9000.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_stable_mean": 9666.666666666666,
+        "ntge_stable_std": 577.3502691896257,
+        "ntge_stable_reached": 1,
+        "ge_at_1000_mean": 29.666666666666668,
+        "ge_at_10000_values": [
+          0,
+          26,
+          15
+        ],
+        "ge_at_10000_mean": 13.666666666666666,
+        "ge_at_10000_std": 13.051181300301263,
+        "sr_at_1000_mean": 0.3333333333333333,
+        "sr_at_10000_mean": 0.3333333333333333,
+        "attack_accuracy_mean": 0.003833333333333333,
+        "mean_entropy_mean": 0.147533,
+        "n_adapt": 45000,
+        "n_attack_at_ge1_mean": 6566.666666666667,
+        "n_total_at_ge1_mean": 51566.666666666664,
+        "n_total_at_ge1_std": 5105.226080530942,
+        "train_seconds_mean": 1775.113437652588,
+        "max_top1_share_mean": 0.0,
+        "collapse_epochs_mean": 0.0,
+        "verdict": "not-win"
+      }
+    },
+    "cdpa_mmd": {
+      "desync50": {
+        "n_runs": 3,
+        "method": "cdpa_mmd",
+        "label": "CDPA-MMD",
+        "shift": "desync50",
+        "ntge_first_values": [
+          6400.0,
+          5200.0,
+          5500.0
+        ],
+        "ntge_first_mean": 5700.0,
+        "ntge_first_std": 624.4997998398399,
+        "ntge_first_reached": 3,
+        "ntge_stable_values": [
+          8000.0,
+          5500.0,
+          5500.0
+        ],
+        "ntge_stable_mean": 6333.333333333333,
+        "ntge_stable_std": 1443.3756729740644,
+        "ntge_stable_reached": 3,
+        "ge_at_1000_mean": 30.666666666666668,
+        "ge_at_10000_values": [
+          0,
+          0,
+          0
+        ],
+        "ge_at_10000_mean": 0.0,
+        "ge_at_10000_std": 0.0,
+        "sr_at_1000_mean": 0.0,
+        "sr_at_10000_mean": 1.0,
+        "attack_accuracy_mean": 0.0043,
+        "mean_entropy_mean": 0.8507296666666667,
+        "n_adapt": 45000,
+        "n_attack_at_ge1_mean": 5700.0,
+        "n_total_at_ge1_mean": 50700.0,
+        "n_total_at_ge1_std": 624.4997998398399,
+        "train_seconds_mean": 1899.2781769434612,
+        "max_top1_share_mean": 0.0,
+        "collapse_epochs_mean": 0.0,
+        "verdict": "WIN(tie-ntge)"
+      },
+      "desync100": {
+        "n_runs": 3,
+        "method": "cdpa_mmd",
+        "label": "CDPA-MMD",
+        "shift": "desync100",
+        "ntge_first_values": [
+          300.0,
+          800.0,
+          10000.0
+        ],
+        "ntge_first_mean": 3700.0,
+        "ntge_first_std": 5461.68472176855,
+        "ntge_first_reached": 2,
+        "ntge_stable_values": [
+          7700.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_stable_mean": 9233.333333333334,
+        "ntge_stable_std": 1327.9056191361394,
+        "ntge_stable_reached": 1,
+        "ge_at_1000_mean": 12.666666666666666,
+        "ge_at_10000_values": [
+          0,
+          9,
+          3
+        ],
+        "ge_at_10000_mean": 4.0,
+        "ge_at_10000_std": 4.58257569495584,
+        "sr_at_1000_mean": 0.6666666666666666,
+        "sr_at_10000_mean": 0.3333333333333333,
+        "attack_accuracy_mean": 0.004,
+        "mean_entropy_mean": 0.7996296666666667,
+        "n_adapt": 45000,
+        "n_attack_at_ge1_mean": 3700.0,
+        "n_total_at_ge1_mean": 48700.0,
+        "n_total_at_ge1_std": 5461.68472176855,
+        "train_seconds_mean": 1846.9919243653615,
+        "max_top1_share_mean": 0.0,
+        "collapse_epochs_mean": 0.0,
+        "verdict": "TIE"
+      }
+    },
+    "cdan_sca_full": {
+      "desync50": {
+        "n_runs": 3,
+        "method": "cdan_sca_full",
+        "label": "CDAN-SCA full",
+        "shift": "desync50",
+        "ntge_first_values": [
+          800.0,
+          7200.0,
+          10000.0
+        ],
+        "ntge_first_mean": 6000.0,
+        "ntge_first_std": 4715.930449020639,
+        "ntge_first_reached": 2,
+        "ntge_stable_values": [
+          2000.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_stable_mean": 7333.333333333333,
+        "ntge_stable_std": 4618.8021535170055,
+        "ntge_stable_reached": 1,
+        "ge_at_1000_mean": 44.333333333333336,
+        "ge_at_10000_values": [
+          0,
+          3,
+          20
+        ],
+        "ge_at_10000_mean": 7.666666666666667,
+        "ge_at_10000_std": 10.785793124908958,
+        "sr_at_1000_mean": 0.0,
+        "sr_at_10000_mean": 0.3333333333333333,
+        "attack_accuracy_mean": 0.004166666666666667,
+        "mean_entropy_mean": 0.3635726666666667,
+        "n_adapt": 45000,
+        "n_attack_at_ge1_mean": 6000.0,
+        "n_total_at_ge1_mean": 51000.0,
+        "n_total_at_ge1_std": 4715.930449020639,
+        "train_seconds_mean": 1814.3934965133667,
+        "max_top1_share_mean": 0.6103333333333333,
+        "collapse_epochs_mean": 5.666666666666667,
+        "verdict": "not-win"
+      },
+      "desync100": {
+        "n_runs": 3,
+        "method": "cdan_sca_full",
+        "label": "CDAN-SCA full",
+        "shift": "desync100",
+        "ntge_first_values": [
+          7000.0,
+          1000.0,
+          10000.0
+        ],
+        "ntge_first_mean": 6000.0,
+        "ntge_first_std": 4582.57569495584,
+        "ntge_first_reached": 2,
+        "ntge_stable_values": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_stable_mean": 10000.0,
+        "ntge_stable_std": 0.0,
+        "ntge_stable_reached": 0,
+        "ge_at_1000_mean": 51.333333333333336,
+        "ge_at_10000_values": [
+          6,
+          5,
+          15
+        ],
+        "ge_at_10000_mean": 8.666666666666666,
+        "ge_at_10000_std": 5.507570547286102,
+        "sr_at_1000_mean": 0.3333333333333333,
+        "sr_at_10000_mean": 0.0,
+        "attack_accuracy_mean": 0.004366666666666667,
+        "mean_entropy_mean": 0.14001233333333332,
+        "n_adapt": 45000,
+        "n_attack_at_ge1_mean": 6000.0,
+        "n_total_at_ge1_mean": 51000.0,
+        "n_total_at_ge1_std": 4582.57569495584,
+        "train_seconds_mean": 1885.5969793001811,
+        "max_top1_share_mean": 0.791,
+        "collapse_epochs_mean": 35.333333333333336,
+        "verdict": "not-win"
+      }
+    },
+    "cdan_sca_marg": {
+      "desync50": {
+        "n_runs": 3,
+        "method": "cdan_sca_marg",
+        "label": "Abl.1 marginal+w",
+        "shift": "desync50",
+        "ntge_first_values": [
+          2600.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_first_mean": 7533.333333333333,
+        "ntge_first_std": 4272.391992003231,
+        "ntge_first_reached": 1,
+        "ntge_stable_values": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_stable_mean": 10000.0,
+        "ntge_stable_std": 0.0,
+        "ntge_stable_reached": 0,
+        "ge_at_1000_mean": 25.666666666666668,
+        "ge_at_10000_values": [
+          5,
+          2,
+          7
+        ],
+        "ge_at_10000_mean": 4.666666666666667,
+        "ge_at_10000_std": 2.516611478423583,
+        "sr_at_1000_mean": 0.0,
+        "sr_at_10000_mean": 0.0,
+        "attack_accuracy_mean": 0.004433333333333333,
+        "mean_entropy_mean": 0.558353,
+        "n_adapt": 45000,
+        "n_attack_at_ge1_mean": 7533.333333333333,
+        "n_total_at_ge1_mean": 52533.333333333336,
+        "n_total_at_ge1_std": 4272.391992003231,
+        "train_seconds_mean": 1916.6918762524922,
+        "max_top1_share_mean": 0.16133333333333333,
+        "collapse_epochs_mean": 0.0,
+        "verdict": "not-win"
+      },
+      "desync100": {
+        "n_runs": 3,
+        "method": "cdan_sca_marg",
+        "label": "Abl.1 marginal+w",
+        "shift": "desync100",
+        "ntge_first_values": [
+          3000.0,
+          10000.0,
+          800.0
+        ],
+        "ntge_first_mean": 4600.0,
+        "ntge_first_std": 4804.164859785726,
+        "ntge_first_reached": 2,
+        "ntge_stable_values": [
+          10000.0,
+          10000.0,
+          10000.0
+        ],
+        "ntge_stable_mean": 10000.0,
+        "ntge_stable_std": 0.0,
+        "ntge_stable_reached": 0,
+        "ge_at_1000_mean": 2.0,
+        "ge_at_10000_values": [
+          1,
+          48,
+          5
+        ],
+        "ge_at_10000_mean": 18.0,
+        "ge_at_10000_std": 26.057628441590765,
+        "sr_at_1000_mean": 0.0,
+        "sr_at_10000_mean": 0.0,
+        "attack_accuracy_mean": 0.005266666666666667,
+        "mean_entropy_mean": 0.31346633333333335,
+        "n_adapt": 45000,
+        "n_attack_at_ge1_mean": 4600.0,
+        "n_total_at_ge1_mean": 49600.0,
+        "n_total_at_ge1_std": 4804.164859785726,
+        "train_seconds_mean": 1927.175209204356,
+        "max_top1_share_mean": 0.4255,
+        "collapse_epochs_mean": 0.6666666666666666,
+        "verdict": "not-win"
+      }
+    }
+  },
+  "paired": {
+    "full_vs_source_only@desync50": {
+      "delta_ntge_values": [
+        -9200.0,
+        -2800.0,
+        0.0
+      ],
+      "delta_ntge_mean": -4000.0,
+      "wins": 2,
+      "ties": 1,
+      "losses": 0
+    },
+    "full_vs_dann@desync50": {
+      "delta_ntge_values": [
+        -6700,
+        -2800.0,
+        0.0
+      ],
+      "delta_ntge_mean": -3166.6666666666665,
+      "wins": 2,
+      "ties": 1,
+      "losses": 0
+    },
+    "full_vs_cdan@desync50": {
+      "delta_ntge_values": [
+        -9200.0,
+        -2800.0,
+        0.0
+      ],
+      "delta_ntge_mean": -4000.0,
+      "wins": 2,
+      "ties": 1,
+      "losses": 0
+    },
+    "full_vs_cdpa_mmd@desync50": {
+      "delta_ntge_values": [
+        -5600,
+        2000,
+        4500.0
+      ],
+      "delta_ntge_mean": 300.0,
+      "wins": 1,
+      "ties": 0,
+      "losses": 2
+    },
+    "full_vs_cdan_sca_marg@desync50": {
+      "delta_ntge_values": [
+        -1800,
+        -2800.0,
+        0.0
+      ],
+      "delta_ntge_mean": -1533.3333333333333,
+      "wins": 2,
+      "ties": 1,
+      "losses": 0
+    },
+    "full_vs_cdan_ge10k@desync50": {
+      "delta_values": [
+        -2,
+        -10,
+        7
+      ],
+      "delta_mean": -1.6666666666666667
+    },
+    "full_vs_source_only@desync100": {
+      "delta_ntge_values": [
+        6200,
+        700,
+        0.0
+      ],
+      "delta_ntge_mean": 2300.0,
+      "wins": 0,
+      "ties": 1,
+      "losses": 2
+    },
+    "full_vs_dann@desync100": {
+      "delta_ntge_values": [
+        2100,
+        -9000.0,
+        0.0
+      ],
+      "delta_ntge_mean": -2300.0,
+      "wins": 1,
+      "ties": 1,
+      "losses": 1
+    },
+    "full_vs_cdan@desync100": {
+      "delta_ntge_values": [
+        -2000,
+        300,
+        0.0
+      ],
+      "delta_ntge_mean": -566.6666666666666,
+      "wins": 1,
+      "ties": 1,
+      "losses": 1
+    },
+    "full_vs_cdpa_mmd@desync100": {
+      "delta_ntge_values": [
+        6700,
+        200,
+        0.0
+      ],
+      "delta_ntge_mean": 2300.0,
+      "wins": 0,
+      "ties": 1,
+      "losses": 2
+    },
+    "full_vs_cdan_sca_marg@desync100": {
+      "delta_ntge_values": [
+        4000,
+        -9000.0,
+        9200.0
+      ],
+      "delta_ntge_mean": 1400.0,
+      "wins": 1,
+      "ties": 0,
+      "losses": 2
+    },
+    "full_vs_cdan_ge10k@desync100": {
+      "delta_values": [
+        6,
+        -21,
+        0
+      ],
+      "delta_mean": -5.0
+    }
+  },
+  "three_way": {
+    "desync50": {
+      "cdan": {
+        "ntge_first_mean": 10000.0,
+        "ntge_first_std": 0.0,
+        "ntge_first_reached": 0,
+        "ntge_stable_reached": 0,
+        "ge_at_10000_mean": 9.333333333333334,
+        "ge_at_10000_std": 6.3508529610858835,
+        "sr_at_10000_mean": 0.0,
+        "n_total_at_ge1_mean": 55000.0,
+        "attack_accuracy_mean": 0.004233333333333333,
+        "mean_entropy_mean": 0.4245916666666667,
+        "max_top1_share_mean": 0.0,
+        "collapse_epochs_mean": 0.0
+      },
+      "cdan_sca_marg": {
+        "ntge_first_mean": 7533.333333333333,
+        "ntge_first_std": 4272.391992003231,
+        "ntge_first_reached": 1,
+        "ntge_stable_reached": 0,
+        "ge_at_10000_mean": 4.666666666666667,
+        "ge_at_10000_std": 2.516611478423583,
+        "sr_at_10000_mean": 0.0,
+        "n_total_at_ge1_mean": 52533.333333333336,
+        "attack_accuracy_mean": 0.004433333333333333,
+        "mean_entropy_mean": 0.558353,
+        "max_top1_share_mean": 0.16133333333333333,
+        "collapse_epochs_mean": 0.0
+      },
+      "cdan_sca_full": {
+        "ntge_first_mean": 6000.0,
+        "ntge_first_std": 4715.930449020639,
+        "ntge_first_reached": 2,
+        "ntge_stable_reached": 1,
+        "ge_at_10000_mean": 7.666666666666667,
+        "ge_at_10000_std": 10.785793124908958,
+        "sr_at_10000_mean": 0.3333333333333333,
+        "n_total_at_ge1_mean": 51000.0,
+        "attack_accuracy_mean": 0.004166666666666667,
+        "mean_entropy_mean": 0.3635726666666667,
+        "max_top1_share_mean": 0.6103333333333333,
+        "collapse_epochs_mean": 5.666666666666667
+      }
+    },
+    "desync100": {
+      "cdan": {
+        "ntge_first_mean": 6566.666666666667,
+        "ntge_first_std": 5105.226080530943,
+        "ntge_first_reached": 2,
+        "ntge_stable_reached": 1,
+        "ge_at_10000_mean": 13.666666666666666,
+        "ge_at_10000_std": 13.051181300301263,
+        "sr_at_10000_mean": 0.3333333333333333,
+        "n_total_at_ge1_mean": 51566.666666666664,
+        "attack_accuracy_mean": 0.003833333333333333,
+        "mean_entropy_mean": 0.147533,
+        "max_top1_share_mean": 0.0,
+        "collapse_epochs_mean": 0.0
+      },
+      "cdan_sca_marg": {
+        "ntge_first_mean": 4600.0,
+        "ntge_first_std": 4804.164859785726,
+        "ntge_first_reached": 2,
+        "ntge_stable_reached": 0,
+        "ge_at_10000_mean": 18.0,
+        "ge_at_10000_std": 26.057628441590765,
+        "sr_at_10000_mean": 0.0,
+        "n_total_at_ge1_mean": 49600.0,
+        "attack_accuracy_mean": 0.005266666666666667,
+        "mean_entropy_mean": 0.31346633333333335,
+        "max_top1_share_mean": 0.4255,
+        "collapse_epochs_mean": 0.6666666666666666
+      },
+      "cdan_sca_full": {
+        "ntge_first_mean": 6000.0,
+        "ntge_first_std": 4582.57569495584,
+        "ntge_first_reached": 2,
+        "ntge_stable_reached": 0,
+        "ge_at_10000_mean": 8.666666666666666,
+        "ge_at_10000_std": 5.507570547286102,
+        "sr_at_10000_mean": 0.0,
+        "n_total_at_ge1_mean": 51000.0,
+        "attack_accuracy_mean": 0.004366666666666667,
+        "mean_entropy_mean": 0.14001233333333332,
+        "max_top1_share_mean": 0.791,
+        "collapse_epochs_mean": 35.333333333333336
+      }
+    }
+  },
+  "censor": 10000.0,
+  "n_adapt": 45000,
+  "thresholds": {
+    "desync50": {
+      "ntge": 5700.0
+    },
+    "desync100": {
+      "ntge": 3700.0,
+      "ge10k": 4.0
+    }
+  }
+}

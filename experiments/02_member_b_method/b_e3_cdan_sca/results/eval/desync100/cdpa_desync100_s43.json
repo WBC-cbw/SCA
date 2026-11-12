@@ -1,0 +1,479 @@
+{
+  "ntge_first": 800,
+  "ntge_stable": null,
+  "ge_at_1000": 0,
+  "ge_at_2000": 18,
+  "ge_at_5000": 3,
+  "ge_at_10000": 9,
+  "min_ge": 0,
+  "final_ge": 9,
+  "n_zero_points": 5,
+  "transient_only": true,
+  "sr_at_1000": 1,
+  "sr_at_10000": 0,
+  "n_attack_at_ge1": 800,
+  "n_total_at_ge1": 45800,
+  "n_attack_at_stable_ge0": null,
+  "n_total_at_stable_ge0": null,
+  "n_adapt": 45000,
+  "adapt_included_in_n_total": true,
+  "method": "cdpa_mmd",
+  "run": "cdpa_desync100_s43",
+  "shift": "desync100",
+  "seed": 43,
+  "dataset": "D:\\sca_project\\ASCAD_data\\ASCAD_desync100.h5",
+  "predictions": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e3_cdpa_or_adabn\\results\\cdpa_desync100_s43\\predictions_attack.npy",
+  "n_attack_traces": 10000,
+  "step": 100,
+  "target_byte": 2,
+  "real_key_byte": 224,
+  "attack_accuracy": 0.0043,
+  "mean_max_softmax": 0.74116,
+  "mean_entropy_nats": 0.778526,
+  "train_seconds": 1864.146183013916,
+  "sec_per_epoch_mean": 24.855282440185547,
+  "entropy_weighting": null,
+  "conditional_input": null,
+  "max_top1_share": null,
+  "collapse_epochs": null,
+  "grad_probe": [
+    {
+      "lambda_mmd": 0.1,
+      "mmd_grad_norm": 1.4099557399749756,
+      "cls_grad_norm": 86.60641479492188,
+      "ratio": 0.016280038185550752,
+      "mmd_terms": {
+        "conv": 1.4855798482894897,
+        "fc1": 1.03435480594635,
+        "fc2": 0.20203018188476562
+      },
+      "epoch": 1
+    },
+    {
+      "lambda_mmd": 0.1,
+      "mmd_grad_norm": 0.32294198870658875,
+      "cls_grad_norm": 242.8462371826172,
+      "ratio": 0.001329820846529076,
+      "mmd_terms": {
+        "conv": 1.5484538078308105,
+        "fc1": 0.08535430580377579,
+        "fc2": 0.04171037673950195
+      },
+      "epoch": 20
+    },
+    {
+      "lambda_mmd": 0.1,
+      "mmd_grad_norm": 0.17479689419269562,
+      "cls_grad_norm": 48.5887451171875,
+      "ratio": 0.003597477024177436,
+      "mmd_terms": {
+        "conv": 1.2448419332504272,
+        "fc1": 0.05992662161588669,
+        "fc2": 0.034402698278427124
+      },
+      "epoch": 50
+    }
+  ],
+  "ge_curve": [
+    {
+      "traces": 100,
+      "ge": 9
+    },
+    {
+      "traces": 200,
+      "ge": 20
+    },
+    {
+      "traces": 300,
+      "ge": 50
+    },
+    {
+      "traces": 400,
+      "ge": 28
+    },
+    {
+      "traces": 500,
+      "ge": 11
+    },
+    {
+      "traces": 600,
+      "ge": 1
+    },
+    {
+      "traces": 700,
+      "ge": 3
+    },
+    {
+      "traces": 800,
+      "ge": 0
+    },
+    {
+      "traces": 900,
+      "ge": 0
+    },
+    {
+      "traces": 1000,
+      "ge": 0
+    },
+    {
+      "traces": 1100,
+      "ge": 0
+    },
+    {
+      "traces": 1200,
+      "ge": 0
+    },
+    {
+      "traces": 1300,
+      "ge": 2
+    },
+    {
+      "traces": 1400,
+      "ge": 7
+    },
+    {
+      "traces": 1500,
+      "ge": 4
+    },
+    {
+      "traces": 1600,
+      "ge": 5
+    },
+    {
+      "traces": 1700,
+      "ge": 6
+    },
+    {
+      "traces": 1800,
+      "ge": 3
+    },
+    {
+      "traces": 1900,
+      "ge": 13
+    },
+    {
+      "traces": 2000,
+      "ge": 18
+    },
+    {
+      "traces": 2100,
+      "ge": 20
+    },
+    {
+      "traces": 2200,
+      "ge": 27
+    },
+    {
+      "traces": 2300,
+      "ge": 23
+    },
+    {
+      "traces": 2400,
+      "ge": 11
+    },
+    {
+      "traces": 2500,
+      "ge": 13
+    },
+    {
+      "traces": 2600,
+      "ge": 11
+    },
+    {
+      "traces": 2700,
+      "ge": 13
+    },
+    {
+      "traces": 2800,
+      "ge": 10
+    },
+    {
+      "traces": 2900,
+      "ge": 12
+    },
+    {
+      "traces": 3000,
+      "ge": 12
+    },
+    {
+      "traces": 3100,
+      "ge": 10
+    },
+    {
+      "traces": 3200,
+      "ge": 13
+    },
+    {
+      "traces": 3300,
+      "ge": 14
+    },
+    {
+      "traces": 3400,
+      "ge": 14
+    },
+    {
+      "traces": 3500,
+      "ge": 7
+    },
+    {
+      "traces": 3600,
+      "ge": 5
+    },
+    {
+      "traces": 3700,
+      "ge": 7
+    },
+    {
+      "traces": 3800,
+      "ge": 4
+    },
+    {
+      "traces": 3900,
+      "ge": 10
+    },
+    {
+      "traces": 4000,
+      "ge": 12
+    },
+    {
+      "traces": 4100,
+      "ge": 5
+    },
+    {
+      "traces": 4200,
+      "ge": 4
+    },
+    {
+      "traces": 4300,
+      "ge": 3
+    },
+    {
+      "traces": 4400,
+      "ge": 3
+    },
+    {
+      "traces": 4500,
+      "ge": 5
+    },
+    {
+      "traces": 4600,
+      "ge": 4
+    },
+    {
+      "traces": 4700,
+      "ge": 4
+    },
+    {
+      "traces": 4800,
+      "ge": 6
+    },
+    {
+      "traces": 4900,
+      "ge": 3
+    },
+    {
+      "traces": 5000,
+      "ge": 3
+    },
+    {
+      "traces": 5100,
+      "ge": 3
+    },
+    {
+      "traces": 5200,
+      "ge": 3
+    },
+    {
+      "traces": 5300,
+      "ge": 4
+    },
+    {
+      "traces": 5400,
+      "ge": 4
+    },
+    {
+      "traces": 5500,
+      "ge": 5
+    },
+    {
+      "traces": 5600,
+      "ge": 3
+    },
+    {
+      "traces": 5700,
+      "ge": 4
+    },
+    {
+      "traces": 5800,
+      "ge": 5
+    },
+    {
+      "traces": 5900,
+      "ge": 4
+    },
+    {
+      "traces": 6000,
+      "ge": 4
+    },
+    {
+      "traces": 6100,
+      "ge": 4
+    },
+    {
+      "traces": 6200,
+      "ge": 6
+    },
+    {
+      "traces": 6300,
+      "ge": 6
+    },
+    {
+      "traces": 6400,
+      "ge": 10
+    },
+    {
+      "traces": 6500,
+      "ge": 11
+    },
+    {
+      "traces": 6600,
+      "ge": 11
+    },
+    {
+      "traces": 6700,
+      "ge": 11
+    },
+    {
+      "traces": 6800,
+      "ge": 10
+    },
+    {
+      "traces": 6900,
+      "ge": 11
+    },
+    {
+      "traces": 7000,
+      "ge": 11
+    },
+    {
+      "traces": 7100,
+      "ge": 12
+    },
+    {
+      "traces": 7200,
+      "ge": 15
+    },
+    {
+      "traces": 7300,
+      "ge": 19
+    },
+    {
+      "traces": 7400,
+      "ge": 19
+    },
+    {
+      "traces": 7500,
+      "ge": 15
+    },
+    {
+      "traces": 7600,
+      "ge": 12
+    },
+    {
+      "traces": 7700,
+      "ge": 11
+    },
+    {
+      "traces": 7800,
+      "ge": 9
+    },
+    {
+      "traces": 7900,
+      "ge": 8
+    },
+    {
+      "traces": 8000,
+      "ge": 8
+    },
+    {
+      "traces": 8100,
+      "ge": 8
+    },
+    {
+      "traces": 8200,
+      "ge": 6
+    },
+    {
+      "traces": 8300,
+      "ge": 4
+    },
+    {
+      "traces": 8400,
+      "ge": 5
+    },
+    {
+      "traces": 8500,
+      "ge": 4
+    },
+    {
+      "traces": 8600,
+      "ge": 4
+    },
+    {
+      "traces": 8700,
+      "ge": 4
+    },
+    {
+      "traces": 8800,
+      "ge": 4
+    },
+    {
+      "traces": 8900,
+      "ge": 5
+    },
+    {
+      "traces": 9000,
+      "ge": 5
+    },
+    {
+      "traces": 9100,
+      "ge": 8
+    },
+    {
+      "traces": 9200,
+      "ge": 9
+    },
+    {
+      "traces": 9300,
+      "ge": 9
+    },
+    {
+      "traces": 9400,
+      "ge": 9
+    },
+    {
+      "traces": 9500,
+      "ge": 10
+    },
+    {
+      "traces": 9600,
+      "ge": 9
+    },
+    {
+      "traces": 9700,
+      "ge": 7
+    },
+    {
+      "traces": 9800,
+      "ge": 6
+    },
+    {
+      "traces": 9900,
+      "ge": 7
+    },
+    {
+      "traces": 10000,
+      "ge": 9
+    }
+  ]
+}
