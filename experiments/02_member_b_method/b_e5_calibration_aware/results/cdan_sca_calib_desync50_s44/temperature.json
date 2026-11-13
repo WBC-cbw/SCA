@@ -1,0 +1,20 @@
+{
+  "temperature": 14.451371930365577,
+  "nll_before": 8.527209847366354,
+  "nll_after": 5.517320020054933,
+  "ece_before": 0.24789510993458308,
+  "ece_after": 0.001199533159975408,
+  "accuracy": 0.0054,
+  "n_val": 5000,
+  "grid": {
+    "lo": 0.05,
+    "hi": 20.0,
+    "n_grid": 400,
+    "refine_rounds": 3
+  },
+  "fit_objective": "mean NLL of softmax(logits/T) on source_val",
+  "source_val": "fixed Profiling[45000:50000] (5000 traces, labels)",
+  "init_ckpt": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\outputs\\models\\b_e1\\cnn_s44\\ckpt.pt",
+  "fit_time": "before adaptation (epoch 0), B-E1 same-seed checkpoint",
+  "note": "T 只用 source_val 拟合；目标域权重 w = 1 - H(softmax(logits/T))/log256。条件表示 T(f,g) 仍用未校准 softmax(g)，保证唯一变量是权重函数。"
+}

@@ -1,0 +1,484 @@
+{
+  "ntge_first": 5200,
+  "ntge_stable": 5500,
+  "ge_at_1000": 17,
+  "ge_at_2000": 10,
+  "ge_at_5000": 1,
+  "ge_at_10000": 0,
+  "min_ge": 0,
+  "final_ge": 0,
+  "n_zero_points": 48,
+  "transient_only": false,
+  "sr_at_1000": 0,
+  "sr_at_10000": 1,
+  "n_attack_at_ge1": 5200,
+  "n_total_at_ge1": 50200,
+  "n_attack_at_stable_ge0": 5500,
+  "n_total_at_stable_ge0": 50500,
+  "n_adapt": 45000,
+  "adapt_included_in_n_total": true,
+  "method": "cdpa_mmd",
+  "run": "cdpa_desync50_s43",
+  "shift": "desync50",
+  "seed": 43,
+  "dataset": "D:\\sca_project\\ASCAD_data\\ASCAD_desync50.h5",
+  "predictions": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\01_member_a_baselines\\a_e3_cdpa_or_adabn\\results\\cdpa_desync50_s43\\predictions_attack.npy",
+  "n_attack_traces": 10000,
+  "step": 100,
+  "target_byte": 2,
+  "real_key_byte": 224,
+  "attack_accuracy": 0.0046,
+  "mean_max_softmax": 0.725915,
+  "mean_entropy_nats": 0.836755,
+  "train_seconds": 1866.7149682044983,
+  "sec_per_epoch_mean": 24.88953290939331,
+  "entropy_weighting": null,
+  "conditional_input": null,
+  "max_top1_share": null,
+  "collapse_epochs": null,
+  "temperature": null,
+  "w_mean_calib": null,
+  "w_p90_calib": null,
+  "w_bare_mean": null,
+  "entropy_calib_mean": null,
+  "grad_probe": [
+    {
+      "lambda_mmd": 0.1,
+      "mmd_grad_norm": 1.2126474380493164,
+      "cls_grad_norm": 50.920108795166016,
+      "ratio": 0.023814706345726352,
+      "mmd_terms": {
+        "conv": 0.9452692866325378,
+        "fc1": 0.6617128849029541,
+        "fc2": 0.38477006554603577
+      },
+      "epoch": 1
+    },
+    {
+      "lambda_mmd": 0.1,
+      "mmd_grad_norm": 0.1467714011669159,
+      "cls_grad_norm": 80.8329849243164,
+      "ratio": 0.0018157365004439383,
+      "mmd_terms": {
+        "conv": 0.9428249597549438,
+        "fc1": 0.07727581262588501,
+        "fc2": 0.03584708645939827
+      },
+      "epoch": 20
+    },
+    {
+      "lambda_mmd": 0.1,
+      "mmd_grad_norm": 0.20687252283096313,
+      "cls_grad_norm": 43.64627456665039,
+      "ratio": 0.004739752129704834,
+      "mmd_terms": {
+        "conv": 0.8616023063659668,
+        "fc1": 0.056376583874225616,
+        "fc2": 0.0335162878036499
+      },
+      "epoch": 50
+    }
+  ],
+  "ge_curve": [
+    {
+      "traces": 100,
+      "ge": 3
+    },
+    {
+      "traces": 200,
+      "ge": 16
+    },
+    {
+      "traces": 300,
+      "ge": 27
+    },
+    {
+      "traces": 400,
+      "ge": 25
+    },
+    {
+      "traces": 500,
+      "ge": 8
+    },
+    {
+      "traces": 600,
+      "ge": 4
+    },
+    {
+      "traces": 700,
+      "ge": 5
+    },
+    {
+      "traces": 800,
+      "ge": 4
+    },
+    {
+      "traces": 900,
+      "ge": 5
+    },
+    {
+      "traces": 1000,
+      "ge": 17
+    },
+    {
+      "traces": 1100,
+      "ge": 20
+    },
+    {
+      "traces": 1200,
+      "ge": 8
+    },
+    {
+      "traces": 1300,
+      "ge": 2
+    },
+    {
+      "traces": 1400,
+      "ge": 6
+    },
+    {
+      "traces": 1500,
+      "ge": 7
+    },
+    {
+      "traces": 1600,
+      "ge": 9
+    },
+    {
+      "traces": 1700,
+      "ge": 10
+    },
+    {
+      "traces": 1800,
+      "ge": 8
+    },
+    {
+      "traces": 1900,
+      "ge": 6
+    },
+    {
+      "traces": 2000,
+      "ge": 10
+    },
+    {
+      "traces": 2100,
+      "ge": 9
+    },
+    {
+      "traces": 2200,
+      "ge": 15
+    },
+    {
+      "traces": 2300,
+      "ge": 14
+    },
+    {
+      "traces": 2400,
+      "ge": 11
+    },
+    {
+      "traces": 2500,
+      "ge": 16
+    },
+    {
+      "traces": 2600,
+      "ge": 12
+    },
+    {
+      "traces": 2700,
+      "ge": 13
+    },
+    {
+      "traces": 2800,
+      "ge": 8
+    },
+    {
+      "traces": 2900,
+      "ge": 7
+    },
+    {
+      "traces": 3000,
+      "ge": 9
+    },
+    {
+      "traces": 3100,
+      "ge": 12
+    },
+    {
+      "traces": 3200,
+      "ge": 17
+    },
+    {
+      "traces": 3300,
+      "ge": 13
+    },
+    {
+      "traces": 3400,
+      "ge": 13
+    },
+    {
+      "traces": 3500,
+      "ge": 12
+    },
+    {
+      "traces": 3600,
+      "ge": 11
+    },
+    {
+      "traces": 3700,
+      "ge": 9
+    },
+    {
+      "traces": 3800,
+      "ge": 10
+    },
+    {
+      "traces": 3900,
+      "ge": 8
+    },
+    {
+      "traces": 4000,
+      "ge": 9
+    },
+    {
+      "traces": 4100,
+      "ge": 11
+    },
+    {
+      "traces": 4200,
+      "ge": 9
+    },
+    {
+      "traces": 4300,
+      "ge": 9
+    },
+    {
+      "traces": 4400,
+      "ge": 6
+    },
+    {
+      "traces": 4500,
+      "ge": 6
+    },
+    {
+      "traces": 4600,
+      "ge": 7
+    },
+    {
+      "traces": 4700,
+      "ge": 7
+    },
+    {
+      "traces": 4800,
+      "ge": 7
+    },
+    {
+      "traces": 4900,
+      "ge": 6
+    },
+    {
+      "traces": 5000,
+      "ge": 1
+    },
+    {
+      "traces": 5100,
+      "ge": 1
+    },
+    {
+      "traces": 5200,
+      "ge": 0
+    },
+    {
+      "traces": 5300,
+      "ge": 0
+    },
+    {
+      "traces": 5400,
+      "ge": 1
+    },
+    {
+      "traces": 5500,
+      "ge": 0
+    },
+    {
+      "traces": 5600,
+      "ge": 0
+    },
+    {
+      "traces": 5700,
+      "ge": 0
+    },
+    {
+      "traces": 5800,
+      "ge": 0
+    },
+    {
+      "traces": 5900,
+      "ge": 0
+    },
+    {
+      "traces": 6000,
+      "ge": 0
+    },
+    {
+      "traces": 6100,
+      "ge": 0
+    },
+    {
+      "traces": 6200,
+      "ge": 0
+    },
+    {
+      "traces": 6300,
+      "ge": 0
+    },
+    {
+      "traces": 6400,
+      "ge": 0
+    },
+    {
+      "traces": 6500,
+      "ge": 0
+    },
+    {
+      "traces": 6600,
+      "ge": 0
+    },
+    {
+      "traces": 6700,
+      "ge": 0
+    },
+    {
+      "traces": 6800,
+      "ge": 0
+    },
+    {
+      "traces": 6900,
+      "ge": 0
+    },
+    {
+      "traces": 7000,
+      "ge": 0
+    },
+    {
+      "traces": 7100,
+      "ge": 0
+    },
+    {
+      "traces": 7200,
+      "ge": 0
+    },
+    {
+      "traces": 7300,
+      "ge": 0
+    },
+    {
+      "traces": 7400,
+      "ge": 0
+    },
+    {
+      "traces": 7500,
+      "ge": 0
+    },
+    {
+      "traces": 7600,
+      "ge": 0
+    },
+    {
+      "traces": 7700,
+      "ge": 0
+    },
+    {
+      "traces": 7800,
+      "ge": 0
+    },
+    {
+      "traces": 7900,
+      "ge": 0
+    },
+    {
+      "traces": 8000,
+      "ge": 0
+    },
+    {
+      "traces": 8100,
+      "ge": 0
+    },
+    {
+      "traces": 8200,
+      "ge": 0
+    },
+    {
+      "traces": 8300,
+      "ge": 0
+    },
+    {
+      "traces": 8400,
+      "ge": 0
+    },
+    {
+      "traces": 8500,
+      "ge": 0
+    },
+    {
+      "traces": 8600,
+      "ge": 0
+    },
+    {
+      "traces": 8700,
+      "ge": 0
+    },
+    {
+      "traces": 8800,
+      "ge": 0
+    },
+    {
+      "traces": 8900,
+      "ge": 0
+    },
+    {
+      "traces": 9000,
+      "ge": 0
+    },
+    {
+      "traces": 9100,
+      "ge": 0
+    },
+    {
+      "traces": 9200,
+      "ge": 0
+    },
+    {
+      "traces": 9300,
+      "ge": 0
+    },
+    {
+      "traces": 9400,
+      "ge": 0
+    },
+    {
+      "traces": 9500,
+      "ge": 0
+    },
+    {
+      "traces": 9600,
+      "ge": 0
+    },
+    {
+      "traces": 9700,
+      "ge": 0
+    },
+    {
+      "traces": 9800,
+      "ge": 0
+    },
+    {
+      "traces": 9900,
+      "ge": 0
+    },
+    {
+      "traces": 10000,
+      "ge": 0
+    }
+  ]
+}

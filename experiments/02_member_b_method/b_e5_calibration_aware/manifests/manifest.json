@@ -1,0 +1,2232 @@
+{
+  "experiment_id": "B-E5",
+  "experiment_name": "\u6821\u51c6\u611f\u77e5 CDAN-SCA\uff08\u6e29\u5ea6\u6821\u51c6\u6743\u91cd vs \u88f8\u71b5\u6743\u91cd\uff09\uff1aASCAD fixed -> desync50/desync100",
+  "owner": "WBC-cbw",
+  "created_utc": "2026-11-13T08:41:38+00:00",
+  "git_commit": "c7c19299c682d3e335fc62e1a46180e9e5050989",
+  "git_branch": "main",
+  "run_commands": [
+    "python scripts/train_cdan_sca_calib.py --shift desync50|desync100 --seed 42|43|44  (x6 via scripts/run_queue.bat)",
+    "python scripts/evaluate_b_e5.py",
+    "python scripts/aggregate_b_e5.py",
+    "python scripts/analyze_calibration_b_e5.py",
+    "python scripts/permutation_b_e5.py",
+    "python scripts/plot_b_e5.py",
+    "python scripts/make_manifest.py"
+  ],
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "os": "Windows-11-10.0.26300-SP0"
+  },
+  "software": {
+    "python": "3.12.16",
+    "torch": "2.9.1+cu128",
+    "numpy": "2.5.3",
+    "h5py": "3.14.0",
+    "matplotlib": "3.11.2"
+  },
+  "datasets": {
+    "fixed": {
+      "path": "D:\\sca_project\\ASCAD_data\\ASCAD.h5",
+      "bytes": 46566904,
+      "sha256": "f56625977fb6db8075ab620b1f3ef49a2a349ae75511097505855376e9684f91"
+    },
+    "desync50": {
+      "path": "D:\\sca_project\\ASCAD_data\\ASCAD_desync50.h5",
+      "bytes": 46566904,
+      "sha256": "8716a01d4aea2df0650636504803af57dd597623854facfa75beae5a563c0937"
+    },
+    "desync100": {
+      "path": "D:\\sca_project\\ASCAD_data\\ASCAD_desync100.h5",
+      "bytes": 46566904,
+      "sha256": "f6b9e967af287e82f0a152320e58f8f0ded35cd74d499b5f7b1505a5ce338b8e"
+    }
+  },
+  "splits": {
+    "source_train": "fixed Profiling_traces[0:45000] (labeled)",
+    "source_val": "fixed Profiling_traces[45000:50000]",
+    "target_adapt": "target Profiling_traces[0:45000] (unlabeled; entropy weight + adversarial only)",
+    "target_domain_val": "target Profiling_traces[45000:50000] (domain diagnosis only)",
+    "target_attack": "target Attack_traces[0:10000]"
+  },
+  "target_byte": 2,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "methods": [
+    "source_only",
+    "dann",
+    "cdan",
+    "cdpa_mmd",
+    "cdan_sca_full",
+    "cdan_sca_marg",
+    "cdan_sca_calib"
+  ],
+  "method_notes": {
+    "cdan_sca_calib": "T(f,g) proj_dim=1024 + GRL + \u6e29\u5ea6\u6821\u51c6\u71b5\u6743\u91cd w=1-H(softmax(g/T))/log256\uff1bT \u5728 source_val 5000 \u6761\u4e0a\u6309 NLL \u62df\u5408\u4e00\u6b21\uff0c\u5199\u5165\u6bcf\u4e2a run \u7684 temperature.json",
+    "cdan_sca_full": "\u590d\u7528 B-E3 \u7684 6 \u4e2a run\uff08\u88f8\u71b5\u6743\u91cd\uff09\uff0c\u4e0d\u91cd\u8dd1",
+    "cdan_sca_marg": "\u590d\u7528 B-E3/B-E4 \u7684\u6d88\u878d 1\uff08\u53bb\u6761\u4ef6\u8f93\u5165 + \u88f8\u71b5\u6743\u91cd\uff09",
+    "cdan": "\u590d\u7528 A-E2 \u7684 6 \u4e2a run\uff08\u65e0\u71b5\u6743\u91cd\uff09",
+    "cdpa_mmd": "\u6700\u5f3a\u57fa\u7ebf\uff0c\u590d\u7528 A-E3 \u7684 6 \u4e2a run"
+  },
+  "hyperparameters": {
+    "optimizer": "RMSprop",
+    "lr": 1e-05,
+    "batch_size": 200,
+    "epochs": 75,
+    "lambda_adv": 0.1,
+    "proj_dim": 1024,
+    "input": "raw int8 amplitude (no normalization)",
+    "entropy_weight": "w = 1 - H(softmax(g/T))/np.log(256), H in nats, detached",
+    "temperature": "T fitted once per run on source_val by NLL, grid [0.05,20]",
+    "temperature_file": "results/<run>/temperature.json"
+  },
+  "diagnostic_runs": {
+    "level": "pre-check (not part of the 6-run main matrix)",
+    "runs": [
+      "temperature_probe (T fitted on B-E1 same-seed ckpts, results/temperature_probe.json)",
+      "2-epoch smoke on d50_s42 (deleted after checking weight collapse to w~0.02)"
+    ],
+    "purpose": "\u8bad\u7ec3\u524d\u786e\u8ba4\u6e29\u5ea6\u5c3a\u5ea6\u4e0e\u6743\u91cd\u9000\u5316\u65b9\u5411\uff1b\u4e0d\u4ea7\u751f\u4e3b\u7ed3\u679c"
+  },
+  "results_summary": {
+    "metrics": {
+      "source_only": {
+        "desync50": {
+          "n_runs": 3,
+          "method": "source_only",
+          "label": "Source Only",
+          "shift": "desync50",
+          "ntge_first_values": [
+            10000.0,
+            10000.0,
+            10000.0
+          ],
+          "ntge_first_mean": 10000.0,
+          "ntge_first_std": 0.0,
+          "ntge_first_reached": 0,
+          "ntge_stable_values": [
+            10000.0,
+            10000.0,
+            10000.0
+          ],
+          "ntge_stable_mean": 10000.0,
+          "ntge_stable_std": 0.0,
+          "ntge_stable_reached": 0,
+          "ge_at_1000_mean": 96.33333333333333,
+          "ge_at_10000_values": [
+            32,
+            10,
+            26
+          ],
+          "ge_at_10000_mean": 22.666666666666668,
+          "ge_at_10000_std": 11.372481406154654,
+          "sr_at_1000_mean": 0.0,
+          "sr_at_10000_mean": 0.0,
+          "attack_accuracy_mean": 0.003966666666666666,
+          "mean_entropy_mean": 1.6216276666666667,
+          "n_adapt": 0,
+          "n_attack_at_ge1_mean": 10000.0,
+          "n_total_at_ge1_mean": 10000.0,
+          "n_total_at_ge1_std": 0.0,
+          "train_seconds_mean": null,
+          "max_top1_share_mean": 0.0,
+          "collapse_epochs_mean": 0.0,
+          "temperature_mean": null,
+          "w_mean_calib_mean": null,
+          "w_p90_calib_mean": null,
+          "verdict": "baseline"
+        },
+        "desync100": {
+          "n_runs": 3,
+          "method": "source_only",
+          "label": "Source Only",
+          "shift": "desync100",
+          "ntge_first_values": [
+            800.0,
+            300.0,
+            10000.0
+          ],
+          "ntge_first_mean": 3700.0,
+          "ntge_first_std": 5461.68472176855,
+          "ntge_first_reached": 2,
+          "ntge_stable_values": [
+            10000.0,
+            10000.0,
+            10000.0
+          ],
+          "ntge_stable_mean": 10000.0,
+          "ntge_stable_std": 0.0,
+          "ntge_stable_reached": 0,
+          "ge_at_1000_mean": 3.0,
+          "ge_at_10000_values": [
+            15,
+            19,
+            35
+          ],
+          "ge_at_10000_mean": 23.0,
+          "ge_at_10000_std": 10.583005244258363,
+          "sr_at_1000_mean": 0.3333333333333333,
+          "sr_at_10000_mean": 0.0,
+          "attack_accuracy_mean": 0.004666666666666666,
+          "mean_entropy_mean": 1.000136,
+          "n_adapt": 0,
+          "n_attack_at_ge1_mean": 3700.0,
+          "n_total_at_ge1_mean": 3700.0,
+          "n_total_at_ge1_std": 5461.68472176855,
+          "train_seconds_mean": null,
+          "max_top1_share_mean": 0.0,
+          "collapse_epochs_mean": 0.0,
+          "temperature_mean": null,
+          "w_mean_calib_mean": null,
+          "w_p90_calib_mean": null,
+          "verdict": "baseline"
+        }
+      },
+      "dann": {
+        "desync50": {
+          "n_runs": 3,
+          "method": "dann",
+          "label": "DANN",
+          "shift": "desync50",
+          "ntge_first_values": [
+            7500.0,
+            10000.0,
+            10000.0
+          ],
+          "ntge_first_mean": 9166.666666666666,
+          "ntge_first_std": 1443.3756729740644,
+          "ntge_first_reached": 1,
+          "ntge_stable_values": [
+            7500.0,
+            10000.0,
+            10000.0
+          ],
+          "ntge_stable_mean": 9166.666666666666,
+          "ntge_stable_std": 1443.3756729740644,
+          "ntge_stable_reached": 1,
+          "ge_at_1000_mean": 68.66666666666667,
+          "ge_at_10000_values": [
+            0,
+            10,
+            2
+          ],
+          "ge_at_10000_mean": 4.0,
+          "ge_at_10000_std": 5.291502622129181,
+          "sr_at_1000_mean": 0.0,
+          "sr_at_10000_mean": 0.3333333333333333,
+          "attack_accuracy_mean": 0.005066666666666666,
+          "mean_entropy_mean": 0.4946176666666667,
+          "n_adapt": 45000,
+          "n_attack_at_ge1_mean": 9166.666666666666,
+          "n_total_at_ge1_mean": 54166.666666666664,
+          "n_total_at_ge1_std": 1443.3756729740644,
+          "train_seconds_mean": 1974.9742069244385,
+          "max_top1_share_mean": 0.0,
+          "collapse_epochs_mean": 0.0,
+          "temperature_mean": null,
+          "w_mean_calib_mean": null,
+          "w_p90_calib_mean": null,
+          "verdict": "not-win"
+        },
+        "desync100": {
+          "n_runs": 3,
+          "method": "dann",
+          "label": "DANN",
+          "shift": "desync100",
+          "ntge_first_values": [
+            4900.0,
+            10000.0,
+            10000.0
+          ],
+          "ntge_first_mean": 8300.0,
+          "ntge_first_std": 2944.486372867091,
+          "ntge_first_reached": 1,
+          "ntge_stable_values": [
+            10000.0,
+            10000.0,
+            10000.0
+          ],
+          "ntge_stable_mean": 10000.0,
+          "ntge_stable_std": 0.0,
+          "ntge_stable_reached": 0,
+          "ge_at_1000_mean": 19.0,
+          "ge_at_10000_values": [
+            7,
+            8,
+            18
+          ],
+          "ge_at_10000_mean": 11.0,
+          "ge_at_10000_std": 6.082762530298219,
+          "sr_at_1000_mean": 0.0,
+          "sr_at_10000_mean": 0.0,
+          "attack_accuracy_mean": 0.004166666666666667,
+          "mean_entropy_mean": 0.29397466666666666,
+          "n_adapt": 45000,
+          "n_attack_at_ge1_mean": 8300.0,
+          "n_total_at_ge1_mean": 53300.0,
+          "n_total_at_ge1_std": 2944.486372867091,
+          "train_seconds_mean": 1946.2393272717793,
+          "max_top1_share_mean": 0.0,
+          "collapse_epochs_mean": 0.0,
+          "temperature_mean": null,
+          "w_mean_calib_mean": null,
+          "w_p90_calib_mean": null,
+          "verdict": "not-win"
+        }
+      },
+      "cdan": {
+        "desync50": {
+          "n_runs": 3,
+          "method": "cdan",
+          "label": "CDAN",
+          "shift": "desync50",
+          "ntge_first_values": [
+            10000.0,
+            10000.0,
+            10000.0
+          ],
+          "ntge_first_mean": 10000.0,
+          "ntge_first_std": 0.0,
+          "ntge_first_reached": 0,
+          "ntge_stable_values": [
+            10000.0,
+            10000.0,
+            10000.0
+          ],
+          "ntge_stable_mean": 10000.0,
+          "ntge_stable_std": 0.0,
+          "ntge_stable_reached": 0,
+          "ge_at_1000_mean": 15.0,
+          "ge_at_10000_values": [
+            2,
+            13,
+            13
+          ],
+          "ge_at_10000_mean": 9.333333333333334,
+          "ge_at_10000_std": 6.3508529610858835,
+          "sr_at_1000_mean": 0.0,
+          "sr_at_10000_mean": 0.0,
+          "attack_accuracy_mean": 0.004233333333333333,
+          "mean_entropy_mean": 0.4245916666666667,
+          "n_adapt": 45000,
+          "n_attack_at_ge1_mean": 10000.0,
+          "n_total_at_ge1_mean": 55000.0,
+          "n_total_at_ge1_std": 0.0,
+          "train_seconds_mean": 1869.9906901518505,
+          "max_top1_share_mean": 0.0,
+          "collapse_epochs_mean": 0.0,
+          "temperature_mean": null,
+          "w_mean_calib_mean": null,
+          "w_p90_calib_mean": null,
+          "verdict": "not-win"
+        },
+        "desync100": {
+          "n_runs": 3,
+          "method": "cdan",
+          "label": "CDAN",
+          "shift": "desync100",
+          "ntge_first_values": [
+            9000.0,
+            700.0,
+            10000.0
+          ],
+          "ntge_first_mean": 6566.666666666667,
+          "ntge_first_std": 5105.226080530943,
+          "ntge_first_reached": 2,
+          "ntge_stable_values": [
+            9000.0,
+            10000.0,
+            10000.0
+          ],
+          "ntge_stable_mean": 9666.666666666666,
+          "ntge_stable_std": 577.3502691896257,
+          "ntge_stable_reached": 1,
+          "ge_at_1000_mean": 29.666666666666668,
+          "ge_at_10000_values": [
+            0,
+            26,
+            15
+          ],
+          "ge_at_10000_mean": 13.666666666666666,
+          "ge_at_10000_std": 13.051181300301263,
+          "sr_at_1000_mean": 0.3333333333333333,
+          "sr_at_10000_mean": 0.3333333333333333,
+          "attack_accuracy_mean": 0.003833333333333333,
+          "mean_entropy_mean": 0.147533,
+          "n_adapt": 45000,
+          "n_attack_at_ge1_mean": 6566.666666666667,
+          "n_total_at_ge1_mean": 51566.666666666664,
+          "n_total_at_ge1_std": 5105.226080530942,
+          "train_seconds_mean": 1775.113437652588,
+          "max_top1_share_mean": 0.0,
+          "collapse_epochs_mean": 0.0,
+          "temperature_mean": null,
+          "w_mean_calib_mean": null,
+          "w_p90_calib_mean": null,
+          "verdict": "not-win"
+        }
+      },
+      "cdpa_mmd": {
+        "desync50": {
+          "n_runs": 3,
+          "method": "cdpa_mmd",
+          "label": "CDPA-MMD",
+          "shift": "desync50",
+          "ntge_first_values": [
+            6400.0,
+            5200.0,
+            5500.0
+          ],
+          "ntge_first_mean": 5700.0,
+          "ntge_first_std": 624.4997998398399,
+          "ntge_first_reached": 3,
+          "ntge_stable_values": [
+            8000.0,
+            5500.0,
+            5500.0
+          ],
+          "ntge_stable_mean": 6333.333333333333,
+          "ntge_stable_std": 1443.3756729740644,
+          "ntge_stable_reached": 3,
+          "ge_at_1000_mean": 30.666666666666668,
+          "ge_at_10000_values": [
+            0,
+            0,
+            0
+          ],
+          "ge_at_10000_mean": 0.0,
+          "ge_at_10000_std": 0.0,
+          "sr_at_1000_mean": 0.0,
+          "sr_at_10000_mean": 1.0,
+          "attack_accuracy_mean": 0.0043,
+          "mean_entropy_mean": 0.8507296666666667,
+          "n_adapt": 45000,
+          "n_attack_at_ge1_mean": 5700.0,
+          "n_total_at_ge1_mean": 50700.0,
+          "n_total_at_ge1_std": 624.4997998398399,
+          "train_seconds_mean": 1899.2781769434612,
+          "max_top1_share_mean": 0.0,
+          "collapse_epochs_mean": 0.0,
+          "temperature_mean": null,
+          "w_mean_calib_mean": null,
+          "w_p90_calib_mean": null,
+          "verdict": "WIN(tie-ntge)"
+        },
+        "desync100": {
+          "n_runs": 3,
+          "method": "cdpa_mmd",
+          "label": "CDPA-MMD",
+          "shift": "desync100",
+          "ntge_first_values": [
+            300.0,
+            800.0,
+            10000.0
+          ],
+          "ntge_first_mean": 3700.0,
+          "ntge_first_std": 5461.68472176855,
+          "ntge_first_reached": 2,
+          "ntge_stable_values": [
+            7700.0,
+            10000.0,
+            10000.0
+          ],
+          "ntge_stable_mean": 9233.333333333334,
+          "ntge_stable_std": 1327.9056191361394,
+          "ntge_stable_reached": 1,
+          "ge_at_1000_mean": 12.666666666666666,
+          "ge_at_10000_values": [
+            0,
+            9,
+            3
+          ],
+          "ge_at_10000_mean": 4.0,
+          "ge_at_10000_std": 4.58257569495584,
+          "sr_at_1000_mean": 0.6666666666666666,
+          "sr_at_10000_mean": 0.3333333333333333,
+          "attack_accuracy_mean": 0.004,
+          "mean_entropy_mean": 0.7996296666666667,
+          "n_adapt": 45000,
+          "n_attack_at_ge1_mean": 3700.0,
+          "n_total_at_ge1_mean": 48700.0,
+          "n_total_at_ge1_std": 5461.68472176855,
+          "train_seconds_mean": 1846.9919243653615,
+          "max_top1_share_mean": 0.0,
+          "collapse_epochs_mean": 0.0,
+          "temperature_mean": null,
+          "w_mean_calib_mean": null,
+          "w_p90_calib_mean": null,
+          "verdict": "TIE"
+        }
+      },
+      "cdan_sca_full": {
+        "desync50": {
+          "n_runs": 3,
+          "method": "cdan_sca_full",
+          "label": "CDAN-SCA full",
+          "shift": "desync50",
+          "ntge_first_values": [
+            800.0,
+            7200.0,
+            10000.0
+          ],
+          "ntge_first_mean": 6000.0,
+          "ntge_first_std": 4715.930449020639,
+          "ntge_first_reached": 2,
+          "ntge_stable_values": [
+            2000.0,
+            10000.0,
+            10000.0
+          ],
+          "ntge_stable_mean": 7333.333333333333,
+          "ntge_stable_std": 4618.8021535170055,
+          "ntge_stable_reached": 1,
+          "ge_at_1000_mean": 44.333333333333336,
+          "ge_at_10000_values": [
+            0,
+            3,
+            20
+          ],
+          "ge_at_10000_mean": 7.666666666666667,
+          "ge_at_10000_std": 10.785793124908958,
+          "sr_at_1000_mean": 0.0,
+          "sr_at_10000_mean": 0.3333333333333333,
+          "attack_accuracy_mean": 0.004166666666666667,
+          "mean_entropy_mean": 0.3635726666666667,
+          "n_adapt": 45000,
+          "n_attack_at_ge1_mean": 6000.0,
+          "n_total_at_ge1_mean": 51000.0,
+          "n_total_at_ge1_std": 4715.930449020639,
+          "train_seconds_mean": 1814.3934965133667,
+          "max_top1_share_mean": 0.6103333333333333,
+          "collapse_epochs_mean": 5.666666666666667,
+          "temperature_mean": null,
+          "w_mean_calib_mean": 0.9385884404182434,
+          "w_p90_calib_mean": 0.9999998013178507,
+          "verdict": "not-win"
+        },
+        "desync100": {
+          "n_runs": 3,
+          "method": "cdan_sca_full",
+          "label": "CDAN-SCA full",
+          "shift": "desync100",
+          "ntge_first_values": [
+            7000.0,
+            1000.0,
+            10000.0
+          ],
+          "ntge_first_mean": 6000.0,
+          "ntge_first_std": 4582.57569495584,
+          "ntge_first_reached": 2,
+          "ntge_stable_values": [
+            10000.0,
+            10000.0,
+            10000.0
+          ],
+          "ntge_stable_mean": 10000.0,
+          "ntge_stable_std": 0.0,
+          "ntge_stable_reached": 0,
+          "ge_at_1000_mean": 51.333333333333336,
+          "ge_at_10000_values": [
+            6,
+            5,
+            15
+          ],
+          "ge_at_10000_mean": 8.666666666666666,
+          "ge_at_10000_std": 5.507570547286102,
+          "sr_at_1000_mean": 0.3333333333333333,
+          "sr_at_10000_mean": 0.0,
+          "attack_accuracy_mean": 0.004366666666666667,
+          "mean_entropy_mean": 0.14001233333333332,
+          "n_adapt": 45000,
+          "n_attack_at_ge1_mean": 6000.0,
+          "n_total_at_ge1_mean": 51000.0,
+          "n_total_at_ge1_std": 4582.57569495584,
+          "train_seconds_mean": 1885.5969793001811,
+          "max_top1_share_mean": 0.791,
+          "collapse_epochs_mean": 35.333333333333336,
+          "temperature_mean": null,
+          "w_mean_calib_mean": 0.9770749807357788,
+          "w_p90_calib_mean": 1.0,
+          "verdict": "not-win"
+        }
+      },
+      "cdan_sca_marg": {
+        "desync50": {
+          "n_runs": 3,
+          "method": "cdan_sca_marg",
+          "label": "Abl.1 marginal+w",
+          "shift": "desync50",
+          "ntge_first_values": [
+            2600.0,
+            10000.0,
+            10000.0
+          ],
+          "ntge_first_mean": 7533.333333333333,
+          "ntge_first_std": 4272.391992003231,
+          "ntge_first_reached": 1,
+          "ntge_stable_values": [
+            10000.0,
+            10000.0,
+            10000.0
+          ],
+          "ntge_stable_mean": 10000.0,
+          "ntge_stable_std": 0.0,
+          "ntge_stable_reached": 0,
+          "ge_at_1000_mean": 25.666666666666668,
+          "ge_at_10000_values": [
+            5,
+            2,
+            7
+          ],
+          "ge_at_10000_mean": 4.666666666666667,
+          "ge_at_10000_std": 2.516611478423583,
+          "sr_at_1000_mean": 0.0,
+          "sr_at_10000_mean": 0.0,
+          "attack_accuracy_mean": 0.004433333333333333,
+          "mean_entropy_mean": 0.558353,
+          "n_adapt": 45000,
+          "n_attack_at_ge1_mean": 7533.333333333333,
+          "n_total_at_ge1_mean": 52533.333333333336,
+          "n_total_at_ge1_std": 4272.391992003231,
+          "train_seconds_mean": 1916.6918762524922,
+          "max_top1_share_mean": 0.16133333333333333,
+          "collapse_epochs_mean": 0.0,
+          "temperature_mean": null,
+          "w_mean_calib_mean": 0.9048749407132467,
+          "w_p90_calib_mean": 0.9995377659797668,
+          "verdict": "not-win"
+        },
+        "desync100": {
+          "n_runs": 3,
+          "method": "cdan_sca_marg",
+          "label": "Abl.1 marginal+w",
+          "shift": "desync100",
+          "ntge_first_values": [
+            3000.0,
+            10000.0,
+            800.0
+          ],
+          "ntge_first_mean": 4600.0,
+          "ntge_first_std": 4804.164859785726,
+          "ntge_first_reached": 2,
+          "ntge_stable_values": [
+            10000.0,
+            10000.0,
+            10000.0
+          ],
+          "ntge_stable_mean": 10000.0,
+          "ntge_stable_std": 0.0,
+          "ntge_stable_reached": 0,
+          "ge_at_1000_mean": 2.0,
+          "ge_at_10000_values": [
+            1,
+            48,
+            5
+          ],
+          "ge_at_10000_mean": 18.0,
+          "ge_at_10000_std": 26.057628441590765,
+          "sr_at_1000_mean": 0.0,
+          "sr_at_10000_mean": 0.0,
+          "attack_accuracy_mean": 0.005266666666666667,
+          "mean_entropy_mean": 0.31346633333333335,
+          "n_adapt": 45000,
+          "n_attack_at_ge1_mean": 4600.0,
+          "n_total_at_ge1_mean": 49600.0,
+          "n_total_at_ge1_std": 4804.164859785726,
+          "train_seconds_mean": 1927.175209204356,
+          "max_top1_share_mean": 0.4255,
+          "collapse_epochs_mean": 0.6666666666666666,
+          "temperature_mean": null,
+          "w_mean_calib_mean": 0.9447691837946574,
+          "w_p90_calib_mean": 0.9999987880388895,
+          "verdict": "not-win"
+        }
+      },
+      "cdan_sca_calib": {
+        "desync50": {
+          "n_runs": 3,
+          "method": "cdan_sca_calib",
+          "label": "CDAN-SCA-calib",
+          "shift": "desync50",
+          "ntge_first_values": [
+            10000.0,
+            5400.0,
+            10000.0
+          ],
+          "ntge_first_mean": 8466.666666666666,
+          "ntge_first_std": 2655.8112382722784,
+          "ntge_first_reached": 1,
+          "ntge_stable_values": [
+            10000.0,
+            5800.0,
+            10000.0
+          ],
+          "ntge_stable_mean": 8600.0,
+          "ntge_stable_std": 2424.8711305964284,
+          "ntge_stable_reached": 1,
+          "ge_at_1000_mean": 24.333333333333332,
+          "ge_at_10000_values": [
+            3,
+            0,
+            2
+          ],
+          "ge_at_10000_mean": 1.6666666666666667,
+          "ge_at_10000_std": 1.5275252316519465,
+          "sr_at_1000_mean": 0.0,
+          "sr_at_10000_mean": 0.3333333333333333,
+          "attack_accuracy_mean": 0.004666666666666667,
+          "mean_entropy_mean": 0.23648533333333333,
+          "n_adapt": 45000,
+          "n_attack_at_ge1_mean": 8466.666666666666,
+          "n_total_at_ge1_mean": 53466.666666666664,
+          "n_total_at_ge1_std": 2655.811238272279,
+          "train_seconds_mean": 1864.1724342505138,
+          "max_top1_share_mean": 0.6821666666666667,
+          "collapse_epochs_mean": 23.666666666666668,
+          "temperature_mean": 12.305540952647839,
+          "w_mean_calib_mean": 0.017063069778184097,
+          "w_p90_calib_mean": 0.03324000909924507,
+          "verdict": "not-win"
+        },
+        "desync100": {
+          "n_runs": 3,
+          "method": "cdan_sca_calib",
+          "label": "CDAN-SCA-calib",
+          "shift": "desync100",
+          "ntge_first_values": [
+            600.0,
+            7000.0,
+            1800.0
+          ],
+          "ntge_first_mean": 3133.3333333333335,
+          "ntge_first_std": 3401.960219246153,
+          "ntge_first_reached": 3,
+          "ntge_stable_values": [
+            10000.0,
+            9200.0,
+            9200.0
+          ],
+          "ntge_stable_mean": 9466.666666666666,
+          "ntge_stable_std": 461.8802153517006,
+          "ntge_stable_reached": 2,
+          "ge_at_1000_mean": 12.0,
+          "ge_at_10000_values": [
+            1,
+            0,
+            0
+          ],
+          "ge_at_10000_mean": 0.3333333333333333,
+          "ge_at_10000_std": 0.5773502691896258,
+          "sr_at_1000_mean": 0.3333333333333333,
+          "sr_at_10000_mean": 0.6666666666666666,
+          "attack_accuracy_mean": 0.004633333333333333,
+          "mean_entropy_mean": 0.128458,
+          "n_adapt": 45000,
+          "n_attack_at_ge1_mean": 3133.3333333333335,
+          "n_total_at_ge1_mean": 48133.333333333336,
+          "n_total_at_ge1_std": 3401.960219246153,
+          "train_seconds_mean": 1911.1978308359783,
+          "max_top1_share_mean": 0.8145000000000001,
+          "collapse_epochs_mean": 56.666666666666664,
+          "temperature_mean": 12.305540952647839,
+          "w_mean_calib_mean": 0.013800937837610642,
+          "w_p90_calib_mean": 0.027990323180953663,
+          "verdict": "WIN"
+        }
+      }
+    },
+    "paired": {
+      "calib_vs_source_only@desync50": {
+        "delta_ntge_values": [
+          0.0,
+          -4600.0,
+          0.0
+        ],
+        "delta_ntge_mean": -1533.3333333333333,
+        "wins": 1,
+        "ties": 2,
+        "losses": 0
+      },
+      "calib_vs_dann@desync50": {
+        "delta_ntge_values": [
+          2500.0,
+          -4600.0,
+          0.0
+        ],
+        "delta_ntge_mean": -700.0,
+        "wins": 1,
+        "ties": 1,
+        "losses": 1
+      },
+      "calib_vs_cdan@desync50": {
+        "delta_ntge_values": [
+          0.0,
+          -4600.0,
+          0.0
+        ],
+        "delta_ntge_mean": -1533.3333333333333,
+        "wins": 1,
+        "ties": 2,
+        "losses": 0
+      },
+      "calib_vs_cdpa_mmd@desync50": {
+        "delta_ntge_values": [
+          3600.0,
+          200,
+          4500.0
+        ],
+        "delta_ntge_mean": 2766.6666666666665,
+        "wins": 0,
+        "ties": 0,
+        "losses": 3
+      },
+      "calib_vs_cdan_sca_marg@desync50": {
+        "delta_ntge_values": [
+          7400.0,
+          -4600.0,
+          0.0
+        ],
+        "delta_ntge_mean": 933.3333333333334,
+        "wins": 1,
+        "ties": 1,
+        "losses": 1
+      },
+      "calib_vs_cdan_sca_full@desync50": {
+        "delta_ntge_values": [
+          9200.0,
+          -1800,
+          0.0
+        ],
+        "delta_ntge_mean": 2466.6666666666665,
+        "wins": 1,
+        "ties": 1,
+        "losses": 1
+      },
+      "calib_vs_cdan_ge10k@desync50": {
+        "delta_values": [
+          1,
+          -13,
+          -11
+        ],
+        "delta_mean": -7.666666666666667
+      },
+      "calib_vs_cdpa_mmd_ge10k@desync50": {
+        "delta_values": [
+          3,
+          0,
+          2
+        ],
+        "delta_mean": 1.6666666666666667
+      },
+      "full_vs_cdpa_mmd@desync50": {
+        "delta_ntge_values": [
+          -5600,
+          2000,
+          4500.0
+        ],
+        "delta_ntge_mean": 300.0,
+        "wins": 1,
+        "ties": 0,
+        "losses": 2
+      },
+      "calib_vs_source_only@desync100": {
+        "delta_ntge_values": [
+          -200,
+          6700,
+          -8200.0
+        ],
+        "delta_ntge_mean": -566.6666666666666,
+        "wins": 2,
+        "ties": 0,
+        "losses": 1
+      },
+      "calib_vs_dann@desync100": {
+        "delta_ntge_values": [
+          -4300,
+          -3000.0,
+          -8200.0
+        ],
+        "delta_ntge_mean": -5166.666666666667,
+        "wins": 3,
+        "ties": 0,
+        "losses": 0
+      },
+      "calib_vs_cdan@desync100": {
+        "delta_ntge_values": [
+          -8400,
+          6300,
+          -8200.0
+        ],
+        "delta_ntge_mean": -3433.3333333333335,
+        "wins": 2,
+        "ties": 0,
+        "losses": 1
+      },
+      "calib_vs_cdpa_mmd@desync100": {
+        "delta_ntge_values": [
+          300,
+          6200,
+          -8200.0
+        ],
+        "delta_ntge_mean": -566.6666666666666,
+        "wins": 1,
+        "ties": 0,
+        "losses": 2
+      },
+      "calib_vs_cdan_sca_marg@desync100": {
+        "delta_ntge_values": [
+          -2400,
+          -3000.0,
+          1000
+        ],
+        "delta_ntge_mean": -1466.6666666666667,
+        "wins": 2,
+        "ties": 0,
+        "losses": 1
+      },
+      "calib_vs_cdan_sca_full@desync100": {
+        "delta_ntge_values": [
+          -6400,
+          6000,
+          -8200.0
+        ],
+        "delta_ntge_mean": -2866.6666666666665,
+        "wins": 2,
+        "ties": 0,
+        "losses": 1
+      },
+      "calib_vs_cdan_ge10k@desync100": {
+        "delta_values": [
+          1,
+          -26,
+          -15
+        ],
+        "delta_mean": -13.333333333333334
+      },
+      "calib_vs_cdpa_mmd_ge10k@desync100": {
+        "delta_values": [
+          1,
+          -9,
+          -3
+        ],
+        "delta_mean": -3.6666666666666665
+      },
+      "full_vs_cdpa_mmd@desync100": {
+        "delta_ntge_values": [
+          6700,
+          200,
+          0.0
+        ],
+        "delta_ntge_mean": 2300.0,
+        "wins": 0,
+        "ties": 1,
+        "losses": 2
+      }
+    },
+    "three_way": {
+      "desync50": {
+        "cdan": {
+          "ntge_first_mean": 10000.0,
+          "ntge_first_std": 0.0,
+          "ntge_first_reached": 0,
+          "ntge_stable_reached": 0,
+          "ge_at_10000_mean": 9.333333333333334,
+          "ge_at_10000_std": 6.3508529610858835,
+          "sr_at_10000_mean": 0.0,
+          "n_total_at_ge1_mean": 55000.0,
+          "attack_accuracy_mean": 0.004233333333333333,
+          "mean_entropy_mean": 0.4245916666666667,
+          "max_top1_share_mean": 0.0,
+          "collapse_epochs_mean": 0.0,
+          "temperature_mean": null,
+          "w_mean_calib_mean": null,
+          "w_p90_calib_mean": null
+        },
+        "cdan_sca_full": {
+          "ntge_first_mean": 6000.0,
+          "ntge_first_std": 4715.930449020639,
+          "ntge_first_reached": 2,
+          "ntge_stable_reached": 1,
+          "ge_at_10000_mean": 7.666666666666667,
+          "ge_at_10000_std": 10.785793124908958,
+          "sr_at_10000_mean": 0.3333333333333333,
+          "n_total_at_ge1_mean": 51000.0,
+          "attack_accuracy_mean": 0.004166666666666667,
+          "mean_entropy_mean": 0.3635726666666667,
+          "max_top1_share_mean": 0.6103333333333333,
+          "collapse_epochs_mean": 5.666666666666667,
+          "temperature_mean": null,
+          "w_mean_calib_mean": 0.9385884404182434,
+          "w_p90_calib_mean": 0.9999998013178507
+        },
+        "cdan_sca_calib": {
+          "ntge_first_mean": 8466.666666666666,
+          "ntge_first_std": 2655.8112382722784,
+          "ntge_first_reached": 1,
+          "ntge_stable_reached": 1,
+          "ge_at_10000_mean": 1.6666666666666667,
+          "ge_at_10000_std": 1.5275252316519465,
+          "sr_at_10000_mean": 0.3333333333333333,
+          "n_total_at_ge1_mean": 53466.666666666664,
+          "attack_accuracy_mean": 0.004666666666666667,
+          "mean_entropy_mean": 0.23648533333333333,
+          "max_top1_share_mean": 0.6821666666666667,
+          "collapse_epochs_mean": 23.666666666666668,
+          "temperature_mean": 12.305540952647839,
+          "w_mean_calib_mean": 0.017063069778184097,
+          "w_p90_calib_mean": 0.03324000909924507
+        }
+      },
+      "desync100": {
+        "cdan": {
+          "ntge_first_mean": 6566.666666666667,
+          "ntge_first_std": 5105.226080530943,
+          "ntge_first_reached": 2,
+          "ntge_stable_reached": 1,
+          "ge_at_10000_mean": 13.666666666666666,
+          "ge_at_10000_std": 13.051181300301263,
+          "sr_at_10000_mean": 0.3333333333333333,
+          "n_total_at_ge1_mean": 51566.666666666664,
+          "attack_accuracy_mean": 0.003833333333333333,
+          "mean_entropy_mean": 0.147533,
+          "max_top1_share_mean": 0.0,
+          "collapse_epochs_mean": 0.0,
+          "temperature_mean": null,
+          "w_mean_calib_mean": null,
+          "w_p90_calib_mean": null
+        },
+        "cdan_sca_full": {
+          "ntge_first_mean": 6000.0,
+          "ntge_first_std": 4582.57569495584,
+          "ntge_first_reached": 2,
+          "ntge_stable_reached": 0,
+          "ge_at_10000_mean": 8.666666666666666,
+          "ge_at_10000_std": 5.507570547286102,
+          "sr_at_10000_mean": 0.0,
+          "n_total_at_ge1_mean": 51000.0,
+          "attack_accuracy_mean": 0.004366666666666667,
+          "mean_entropy_mean": 0.14001233333333332,
+          "max_top1_share_mean": 0.791,
+          "collapse_epochs_mean": 35.333333333333336,
+          "temperature_mean": null,
+          "w_mean_calib_mean": 0.9770749807357788,
+          "w_p90_calib_mean": 1.0
+        },
+        "cdan_sca_calib": {
+          "ntge_first_mean": 3133.3333333333335,
+          "ntge_first_std": 3401.960219246153,
+          "ntge_first_reached": 3,
+          "ntge_stable_reached": 2,
+          "ge_at_10000_mean": 0.3333333333333333,
+          "ge_at_10000_std": 0.5773502691896258,
+          "sr_at_10000_mean": 0.6666666666666666,
+          "n_total_at_ge1_mean": 48133.333333333336,
+          "attack_accuracy_mean": 0.004633333333333333,
+          "mean_entropy_mean": 0.128458,
+          "max_top1_share_mean": 0.8145000000000001,
+          "collapse_epochs_mean": 56.666666666666664,
+          "temperature_mean": 12.305540952647839,
+          "w_mean_calib_mean": 0.013800937837610642,
+          "w_p90_calib_mean": 0.027990323180953663
+        }
+      }
+    },
+    "censor": 10000.0,
+    "n_adapt": 45000,
+    "thresholds": {
+      "desync50": {
+        "ntge": 5700.0
+      },
+      "desync100": {
+        "ntge": 3700.0,
+        "ge10k": 4.0
+      }
+    }
+  },
+  "archived_models": [
+    {
+      "run": "cdan_sca_calib_desync100_s42",
+      "path": "outputs/models/b_e5/cdan_sca_calib_desync100_s42/ckpt.pt",
+      "bytes": 563713977,
+      "sha256": "57840948038706329396f10fc4af0242b63893c14d9cc39c79b29e754ca295d6"
+    },
+    {
+      "run": "cdan_sca_calib_desync100_s43",
+      "path": "outputs/models/b_e5/cdan_sca_calib_desync100_s43/ckpt.pt",
+      "bytes": 563713977,
+      "sha256": "26fbdc645e3aaf64264cba184584d48943fe90c1586d27529c1916924562367a"
+    },
+    {
+      "run": "cdan_sca_calib_desync100_s44",
+      "path": "outputs/models/b_e5/cdan_sca_calib_desync100_s44/ckpt.pt",
+      "bytes": 563713977,
+      "sha256": "a7eeb12a45d875855671e40eea47c3e6dd19bfd0652a817199bcd214957eb220"
+    },
+    {
+      "run": "cdan_sca_calib_desync50_s42",
+      "path": "outputs/models/b_e5/cdan_sca_calib_desync50_s42/ckpt.pt",
+      "bytes": 563713913,
+      "sha256": "f139ad195ce7ef04dd62841b537c684f6dc8965da8dfb3296f5410e42381f6a4"
+    },
+    {
+      "run": "cdan_sca_calib_desync50_s43",
+      "path": "outputs/models/b_e5/cdan_sca_calib_desync50_s43/ckpt.pt",
+      "bytes": 563714553,
+      "sha256": "79a3a2ed0542355d61b497035c1672997567444a1f433ff9eda4b924d810d90f"
+    },
+    {
+      "run": "cdan_sca_calib_desync50_s44",
+      "path": "outputs/models/b_e5/cdan_sca_calib_desync50_s44/ckpt.pt",
+      "bytes": 563714553,
+      "sha256": "ccbf61518a21f6e5f06c78b85f55cb94373a7a4b54f5beb974da8fbc1ced185c"
+    }
+  ],
+  "reused_checkpoints": [
+    {
+      "role": "pretrained source-only weights (same-seed B-E1 ckpt)",
+      "path": "outputs/models/b_e1/cnn_s42/ckpt.pt",
+      "bytes": 266615281,
+      "sha256": "e426e450377e28a2530e63d13fae26f492fd83a206805145f2140a5ecd1e3ded"
+    },
+    {
+      "role": "pretrained source-only weights (same-seed B-E1 ckpt)",
+      "path": "outputs/models/b_e1/cnn_s43/ckpt.pt",
+      "bytes": 266615281,
+      "sha256": "0fa82d0dae2f04ddc32b24625f64b0b0bec81a0ba64a89550a270f1ea01d9add"
+    },
+    {
+      "role": "pretrained source-only weights (same-seed B-E1 ckpt)",
+      "path": "outputs/models/b_e1/cnn_s44/ckpt.pt",
+      "bytes": 266615281,
+      "sha256": "7c55e6d675e349b7a9d13e450f5ee5038eeed8ea2083e6ef4912990786b2543e"
+    },
+    {
+      "role": "CDAN-SCA full (bare entropy weight) checkpoint, B-E3",
+      "path": "outputs/models/b_e3/cdan_sca_full_desync50_s42/ckpt.pt",
+      "bytes": 563687097,
+      "sha256": "6f0aae1acee06dcc0b4a1572920ccaf0ce8a428f6928200a9010447643c9b547"
+    },
+    {
+      "role": "CDAN-SCA full (bare entropy weight) checkpoint, B-E3",
+      "path": "outputs/models/b_e3/cdan_sca_full_desync50_s43/ckpt.pt",
+      "bytes": 563687097,
+      "sha256": "38e451e0e3568c9084e4cc587695dbaadef571225494d169b183cb566f6b4d83"
+    },
+    {
+      "role": "CDAN-SCA full (bare entropy weight) checkpoint, B-E3",
+      "path": "outputs/models/b_e3/cdan_sca_full_desync50_s44/ckpt.pt",
+      "bytes": 563687097,
+      "sha256": "81e734c7903ffbeeb046720cf889cd28f215a8f16df293a897f0dc241eed9b8a"
+    },
+    {
+      "role": "CDAN-SCA full (bare entropy weight) checkpoint, B-E3",
+      "path": "outputs/models/b_e3/cdan_sca_full_desync100_s42/ckpt.pt",
+      "bytes": 563687161,
+      "sha256": "56e8c7d4e0241005b55ec56a0c015e23b82ec3ea9887e2ee7ced6bcd3e8138d8"
+    },
+    {
+      "role": "CDAN-SCA full (bare entropy weight) checkpoint, B-E3",
+      "path": "outputs/models/b_e3/cdan_sca_full_desync100_s43/ckpt.pt",
+      "bytes": 563687161,
+      "sha256": "18416ae70527d5a02ef731983126b85ed8e815f26ab1d2f71c2fdffa5892b247"
+    },
+    {
+      "role": "CDAN-SCA full (bare entropy weight) checkpoint, B-E3",
+      "path": "outputs/models/b_e3/cdan_sca_full_desync100_s44/ckpt.pt",
+      "bytes": 563687161,
+      "sha256": "c5eec2c843baf295fb69cbadbe3e4e2280b5ffc768999b949a0294b77954de82"
+    },
+    {
+      "role": "ablation 2 (CDAN, no entropy weighting) checkpoint",
+      "path": "outputs/models/a_e2/cdan_desync50_s42/ckpt.pt",
+      "bytes": 563669177,
+      "sha256": "e8ec7a6b9017fd356c1567def9f3621c1cd64670953d4611346a96e456dc0926"
+    },
+    {
+      "role": "ablation 2 (CDAN, no entropy weighting) checkpoint",
+      "path": "outputs/models/a_e2/cdan_desync50_s43/ckpt.pt",
+      "bytes": 563669177,
+      "sha256": "f3698761c2520167427c7628e68e51e86f92e15bbe5b6a3390bb7f81d29ebfd7"
+    },
+    {
+      "role": "ablation 2 (CDAN, no entropy weighting) checkpoint",
+      "path": "outputs/models/a_e2/cdan_desync50_s44/ckpt.pt",
+      "bytes": 563669177,
+      "sha256": "a21f210545e6ebe8c0d2d145fee14f0cec639a5a8a0dbb278de5095e1960d5b2"
+    },
+    {
+      "role": "ablation 2 (CDAN, no entropy weighting) checkpoint",
+      "path": "outputs/models/a_e2/cdan_desync100_s42/ckpt.pt",
+      "bytes": 563669177,
+      "sha256": "ceac9dd86da7d8a74ba14f71b67cdffcc3551e2c33c8326cc36a27daff421ff5"
+    },
+    {
+      "role": "ablation 2 (CDAN, no entropy weighting) checkpoint",
+      "path": "outputs/models/a_e2/cdan_desync100_s43/ckpt.pt",
+      "bytes": 563669177,
+      "sha256": "86d09742fe8c42d18b563073a95ec663ac2cc79ce8fdd5745d7700d56f499cfb"
+    },
+    {
+      "role": "ablation 2 (CDAN, no entropy weighting) checkpoint",
+      "path": "outputs/models/a_e2/cdan_desync100_s44/ckpt.pt",
+      "bytes": 563669177,
+      "sha256": "110d6389b4336c69fa7bb9183a7fd08e4ca13036d22b6cd53a807cfafc03ba30"
+    },
+    {
+      "role": "strong baseline CDPA-MMD checkpoint",
+      "path": "outputs/models/a_e3/cdpa_desync50_s42/ckpt.pt",
+      "bytes": 533238705,
+      "sha256": "9fe3c67978c46ab1e18b51284fffd8a4f9bf770d642db68fd7aba8a991819bd4"
+    },
+    {
+      "role": "strong baseline CDPA-MMD checkpoint",
+      "path": "outputs/models/a_e3/cdpa_desync50_s43/ckpt.pt",
+      "bytes": 533238705,
+      "sha256": "b972c53fae4006dcb01a387f0bbe4718ddebab78bf2ef162dda6c3aec531a4ee"
+    },
+    {
+      "role": "strong baseline CDPA-MMD checkpoint",
+      "path": "outputs/models/a_e3/cdpa_desync50_s44/ckpt.pt",
+      "bytes": 533238705,
+      "sha256": "7c3ac0af0eaa52d6d5d3087a40398541c1ce4626980a2b5dbf54243a51a70fdd"
+    },
+    {
+      "role": "strong baseline CDPA-MMD checkpoint",
+      "path": "outputs/models/a_e3/cdpa_desync100_s42/ckpt.pt",
+      "bytes": 533238705,
+      "sha256": "072a932d526dd565906c9d5ffb189d1521415ce2eb0284d00d03785cc31b171d"
+    },
+    {
+      "role": "strong baseline CDPA-MMD checkpoint",
+      "path": "outputs/models/a_e3/cdpa_desync100_s43/ckpt.pt",
+      "bytes": 533238705,
+      "sha256": "4198f99b5879448162539cb9326d3bc6c85f79489819bb944b86e6d7209414a4"
+    },
+    {
+      "role": "strong baseline CDPA-MMD checkpoint",
+      "path": "outputs/models/a_e3/cdpa_desync100_s44/ckpt.pt",
+      "bytes": 533238705,
+      "sha256": "7f30a9d27690de710051f0df0acbe28f6a977bf26691902af7e599b03a998d87"
+    }
+  ],
+  "files": [
+    {
+      "path": "figures/b_e5_calibration_adapt.pdf",
+      "bytes": 19322,
+      "sha256": "9879426caa1bd500d469fa850e3881d275c5765eaed85e2a46562e254ec39207"
+    },
+    {
+      "path": "figures/b_e5_calibration_adapt.png",
+      "bytes": 68411,
+      "sha256": "afb21c227bdd318cc68289f29f0db9fd5b38d553b2cf6f657fd291eb212a6d10"
+    },
+    {
+      "path": "figures/b_e5_calibration_attack.pdf",
+      "bytes": 19325,
+      "sha256": "63912ffd04a6a612edb6d9275e7c2dec578a5e6281ee96cb93dbb9befe715ac0"
+    },
+    {
+      "path": "figures/b_e5_calibration_attack.png",
+      "bytes": 67668,
+      "sha256": "bf379d004ddd20be25e1da2311bbbace20bdf6581e92b3e6cf99b71443fb66ae"
+    },
+    {
+      "path": "figures/b_e5_ge_desync100.pdf",
+      "bytes": 22625,
+      "sha256": "ee8699556cacdda45df060f8db3557f1662b00fca754abc85fafeaa4cd18746b"
+    },
+    {
+      "path": "figures/b_e5_ge_desync100.png",
+      "bytes": 120023,
+      "sha256": "d710101b216ea9f97cf86595e88758a3321e5d9336e3608921f89c4b1744c69e"
+    },
+    {
+      "path": "figures/b_e5_ge_desync100_all.pdf",
+      "bytes": 26606,
+      "sha256": "a3cd7d4834f0e0225e668be8330a66491491b256d4c1fb7815f2b8d3f376cc5e"
+    },
+    {
+      "path": "figures/b_e5_ge_desync100_all.png",
+      "bytes": 140822,
+      "sha256": "4df2aa0dad958e09952b7bca703564dfe63b4158540c7b690a8c476bd923c610"
+    },
+    {
+      "path": "figures/b_e5_ge_desync100_all_log.pdf",
+      "bytes": 26409,
+      "sha256": "6a39c680b15a894b2b2815c75e22a5f97b7e5bf996b72108a03dfa564c9eb04c"
+    },
+    {
+      "path": "figures/b_e5_ge_desync100_all_log.png",
+      "bytes": 235478,
+      "sha256": "98fe92da2f388834505852652c15fef2676af6c54e370a9ef6d41c633b04d098"
+    },
+    {
+      "path": "figures/b_e5_ge_desync100_log.pdf",
+      "bytes": 22430,
+      "sha256": "6a88d584e8f80db5c88752063877c613edfb3d95f07112429f764bc10d4ed0f8"
+    },
+    {
+      "path": "figures/b_e5_ge_desync100_log.png",
+      "bytes": 190869,
+      "sha256": "e6e107e1514c7c9899fc7194c9e2919f0efdc4555c37408fc9702d90c156f024"
+    },
+    {
+      "path": "figures/b_e5_ge_desync50.pdf",
+      "bytes": 22895,
+      "sha256": "b7c0423a450da87b1727b6b9ece9075df14ecc6d4cc684235007cb52751cb478"
+    },
+    {
+      "path": "figures/b_e5_ge_desync50.png",
+      "bytes": 127757,
+      "sha256": "dbbaf9abbd8f7ca35c4f5b775060718d7f830e80ab01ec1c1b5ae84ac4c34f38"
+    },
+    {
+      "path": "figures/b_e5_ge_desync50_all.pdf",
+      "bytes": 27070,
+      "sha256": "e45c8b70062c8d103defe1945712f3d8450cfd0da3d69b749e0f50bad3afa1ce"
+    },
+    {
+      "path": "figures/b_e5_ge_desync50_all.png",
+      "bytes": 148157,
+      "sha256": "87ca45ddf96e203a69ea174c76e42dd08c073bc2ecbf065a7f6c9b2ca0cb2df2"
+    },
+    {
+      "path": "figures/b_e5_ge_desync50_all_log.pdf",
+      "bytes": 26885,
+      "sha256": "e0a0aece0444b1af69cfd99e58a18fbbb37a6e96319933bc840f62361438f84d"
+    },
+    {
+      "path": "figures/b_e5_ge_desync50_all_log.png",
+      "bytes": 221520,
+      "sha256": "7ed7f3bcfde2970e27bffad9cbbcd4eeae3cf4c65c03953b13c86c4bb5121500"
+    },
+    {
+      "path": "figures/b_e5_ge_desync50_log.pdf",
+      "bytes": 22665,
+      "sha256": "39ca1449e384d6957be8b0aae24941aa8f71c0d1bf67c60986fb1e884fd8fe42"
+    },
+    {
+      "path": "figures/b_e5_ge_desync50_log.png",
+      "bytes": 176167,
+      "sha256": "921dce07a5f9cc9d316f3783fd20676930efd2784532d76dd525e3f279b0ea8e"
+    },
+    {
+      "path": "figures/b_e5_monitor_desync100.pdf",
+      "bytes": 32587,
+      "sha256": "c214cf1f59f50c712b57d0f17753006c01b272283655e79cfd591ca12dc98d53"
+    },
+    {
+      "path": "figures/b_e5_monitor_desync100.png",
+      "bytes": 224286,
+      "sha256": "3076557b5a4bbae6ddce253e5cbecdd8261661d167e973cc5d1143c418e247f5"
+    },
+    {
+      "path": "figures/b_e5_monitor_desync50.pdf",
+      "bytes": 32783,
+      "sha256": "e1c9cb0605c30fd8457d6dea23db968e0f90d23e6a80d7bae89885c1a7dc4bfc"
+    },
+    {
+      "path": "figures/b_e5_monitor_desync50.png",
+      "bytes": 240583,
+      "sha256": "239a37e18d9803914a3a77d55a67ccac7ed19856b32e1d025da02677faf42100"
+    },
+    {
+      "path": "figures/b_e5_ntge.pdf",
+      "bytes": 20846,
+      "sha256": "84c8a7b343e59b4c8519ffec37d9eea8c51e43b4c71e853691d5ad82271cd7ac"
+    },
+    {
+      "path": "figures/b_e5_ntge.png",
+      "bytes": 59167,
+      "sha256": "c602da6c57b1136ff03bd592cb016f49e47cc08b5fddfc21a2c1f4e1f8ca1906"
+    },
+    {
+      "path": "figures/b_e5_weights_adapt.pdf",
+      "bytes": 19573,
+      "sha256": "0617327009a415a86d4e4146460637d1ca31a857536a3c81b1f527c10fe0fe4a"
+    },
+    {
+      "path": "figures/b_e5_weights_adapt.png",
+      "bytes": 83275,
+      "sha256": "743166313f4a1fe64b0d4a2ae2a5fc96238e4f347439921c67b8ffe8c34df508"
+    },
+    {
+      "path": "figures/b_e5_weights_attack.pdf",
+      "bytes": 19905,
+      "sha256": "5bf35d88b754e2046abf8fe528df155e86f92636e75d26abb11824b4b8cc0243"
+    },
+    {
+      "path": "figures/b_e5_weights_attack.png",
+      "bytes": 83550,
+      "sha256": "3843d4ffe1ccca045c19d98267612acae277bfe5c92abf01978aef4dec436dbf"
+    },
+    {
+      "path": "logs/calib_desync100_s42.log",
+      "bytes": 24255,
+      "sha256": "2e443000138cf67f1395beaa1074e944e36c234090213a0e3aac7d3ff3e29b0b"
+    },
+    {
+      "path": "logs/calib_desync100_s43.log",
+      "bytes": 23033,
+      "sha256": "e6b6ea0b1727dff61c9be841ea312c63c89a13e09556da7506f6af63dfc657a6"
+    },
+    {
+      "path": "logs/calib_desync100_s44.log",
+      "bytes": 22833,
+      "sha256": "af9c3b5848989a8e9e347304a3f942efa06bb8fad9f859ba0092ca854434620b"
+    },
+    {
+      "path": "logs/calib_desync50_s42.log",
+      "bytes": 21124,
+      "sha256": "f767e75275d939794d23800fd97d8f2df6bb1276fec48198b5623d1af191195f"
+    },
+    {
+      "path": "logs/calib_desync50_s43.log",
+      "bytes": 21496,
+      "sha256": "d7af56cee62fe33bbdea2fba341eec26986e3ea03b9a6265076721bc5f4aada9"
+    },
+    {
+      "path": "logs/calib_desync50_s44.log",
+      "bytes": 22672,
+      "sha256": "55c800052ecd8ee5664ecf15adb502b04de110e1b89f63c509b8308b073e3662"
+    },
+    {
+      "path": "logs/finalize.log",
+      "bytes": 9400,
+      "sha256": "b429011397e40582276529b731e355c8ef636fd9dc08e06b4c8c0a1ebdea4dc6"
+    },
+    {
+      "path": "logs/FINALIZE_DONE.txt",
+      "bytes": 7,
+      "sha256": "9a2899e09ebcfa7316aecd9b9eec07e81a5f6b4a1f5c743d8ef1c4ff692ccdbe"
+    },
+    {
+      "path": "logs/queue.log",
+      "bytes": 491,
+      "sha256": "03e86449503adb471c57b2b5d16ddf0b4b4bde77e18ab87e89ad0d2715bcccd0"
+    },
+    {
+      "path": "logs/queue2.log",
+      "bytes": 76,
+      "sha256": "97c3e6e855cfb45bb14b1728bf73ab1c044621f5a19d2d3857996e793fefe251"
+    },
+    {
+      "path": "logs/queue3.log",
+      "bytes": 263,
+      "sha256": "18d5cdaf05b75510de45c4f7adb915d86d66fd4d681a962f5ab2f496d2139617"
+    },
+    {
+      "path": "logs/QUEUE3_DONE.txt",
+      "bytes": 7,
+      "sha256": "9a2899e09ebcfa7316aecd9b9eec07e81a5f6b4a1f5c743d8ef1c4ff692ccdbe"
+    },
+    {
+      "path": "README.md",
+      "bytes": 24665,
+      "sha256": "50816eba858bad20ee618d26dfdc8cb81430f653abf0f7960a21bf134ba0a6cb"
+    },
+    {
+      "path": "reports/b_e5_report.md",
+      "bytes": 25097,
+      "sha256": "29a551596ee869eb02209400b30f7e0b8d84f54bccebcbd8de1251d2071a25b4"
+    },
+    {
+      "path": "results/calibration_analysis.csv",
+      "bytes": 20541,
+      "sha256": "076fce1e7d19ba1117cddc9b75c59760c51fde874eaae4ca0bd68947f91ed786"
+    },
+    {
+      "path": "results/calibration_summary.csv",
+      "bytes": 16174,
+      "sha256": "bec5afc0059ce56ffeaaabbf15b3a00d403e0b1cee882499e46fa8030f5d25b4"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s42/diag_target_adapt.npz",
+      "bytes": 1925662,
+      "sha256": "9edb50253f1f94f147028bd1011616fb0c8fbc708e671038bc46b3f3be5b9be2"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s42/domain_diag.json",
+      "bytes": 349,
+      "sha256": "3fc178870262011b61a0d9e8c96f238731bb9603fc3bfa2da7f2bb41d403fe02"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s42/entropy_diag.json",
+      "bytes": 1600,
+      "sha256": "12792538ba62016a5559755fc56ec59e170bb5c3d900a172a50914599451983c"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s42/history.json",
+      "bytes": 113271,
+      "sha256": "fdd86ea17399a30c0633e479f43e4fd31e0f0e98274eb73230c7e45a8128bdee"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s42/predictions_attack.npy",
+      "bytes": 10240128,
+      "sha256": "0c586f014d670b0bd7607ff57fe96e0a65eb5e97cff10564fc324f5697bbdbd2"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s42/run_meta.json",
+      "bytes": 6276,
+      "sha256": "2db99c893401eeeb5c725181f672c972fff85f094133223ae9cf0da53ba56ed5"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s42/temperature.json",
+      "bytes": 846,
+      "sha256": "9fd120fc97cceabef312b48c97429c5ab78548e43fd4d07852baf8d0686f3e2b"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s43/diag_target_adapt.npz",
+      "bytes": 2207483,
+      "sha256": "7bdf9aa0585399bf05f19fa0e2396aff784b010b2f83ea6fb1bba9d63f54f1d1"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s43/domain_diag.json",
+      "bytes": 362,
+      "sha256": "e93db93fa56874817e0a31cf3357768ad16ec08d5d6aa40676ff652737340411"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s43/entropy_diag.json",
+      "bytes": 1600,
+      "sha256": "b07cc3dabc0b09a31fd88471980e82fe5ce499c0d7e46fe9f1df763911d50140"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s43/history.json",
+      "bytes": 113124,
+      "sha256": "d9dd72a88caabe92e2f41217e2b015d06c8abe1eb8930a5e2d6a5d652296bba9"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s43/predictions_attack.npy",
+      "bytes": 10240128,
+      "sha256": "886e70e2b4870869176c05955288af84c27b099c4f6cb065c7ca621a5191a796"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s43/run_meta.json",
+      "bytes": 6296,
+      "sha256": "a92f826075ef7ccb18e2b995e8ac01be4aebdf982bc46d10f9c05e1af6340bce"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s43/temperature.json",
+      "bytes": 847,
+      "sha256": "7f7afa0a1c4fd3d54fcc60364d8da1b1dbd08bc47b8e904d6af09cd8148cdd67"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s44/diag_target_adapt.npz",
+      "bytes": 1707331,
+      "sha256": "9215cdecc1ae2eb6e36a839000320ad5c81154eb3fcab46cf3e84763d6121282"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s44/domain_diag.json",
+      "bytes": 360,
+      "sha256": "f13148273e69dfea8baf3461e8463740d2f576c221cabc8ee29ca27e5ae9f9ed"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s44/entropy_diag.json",
+      "bytes": 1600,
+      "sha256": "a8fe0bd986424db86f5973334ca9e25d7072ad053808690c8fb90471b029cc07"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s44/history.json",
+      "bytes": 113496,
+      "sha256": "b39e07fa3bf5170aef44e3fb0e0dbbb274d6aef08fcb8789c9a6336b2a32628f"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s44/predictions_attack.npy",
+      "bytes": 10240128,
+      "sha256": "28d6608c88993d4e3bb5d3f1c6887a79a54b86c36642b5ed4177fa785380dee6"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s44/run_meta.json",
+      "bytes": 6291,
+      "sha256": "b815e3ceb54ec073776d4fec602cf3baac8a5718c13d0429240dc33c85e94d26"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync100_s44/temperature.json",
+      "bytes": 847,
+      "sha256": "b41ba58950a5bf249f1064d39584f24a7bf2c2cda809d03b0b4deda8fd09d146"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s42/diag_target_adapt.npz",
+      "bytes": 3687833,
+      "sha256": "ddb1cf1053c990b32f39084f812f895088ac21ca857343a9070ac42d1e30a3a5"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s42/domain_diag.json",
+      "bytes": 349,
+      "sha256": "535358faf43ecd56f726042374cd2c46b6744c95493fc00f4580dced7b369642"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s42/entropy_diag.json",
+      "bytes": 1611,
+      "sha256": "9cc96fb3c28115cc53aaed7cce0e4385129e78edd087c4bdedc3452b447dad95"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s42/history.json",
+      "bytes": 113872,
+      "sha256": "d4fb96ddeb458d41cc6f406dece86c1717199481a680b9555dac6e55636b2209"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s42/predictions_attack.npy",
+      "bytes": 10240128,
+      "sha256": "d9cc64401ce681eed6444fd035a5ba990b65f844cf2d00bf782417aa8c367327"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s42/run_meta.json",
+      "bytes": 6290,
+      "sha256": "73f57d8ce8b2d9b2705e96c76c396bbbb35e3928d14fe9946a063bacdbd0a850"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s42/temperature.json",
+      "bytes": 846,
+      "sha256": "9fd120fc97cceabef312b48c97429c5ab78548e43fd4d07852baf8d0686f3e2b"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s43/diag_target_adapt.npz",
+      "bytes": 3598627,
+      "sha256": "e5538a7244d57bf9b508869c8f4f332c43d662a15a40c429323dee07059683b7"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s43/domain_diag.json",
+      "bytes": 350,
+      "sha256": "09cc2858692f38874a9713507ebd013a9d8cad60a0058b495533c1c82bcc1d2f"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s43/entropy_diag.json",
+      "bytes": 1593,
+      "sha256": "fe7ae87d16f1b05840f1bb9c84e178cf070c0dd3effa662ec2f20a3668547e20"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s43/history.json",
+      "bytes": 113979,
+      "sha256": "00635dc80ac25d4623e760cdb7d926272fa780e47fcbde50cb2655cf96db927f"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s43/predictions_attack.npy",
+      "bytes": 10240128,
+      "sha256": "30d9de3fa2f8612921c7ac4e2f18cfe872ecb6f0fee4bba95bf019adb3b83622"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s43/run_meta.json",
+      "bytes": 6284,
+      "sha256": "ecc10b34dec3bdcb32c28c407c7293b0556bfcc72d7acdc73e7f59db1d5ea28c"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s43/temperature.json",
+      "bytes": 847,
+      "sha256": "7f7afa0a1c4fd3d54fcc60364d8da1b1dbd08bc47b8e904d6af09cd8148cdd67"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s44/diag_target_adapt.npz",
+      "bytes": 3235866,
+      "sha256": "e9f19b6a37477e1c41d9765ebb9c00b7a4f1a976f1ac7cb66622ad34bf05d5ed"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s44/domain_diag.json",
+      "bytes": 349,
+      "sha256": "e1c2859070c21e2938019918593350187100231bf0911239fc87a3192a13c26c"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s44/entropy_diag.json",
+      "bytes": 1603,
+      "sha256": "fb50ce9c6fedaa638164d039b1f30e9a247158a3ac0897ae9658d1ca6373b38d"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s44/history.json",
+      "bytes": 113831,
+      "sha256": "476a62cd95baa885c94fb57471f3ef5c88babe951d92ef640dba513328cf9fe7"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s44/predictions_attack.npy",
+      "bytes": 10240128,
+      "sha256": "72c2c59ce416dda938281a865ee57d865c678983eca931f8bf5651c3ccb9a9e8"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s44/run_meta.json",
+      "bytes": 6278,
+      "sha256": "d1a75f56aed76723908f7b78cb9993a2a841ab512dc5b4526db068f03ad3ffab"
+    },
+    {
+      "path": "results/cdan_sca_calib_desync50_s44/temperature.json",
+      "bytes": 847,
+      "sha256": "b41ba58950a5bf249f1064d39584f24a7bf2c2cda809d03b0b4deda8fd09d146"
+    },
+    {
+      "path": "results/eval/desync100/cdan_desync100_s42.json",
+      "bytes": 6664,
+      "sha256": "2e32ebf67f082957e8c56e68f4677ffce6e9377614810fb9dcedcf0e5fe6322a"
+    },
+    {
+      "path": "results/eval/desync100/cdan_desync100_s42_ge.csv",
+      "bytes": 815,
+      "sha256": "9c8aefc4b236b5219b2c316c888a613f54d09251d80fa2c9d16fa70d1715da5b"
+    },
+    {
+      "path": "results/eval/desync100/cdan_desync100_s43.json",
+      "bytes": 6730,
+      "sha256": "e7d9ae73b2ec61fc7de53460e9733ef59e5d34d13ca0e8bcb2bf886fadc04db0"
+    },
+    {
+      "path": "results/eval/desync100/cdan_desync100_s43_ge.csv",
+      "bytes": 882,
+      "sha256": "a2452c5e211e2db5983165399f6764e9d5dfdccc686e2ecc354cd8ddd14c4dc4"
+    },
+    {
+      "path": "results/eval/desync100/cdan_desync100_s44.json",
+      "bytes": 6756,
+      "sha256": "19171b04c4d1a3136029ba82cb3eb610b0d1419f2eb0b454486f62523bd63dd9"
+    },
+    {
+      "path": "results/eval/desync100/cdan_desync100_s44_ge.csv",
+      "bytes": 905,
+      "sha256": "6d289722d681ca7515c38bc49ae372288e485ada17c6922474acba6834aa68aa"
+    },
+    {
+      "path": "results/eval/desync100/cdan_sca_calib_desync100_s42.json",
+      "bytes": 6749,
+      "sha256": "9ea6602eabb257d37d00e1db47c8fa56634b157a55d3cd4a83c464002e5dff37"
+    },
+    {
+      "path": "results/eval/desync100/cdan_sca_calib_desync100_s42_ge.csv",
+      "bytes": 805,
+      "sha256": "aee685ee492912f0356cda018af2abbe216cc6417ca2117c1d47ad20878623be"
+    },
+    {
+      "path": "results/eval/desync100/cdan_sca_calib_desync100_s43.json",
+      "bytes": 6774,
+      "sha256": "0a16a2dda7225498cf63fda7e47408d9ba24a5782f45a9a496304066b17c35d4"
+    },
+    {
+      "path": "results/eval/desync100/cdan_sca_calib_desync100_s43_ge.csv",
+      "bytes": 823,
+      "sha256": "60c9f3ace421d9cab8e1a74aa069b7287fbeb67b03bee5c62da5da3eaa60c719"
+    },
+    {
+      "path": "results/eval/desync100/cdan_sca_calib_desync100_s44.json",
+      "bytes": 6765,
+      "sha256": "7b34445d129e9b305b606b1c096f255e04379c8b969fb6a2c13608310f50de01"
+    },
+    {
+      "path": "results/eval/desync100/cdan_sca_calib_desync100_s44_ge.csv",
+      "bytes": 816,
+      "sha256": "a53d49a6dcdb47229d3de92c8b137a9a05fdc949e9d47c571589a987ad6fcf46"
+    },
+    {
+      "path": "results/eval/desync100/cdan_sca_full_desync100_s42.json",
+      "bytes": 6697,
+      "sha256": "9c34c1230327df12986f26271d07e6b5b1d14f418317a87d7ccd80352a6de33c"
+    },
+    {
+      "path": "results/eval/desync100/cdan_sca_full_desync100_s42_ge.csv",
+      "bytes": 819,
+      "sha256": "597ef35dcb4ddffcaff27f66de75de9c7b6305d1308ccba6b52a9c9e7d91c10a"
+    },
+    {
+      "path": "results/eval/desync100/cdan_sca_full_desync100_s43.json",
+      "bytes": 6683,
+      "sha256": "b960fec602aea3e70f6575685962eb7ccaa2db04137ad99d09ca49b66dcd490c"
+    },
+    {
+      "path": "results/eval/desync100/cdan_sca_full_desync100_s43_ge.csv",
+      "bytes": 808,
+      "sha256": "86dac285ef7e81735cd2ef735efa2ac97c992a6141b1c4830ca060426b14dd58"
+    },
+    {
+      "path": "results/eval/desync100/cdan_sca_full_desync100_s44.json",
+      "bytes": 6798,
+      "sha256": "4bc8df8012d9648d76bc93fbe52299d41ae97154b21ba8526ae36d2dca5beb77"
+    },
+    {
+      "path": "results/eval/desync100/cdan_sca_full_desync100_s44_ge.csv",
+      "bytes": 915,
+      "sha256": "ce7b36f1f65a5b778181160207e0d5c6b227a73612a260bfd1f1e30f004c4f80"
+    },
+    {
+      "path": "results/eval/desync100/cdan_sca_marg_desync100_s42.json",
+      "bytes": 6701,
+      "sha256": "2d83d42e6025f34260422ce82d4bf612c136919ea964cedd523bffe06d3a3696"
+    },
+    {
+      "path": "results/eval/desync100/cdan_sca_marg_desync100_s42_ge.csv",
+      "bytes": 812,
+      "sha256": "56747be8bdaa7960bef7ee4b342554f25975a7fd688c3d3c80e8068bccb888cc"
+    },
+    {
+      "path": "results/eval/desync100/cdan_sca_marg_desync100_s43.json",
+      "bytes": 6796,
+      "sha256": "6265e73e5982d10105a4bd0fbcfff8cce4a0d459dbf5e87261f5b9339efc7a58"
+    },
+    {
+      "path": "results/eval/desync100/cdan_sca_marg_desync100_s43_ge.csv",
+      "bytes": 903,
+      "sha256": "b6bf20ae390268fef189638e3815450ccef5fa5f66ae5b2fc4e776b360c33707"
+    },
+    {
+      "path": "results/eval/desync100/cdan_sca_marg_desync100_s44.json",
+      "bytes": 6685,
+      "sha256": "4349b502ffd0928f8f1b7713c84e2219a034d1a588be06fb9ff92a56d013e272"
+    },
+    {
+      "path": "results/eval/desync100/cdan_sca_marg_desync100_s44_ge.csv",
+      "bytes": 811,
+      "sha256": "2faad1f23c90bb9ef848078928926cf8b264c7a84897d3f9160e29285dc57dc2"
+    },
+    {
+      "path": "results/eval/desync100/cdpa_desync100_s42.json",
+      "bytes": 7631,
+      "sha256": "9568c728351a69a2ad2a9d46f98a4b72c75a62cea6fc3dd4c6bb67c8a3ab24a3"
+    },
+    {
+      "path": "results/eval/desync100/cdpa_desync100_s42_ge.csv",
+      "bytes": 804,
+      "sha256": "02a3c85ff346d2d58e0f542cfaa4748b0151853b3ad6d3147d49b09dc33b19ac"
+    },
+    {
+      "path": "results/eval/desync100/cdpa_desync100_s43.json",
+      "bytes": 7666,
+      "sha256": "e57bdccad4803cd7c57b2db77856fa7d7e911673d7b6f736d9ce53f5318b960c"
+    },
+    {
+      "path": "results/eval/desync100/cdpa_desync100_s43_ge.csv",
+      "bytes": 840,
+      "sha256": "ed35ac8b2dd5c7079dfe7d7c6b02f9a8dfbd1f675dc43e589f2962cbdda715c7"
+    },
+    {
+      "path": "results/eval/desync100/cdpa_desync100_s44.json",
+      "bytes": 7665,
+      "sha256": "2e22b4292f47c0a310409839e197195270bd32e6b982fdab3860cb1d171f0aaf"
+    },
+    {
+      "path": "results/eval/desync100/cdpa_desync100_s44_ge.csv",
+      "bytes": 830,
+      "sha256": "f71bdf989751c8421486c327280f63f9feb3746e06db1f04aa9f63707dbbfde8"
+    },
+    {
+      "path": "results/eval/desync100/dann_desync100_s42.json",
+      "bytes": 6653,
+      "sha256": "53ab36e606332b90dcbf4222d4e771f082da250c462a71de9077362be17044c8"
+    },
+    {
+      "path": "results/eval/desync100/dann_desync100_s42_ge.csv",
+      "bytes": 808,
+      "sha256": "13275fc77595b2b646d95392749afd6fb467a8fbca5f3ed204d701d314bffca9"
+    },
+    {
+      "path": "results/eval/desync100/dann_desync100_s43.json",
+      "bytes": 6714,
+      "sha256": "ac8c838c1030130711d87759ae8dcc70e89be21282e6528c699fd4d4289b66f5"
+    },
+    {
+      "path": "results/eval/desync100/dann_desync100_s43_ge.csv",
+      "bytes": 867,
+      "sha256": "97fbc14352363127ba2349c918ced078b79cd21120f651daf9974a931dcdc580"
+    },
+    {
+      "path": "results/eval/desync100/dann_desync100_s44.json",
+      "bytes": 6750,
+      "sha256": "a404f31bfe9b0df0cdca6e902543ea426d2dcbfe9dcbc4c2b9aa35533ce05f07"
+    },
+    {
+      "path": "results/eval/desync100/dann_desync100_s44_ge.csv",
+      "bytes": 902,
+      "sha256": "6d499ae71b484d2319de8d19fac4c3515640603a80646615783bd1ba0ee78b38"
+    },
+    {
+      "path": "results/eval/desync100/source_only_desync100_s42.json",
+      "bytes": 6711,
+      "sha256": "e1f7a224e47299b2dbcccbea6d4c9945801da530b0505da13e177a8033a0b05f"
+    },
+    {
+      "path": "results/eval/desync100/source_only_desync100_s42_ge.csv",
+      "bytes": 888,
+      "sha256": "c872def2df8adad9ac8d09e78e8b9b385400e1ca529bed1e4a4dc7db2c4ed52c"
+    },
+    {
+      "path": "results/eval/desync100/source_only_desync100_s43.json",
+      "bytes": 6717,
+      "sha256": "3b3b76bd9419d21af5bfeab7d680d55c2d315451a1306f0219ae712b614c15fb"
+    },
+    {
+      "path": "results/eval/desync100/source_only_desync100_s43_ge.csv",
+      "bytes": 894,
+      "sha256": "d48099bb519f6b54048beadaab1a4f98833f2e80ce2f8de1d8f03e139a7b5666"
+    },
+    {
+      "path": "results/eval/desync100/source_only_desync100_s44.json",
+      "bytes": 6729,
+      "sha256": "689311b1f6eea1fcc6ff2eb26835edcc76c6b3b7bea4f876df34eddd0c5ffffd"
+    },
+    {
+      "path": "results/eval/desync100/source_only_desync100_s44_ge.csv",
+      "bytes": 902,
+      "sha256": "eb149be37447c1f651554632d3a4e6e720c2c8cd1b3398ecc4a2e64e5d9fb093"
+    },
+    {
+      "path": "results/eval/desync50/cdan_desync50_s42.json",
+      "bytes": 6690,
+      "sha256": "d2f99fcf83046e7a67cb9b6816c13b5b624ebaf09f6e70d108c38d2e08df61ff"
+    },
+    {
+      "path": "results/eval/desync50/cdan_desync50_s42_ge.csv",
+      "bytes": 847,
+      "sha256": "ccdaa9fc3ab027118967490a28969b62be59601f878b301fb88d5cfc6567c2c2"
+    },
+    {
+      "path": "results/eval/desync50/cdan_desync50_s43.json",
+      "bytes": 6739,
+      "sha256": "311dbb5d6cfbac2e8a77b133dddc88e813bf096517f226da256aec8f69aa67af"
+    },
+    {
+      "path": "results/eval/desync50/cdan_desync50_s43_ge.csv",
+      "bytes": 892,
+      "sha256": "f3fe122e486d11b043cb4772b99427153bae3b11e3632aebc075e919e6f7fece"
+    },
+    {
+      "path": "results/eval/desync50/cdan_desync50_s44.json",
+      "bytes": 6692,
+      "sha256": "f3da13107b74b0e493f153ced665f1df527c8ca952d5c86f88ab7794fb6cecc0"
+    },
+    {
+      "path": "results/eval/desync50/cdan_desync50_s44_ge.csv",
+      "bytes": 848,
+      "sha256": "97403623252808e5db3682a898288e3b9fed3fbb658fe197b7beab88e82fce35"
+    },
+    {
+      "path": "results/eval/desync50/cdan_sca_calib_desync50_s42.json",
+      "bytes": 6818,
+      "sha256": "24fa9e7597ea9eff36d0c961b2c67ff7316f7b32d45d0102b16898be0793468d"
+    },
+    {
+      "path": "results/eval/desync50/cdan_sca_calib_desync50_s42_ge.csv",
+      "bytes": 873,
+      "sha256": "8b82b3d532df2dce140170c9278661e3796f00a605c4e69380941a00b0290dcb"
+    },
+    {
+      "path": "results/eval/desync50/cdan_sca_calib_desync50_s43.json",
+      "bytes": 6766,
+      "sha256": "980fb38cea06215c82ee5f7a4590c087303999f64d711fcf95899e0d9c3f265a"
+    },
+    {
+      "path": "results/eval/desync50/cdan_sca_calib_desync50_s43_ge.csv",
+      "bytes": 820,
+      "sha256": "9f58b6bee345792eb7be34567a77d1f37891d6993e70184f10243f1832037109"
+    },
+    {
+      "path": "results/eval/desync50/cdan_sca_calib_desync50_s44.json",
+      "bytes": 6810,
+      "sha256": "37142c698586ad5454510cf37349b62ce7557539db9093c6400f838bf323c128"
+    },
+    {
+      "path": "results/eval/desync50/cdan_sca_calib_desync50_s44_ge.csv",
+      "bytes": 866,
+      "sha256": "1e40284ab4b84eaee2a55da9c72b78c4c74f38807df6068acbf713125e8cdfda"
+    },
+    {
+      "path": "results/eval/desync50/cdan_sca_full_desync50_s42.json",
+      "bytes": 6695,
+      "sha256": "0826a3ca7e92212f8946d59955ada801d3f0cc6ae4baebe9d14c33c7cfde91a7"
+    },
+    {
+      "path": "results/eval/desync50/cdan_sca_full_desync50_s42_ge.csv",
+      "bytes": 808,
+      "sha256": "23ba296bdf320b43a3a9d77fc17dd1d52b0913f620c4c910b7eadd3cab9ff8fd"
+    },
+    {
+      "path": "results/eval/desync50/cdan_sca_full_desync50_s43.json",
+      "bytes": 6728,
+      "sha256": "f9867ebc73b0dd3d787c038168f5376bb946f5169fad56247b2df8e817d8b040"
+    },
+    {
+      "path": "results/eval/desync50/cdan_sca_full_desync50_s43_ge.csv",
+      "bytes": 841,
+      "sha256": "3ec1d33da44244fc84dfcbcfa3ab9c1953a12f956e1821107d3e1ad55c680293"
+    },
+    {
+      "path": "results/eval/desync50/cdan_sca_full_desync50_s44.json",
+      "bytes": 6767,
+      "sha256": "c4305640b095d9cd3e4a6619b2d5dd33b7184d90a12cc6a979aba41275b03fed"
+    },
+    {
+      "path": "results/eval/desync50/cdan_sca_full_desync50_s44_ge.csv",
+      "bytes": 890,
+      "sha256": "dd6c6ab42e02d04f3040a414a222eea82f016eb46f1bf04675dc277e5807b980"
+    },
+    {
+      "path": "results/eval/desync50/cdan_sca_marg_desync50_s42.json",
+      "bytes": 6713,
+      "sha256": "f2ca8a0a40e8ecc66d5062e205977ff28fd6464677d7b562dc4d510b5d33c169"
+    },
+    {
+      "path": "results/eval/desync50/cdan_sca_marg_desync50_s42_ge.csv",
+      "bytes": 825,
+      "sha256": "f4c558feb4a4913bc31cb0d74d960535d1b92c5512cf9c697e4824907f053782"
+    },
+    {
+      "path": "results/eval/desync50/cdan_sca_marg_desync50_s43.json",
+      "bytes": 6749,
+      "sha256": "dce1567df7d344c3d6cb3d9f8cde710855062710493d11293f7e13e54cc66bad"
+    },
+    {
+      "path": "results/eval/desync50/cdan_sca_marg_desync50_s43_ge.csv",
+      "bytes": 861,
+      "sha256": "f459829b3668f496d097a5e65bb83c4be77f9c3f8f290c28adbf7875323e2d90"
+    },
+    {
+      "path": "results/eval/desync50/cdan_sca_marg_desync50_s44.json",
+      "bytes": 6758,
+      "sha256": "d83a24a6669e52cd486b2615aeeea5e6971a6e842294f104361ede54323bc65d"
+    },
+    {
+      "path": "results/eval/desync50/cdan_sca_marg_desync50_s44_ge.csv",
+      "bytes": 868,
+      "sha256": "9c8e0637145cdf3a2768553ff9fceb17291e7d70cdeeb8036930bfcc8cde4a7b"
+    },
+    {
+      "path": "results/eval/desync50/cdpa_desync50_s42.json",
+      "bytes": 7651,
+      "sha256": "4b42d0ffc47a9f0a534243bf32e1d15c363a83a9ab23fce0670be5ad62e15f8c"
+    },
+    {
+      "path": "results/eval/desync50/cdpa_desync50_s42_ge.csv",
+      "bytes": 821,
+      "sha256": "b34ea2fa577314030575a18639f33344ca96f3a28784e496fdade8b494b57878"
+    },
+    {
+      "path": "results/eval/desync50/cdpa_desync50_s43.json",
+      "bytes": 7655,
+      "sha256": "bad7443dcf870f62b0ca87d37f5a0ee28b07313e8e4ad7538db2533479a65ae5"
+    },
+    {
+      "path": "results/eval/desync50/cdpa_desync50_s43_ge.csv",
+      "bytes": 824,
+      "sha256": "6617f0cbeebb5d06ff2a234a7339ae0051bbcc2e92f67803aa7e7b93101fe73b"
+    },
+    {
+      "path": "results/eval/desync50/cdpa_desync50_s44.json",
+      "bytes": 7680,
+      "sha256": "72aa83dc2c68f8498a6fc737781ee707bb0c308aad44c7b5b48c0b56cffd3476"
+    },
+    {
+      "path": "results/eval/desync50/cdpa_desync50_s44_ge.csv",
+      "bytes": 843,
+      "sha256": "784a22f526f1716b3becf1baf4b7ab85a58d8841e97a54e01ea4d6d08454a2b6"
+    },
+    {
+      "path": "results/eval/desync50/dann_desync50_s42.json",
+      "bytes": 6693,
+      "sha256": "fb6d2ac91a4ad7b862acf5715d754f245f0417a96e09f23167b477b61c62c519"
+    },
+    {
+      "path": "results/eval/desync50/dann_desync50_s42_ge.csv",
+      "bytes": 848,
+      "sha256": "876985fbd45987e781c96eb76a3e507f525c6496744d3c0fd48936ca8bdac7bc"
+    },
+    {
+      "path": "results/eval/desync50/dann_desync50_s43.json",
+      "bytes": 6761,
+      "sha256": "2dd640c2ad4a479f810a41eebc379068c25899d366c8b94c62c0a48da7ccfa2f"
+    },
+    {
+      "path": "results/eval/desync50/dann_desync50_s43_ge.csv",
+      "bytes": 913,
+      "sha256": "1790561522ed1804bda1d315cb6b48288cdb2b4ddd8b426c0bed810ff424c99a"
+    },
+    {
+      "path": "results/eval/desync50/dann_desync50_s44.json",
+      "bytes": 6739,
+      "sha256": "b85c597f38d6605d68a165df648ac5b533d24d37485472f0a4ff1b856307c926"
+    },
+    {
+      "path": "results/eval/desync50/dann_desync50_s44_ge.csv",
+      "bytes": 895,
+      "sha256": "60c9be8e20a067125cabf6925e4bb16f65a9c1f3b7d9f0f034a2ae0067c465de"
+    },
+    {
+      "path": "results/eval/desync50/source_only_desync50_s42.json",
+      "bytes": 6743,
+      "sha256": "7c4a2dc8d2991d7d7792761abeddd4a0d8102de9ba928148ce13791a6914d3ec"
+    },
+    {
+      "path": "results/eval/desync50/source_only_desync50_s42_ge.csv",
+      "bytes": 917,
+      "sha256": "fc14db1a6c5b91ea0a61783dc064e3a39edf00dae48f5e206b970f98f1b15db2"
+    },
+    {
+      "path": "results/eval/desync50/source_only_desync50_s43.json",
+      "bytes": 6739,
+      "sha256": "6688aa2f8bc7a4f95cd3df1076941f371e935003fab1be1724213b8ccd5fac82"
+    },
+    {
+      "path": "results/eval/desync50/source_only_desync50_s43_ge.csv",
+      "bytes": 914,
+      "sha256": "bf6927f4282bcb116fd331991d1bb7b7cf63d52aa6041689fd89b8b2a8a5a5d8"
+    },
+    {
+      "path": "results/eval/desync50/source_only_desync50_s44.json",
+      "bytes": 6729,
+      "sha256": "eec09bdd9de87bddb2d7a3393042d293c98365d88c8c064d33cadd3879149ff3"
+    },
+    {
+      "path": "results/eval/desync50/source_only_desync50_s44_ge.csv",
+      "bytes": 905,
+      "sha256": "46d95bd958b393a32488621493fb08dae507141581d91e2b6a6e6f379ad626ae"
+    },
+    {
+      "path": "results/eval/eval_all.json",
+      "bytes": 326470,
+      "sha256": "7c7b9b29d97a450efa402172be932762462231397a17c16b7eb4f279e423dd5b"
+    },
+    {
+      "path": "results/eval/summary.csv",
+      "bytes": 8233,
+      "sha256": "8d75b055fb8589a8b3fc5706abedd65878da9b26274fcb818dac4b03fe462a18"
+    },
+    {
+      "path": "results/metrics.csv",
+      "bytes": 6271,
+      "sha256": "70a22a95ef2b35d80a7f209edcff87a3c1de57fe05b96074717747716747e089"
+    },
+    {
+      "path": "results/permutation.json",
+      "bytes": 2380,
+      "sha256": "e5010ff36197d1ca1e75a4b385ba7169bcf49ae2ded5491ff28c28c91372bea7"
+    },
+    {
+      "path": "results/summary.json",
+      "bytes": 28644,
+      "sha256": "fed16430bc4fe3d788fb0e7158e9e2718106484ef3249a750c0676ada37c83d4"
+    },
+    {
+      "path": "results/table_methods.csv",
+      "bytes": 3750,
+      "sha256": "9246c7accf20f241a4d443a7042061fd2b57b8dc6730f66eae56803ce09006cc"
+    },
+    {
+      "path": "results/table_weight_variants.csv",
+      "bytes": 1457,
+      "sha256": "eadcff8ec5bb4d9e8f54516c8c6b6cffa994e234b1d504de421e0650b6259d9b"
+    },
+    {
+      "path": "results/temperature_fits.csv",
+      "bytes": 983,
+      "sha256": "4c2825c95b3e5c718d20b5030e9cec6a8925af7f9210b28000498cac247bdca4"
+    },
+    {
+      "path": "results/temperature_probe.json",
+      "bytes": 1994,
+      "sha256": "15fe7e32cd7147ca0f7542d79714398a9629ae968fa4da136187e49421d7a89b"
+    },
+    {
+      "path": "results/temperature_transfer_diagnostic.json",
+      "bytes": 3474,
+      "sha256": "7864fa3fdd38dae2ca73ba599299e6909fd80ba779842f548cce72acab0ab9de"
+    },
+    {
+      "path": "scripts/aggregate_b_e5.py",
+      "bytes": 13931,
+      "sha256": "ed1db9d3c7e7bd957955619a6afeab9a93317fe7c9a221aa393f31be3c3cd50f"
+    },
+    {
+      "path": "scripts/analyze_calibration_b_e5.py",
+      "bytes": 11139,
+      "sha256": "dbf77790b54fea9859a3753ebaf03b55d5611cdc76a26363e933405ca3d9e4ef"
+    },
+    {
+      "path": "scripts/calib_common.py",
+      "bytes": 5264,
+      "sha256": "d816af216d172b1834510405c847880a566c94c6ae9f43aca30353bfeef4ed47"
+    },
+    {
+      "path": "scripts/diagnose_temperature_transfer.py",
+      "bytes": 4077,
+      "sha256": "e0c3f0d9b03ff36147400b7cc12e8e1ffc6c821adc23c189d05dc373268f58c8"
+    },
+    {
+      "path": "scripts/evaluate_b_e5.py",
+      "bytes": 10668,
+      "sha256": "95de6e5ae58afc827374af5a65289077f496a1c52d19ee71e3c5e925cfd1803e"
+    },
+    {
+      "path": "scripts/finalize_after_queue.bat",
+      "bytes": 961,
+      "sha256": "4d2d5ecf354e49b4ee926885d9a8376d3f7867dbbe2f8725d352a8442e063f92"
+    },
+    {
+      "path": "scripts/make_manifest.py",
+      "bytes": 9309,
+      "sha256": "0953f023ce41049f7d5956d70e2243b75afaa2b29bac5dcfbcb225ef14c7b81d"
+    },
+    {
+      "path": "scripts/make_report.py",
+      "bytes": 1277,
+      "sha256": "df9091eed094ed71065ea12fea17a602edf626623a275acd82e21d657b00aa18"
+    },
+    {
+      "path": "scripts/permutation_b_e5.py",
+      "bytes": 3242,
+      "sha256": "9d901bc31d3c5ba1a5c622d46609c40b5fba22a4cba5747f93db7f88a2078674"
+    },
+    {
+      "path": "scripts/plot_b_e5.py",
+      "bytes": 14851,
+      "sha256": "9c40876a4408bb5d3e22af0d64a36aafda3a303e663f99e9fc0d1364b8ab2f82"
+    },
+    {
+      "path": "scripts/probe_temperature.py",
+      "bytes": 2019,
+      "sha256": "aba56e0bff71e98c6ca688626367247c0f6b67be7959fddc9cd48a97cc36d177"
+    },
+    {
+      "path": "scripts/run_queue.bat",
+      "bytes": 1537,
+      "sha256": "ad877ddbbe0c6dd08214f78d834bd257a57f32124721d4c6981bd908cefc4c08"
+    },
+    {
+      "path": "scripts/run_queue2.bat",
+      "bytes": 2377,
+      "sha256": "968c1d0acffe8ad31ee3f022b65fcab76a39c1994db735872e0aa1b867bd3391"
+    },
+    {
+      "path": "scripts/run_queue3.bat",
+      "bytes": 3142,
+      "sha256": "f7a925b7d66357624b2a46205c951192a92614137cf3117a5cea53216f0805e3"
+    },
+    {
+      "path": "scripts/run_queue3_hidden.vbs",
+      "bytes": 241,
+      "sha256": "de5764fcbc5003bf8affd739735ea450f44f4a010232f7950d8449d948eb57c3"
+    },
+    {
+      "path": "scripts/train_cdan_sca_calib.py",
+      "bytes": 19232,
+      "sha256": "b0e83a6beff545d90c0108f46d3ba586cbecd86fc5859c184797e4d238d805dc"
+    },
+    {
+      "path": "scripts/watch2_and_finalize.bat",
+      "bytes": 296,
+      "sha256": "9f63709d76e1b0428d2952ef5fe34f0182b41517bfec2f088873193e39935574"
+    },
+    {
+      "path": "scripts/watch3_and_finalize.vbs",
+      "bytes": 388,
+      "sha256": "c5a9a41b235e743e9ae7918066f4ada73d584525e3ea92465ea639d087cb98bb"
+    },
+    {
+      "path": "scripts/watch_and_finalize.bat",
+      "bytes": 295,
+      "sha256": "8d1e8283eb6a908a382b5562efe9cc57ac2bd7ca4685dc3441acf4b6ad26cc0e"
+    }
+  ],
+  "total_bytes": 82133676,
+  "notes": {
+    "checkpoints": "ckpt.pt \u5b58\u5728 outputs/models/b_e5/<run>/\uff08\u6bcf 5 epoch \u8986\u76d6\u5199\uff09",
+    "temperature": "\u6bcf\u4e2a run \u7684 T \u4e0e NLL/ECE before-after \u89c1 results/temperature_fits.csv \u4e0e results/<run>/temperature.json",
+    "predictions": "results/<run>/predictions_attack.npy \u4e0e diag_target_adapt.npz \u88ab .gitignore \u5ffd\u7565\uff08*.npy/*.npz\uff09\uff0cmanifest \u4ecd\u8bb0\u5f55\u8def\u5f84\u4e0e\u54c8\u5e0c",
+    "baselines": "Source Only / DANN / CDAN / CDPA-MMD \u5747\u590d\u7528\u524d\u5e8f\u5b9e\u9a8c\u9884\u6d4b\uff0c\u672a\u91cd\u8bad",
+    "baseline_monitoring": "CDAN \u7684\u9010 epoch top1/\u71b5\u672a\u5728 A-E2 \u8bb0\u5f55\uff0c\u76d1\u63a7\u56fe\u5bf9 CDAN \u53ea\u7ed9 epoch 75 \u7ec8\u70b9\u53c2\u8003",
+    "single_variable": "calib \u4e0e full \u7684\u552f\u4e00\u65b9\u6cd5\u5dee\u5f02\u662f\u6743\u91cd\u51fd\u6570\uff1b\u6743\u91cd\u51fd\u6570\u4e0d\u5f15\u5165\u53c2\u6570",
+    "privacy": "target_adapt \u6807\u7b7e\u4ec5\u5728\u8bad\u7ec3\u7ed3\u675f\u540e\u7684\u8bca\u65ad\u4e2d\u4f7f\u7528"
+  }
+}

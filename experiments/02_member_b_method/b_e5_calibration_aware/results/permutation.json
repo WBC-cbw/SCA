@@ -1,0 +1,114 @@
+{
+  "n_perm": 10,
+  "step": 100,
+  "runs": [
+    {
+      "run": "cdan_sca_calib_desync50_s42",
+      "shift": "desync50",
+      "method": "cdan_sca_calib",
+      "seed": 42,
+      "ntge_original": null,
+      "note": "no GE=0 in 10k, permutation skipped"
+    },
+    {
+      "run": "cdan_sca_calib_desync50_s43",
+      "shift": "desync50",
+      "method": "cdan_sca_calib",
+      "seed": 43,
+      "ntge_original": 5400,
+      "perm_ntge": [
+        6200,
+        6400,
+        7800,
+        900,
+        1400,
+        5800,
+        1100,
+        7000,
+        4200,
+        4600
+      ],
+      "perm_mean": 4540.0,
+      "perm_std": 2572.158626523644,
+      "perm_min": 900,
+      "perm_max": 7800
+    },
+    {
+      "run": "cdan_sca_calib_desync50_s44",
+      "shift": "desync50",
+      "method": "cdan_sca_calib",
+      "seed": 44,
+      "ntge_original": null,
+      "note": "no GE=0 in 10k, permutation skipped"
+    },
+    {
+      "run": "cdan_sca_calib_desync100_s42",
+      "shift": "desync100",
+      "method": "cdan_sca_calib",
+      "seed": 42,
+      "ntge_original": 600,
+      "perm_ntge": [
+        4300,
+        700,
+        10000,
+        10000,
+        5700,
+        6200,
+        10000,
+        10000,
+        6800,
+        10000
+      ],
+      "perm_mean": 7370.0,
+      "perm_std": 3214.2218688544544,
+      "perm_min": 700,
+      "perm_max": 10000
+    },
+    {
+      "run": "cdan_sca_calib_desync100_s43",
+      "shift": "desync100",
+      "method": "cdan_sca_calib",
+      "seed": 43,
+      "ntge_original": 7000,
+      "perm_ntge": [
+        300,
+        1400,
+        7400,
+        9300,
+        6900,
+        500,
+        4500,
+        2600,
+        3400,
+        5800
+      ],
+      "perm_mean": 4210.0,
+      "perm_std": 3093.523701038815,
+      "perm_min": 300,
+      "perm_max": 9300
+    },
+    {
+      "run": "cdan_sca_calib_desync100_s44",
+      "shift": "desync100",
+      "method": "cdan_sca_calib",
+      "seed": 44,
+      "ntge_original": 1800,
+      "perm_ntge": [
+        7100,
+        2500,
+        600,
+        8600,
+        1300,
+        3700,
+        1500,
+        3200,
+        1000,
+        4600
+      ],
+      "perm_mean": 3410.0,
+      "perm_std": 2681.8111624629933,
+      "perm_min": 600,
+      "perm_max": 8600
+    }
+  ]
+}

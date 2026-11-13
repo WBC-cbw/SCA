@@ -1,0 +1,53 @@
+{
+  "subset": "target_adapt[0:5000]",
+  "note": "标签仅用于事后诊断；T 由 source_val 拟合，未使用目标域标签",
+  "temperature": 11.601292278543161,
+  "bare": {
+    "n": 5000,
+    "accuracy": 0.017,
+    "mean_max_softmax": 0.9514775276184082,
+    "mean_entropy_nats": 0.13543808460235596,
+    "ece_15": 0.9344776592284441,
+    "frac_conf_ge_0.9": 0.8686,
+    "frac_confwrong_ge_0.9": 0.8542,
+    "frac_confwrong_ge_0.99": 0.7804,
+    "frac_conf_lt_0.1": 0.0,
+    "top1_share": 0.583,
+    "top1_class": 128,
+    "unique_pred_classes": 215
+  },
+  "calibrated": {
+    "n": 5000,
+    "accuracy": 0.017,
+    "mean_max_softmax": 0.037618108093738556,
+    "mean_entropy_nats": 5.4570159912109375,
+    "ece_15": 0.020618108093738555,
+    "frac_conf_ge_0.9": 0.0,
+    "frac_confwrong_ge_0.9": 0.0,
+    "frac_confwrong_ge_0.99": 0.0,
+    "frac_conf_lt_0.1": 1.0,
+    "top1_share": 0.583,
+    "top1_class": 128,
+    "unique_pred_classes": 215
+  },
+  "weight_bare": {
+    "w_bare_mean": 0.9755755066871643,
+    "w_bare_std": 0.06142307072877884,
+    "w_bare_p10": 0.8946372270584106,
+    "w_bare_p50": 1.0,
+    "w_bare_p90": 1.0,
+    "w_bare_frac_gt_0.99": 0.786,
+    "w_bare_frac_lt_0.5": 0.0002
+  },
+  "weight_calibrated": {
+    "w_mean": 0.015898723155260086,
+    "w_std": 0.009142608381807804,
+    "w_p10": 0.01069784164428711,
+    "w_p50": 0.01069784164428711,
+    "w_p90": 0.03214563801884651,
+    "w_frac_gt_0.99": 0.0,
+    "w_frac_lt_0.5": 1.0
+  },
+  "entropy_shift_nats": 5.3215779066085815,
+  "w_shift_mean": -0.9596768021583557
+}

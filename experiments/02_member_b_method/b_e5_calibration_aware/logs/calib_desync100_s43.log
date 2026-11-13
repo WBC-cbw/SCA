@@ -1,0 +1,152 @@
+No Python at '"D:\KimiData\daimon-bundle\runtime\python\cpython-3.12\python.exe'
+{"temperature_fit": {"temperature": 11.601292278543161, "nll_before": 7.715162644352966, "nll_after": 5.515454067905823, "ece_before": 0.1895942659298032, "ece_after": 0.0003643858098997697, "accuracy": 0.0064, "n_val": 5000, "grid": {"lo": 0.05, "hi": 20.0, "n_grid": 400, "refine_rounds": 3}, "fit_objective": "mean NLL of softmax(logits/T) on source_val", "source_val": "fixed Profiling[45000:50000] (5000 traces, labels)", "init_ckpt": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\outputs\\models\\b_e1\\cnn_s43\\ckpt.pt", "fit_time": "before adaptation (epoch 0), B-E1 same-seed checkpoint", "note": "T 只用 source_val 拟合；目标域权重 w = 1 - H(softmax(logits/T))/log256。条件表示 T(f,g) 仍用未校准 softmax(g)，保证唯一变量是权重函数。"}}
+{"diag_before": {"src_acc": 0.9676, "tgt_acc": 0.1028, "balanced_acc": 0.5352, "epoch": 0}}
+{"start": {"run": "cdan_sca_calib_desync100_s43", "method": "cdan_sca_calib", "shift": "desync100", "seed": 43, "n_params_total": 68227457, "target_adapt": 45000}}
+{"epoch": 1, "cls": 3.8024, "dom": 0.521, "d_src": 1.0, "d_tgt": 0.0, "w": 0.019, "w_bare": 0.834, "T": 11.6013, "top1": 0.253, "H": 0.918, "H_cal": 5.442, "val_acc": 0.006, "ge_probe": null, "flag": "OK", "sec": 31.4}
+{"epoch": 2, "cls": 3.2337, "dom": 0.5426, "d_src": 1.0, "d_tgt": 0.089, "w": 0.018, "w_bare": 0.855, "T": 11.6013, "top1": 0.504, "H": 0.804, "H_cal": 5.447, "val_acc": 0.008, "ge_probe": 4, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 2 top1_share=0.504 top1_class=232 H=0.804
+{"epoch": 3, "cls": 3.1189, "dom": 0.6177, "d_src": 0.998, "d_tgt": 0.025, "w": 0.021, "w_bare": 0.856, "T": 11.6013, "top1": 0.273, "H": 0.799, "H_cal": 5.431, "val_acc": 0.0056, "ge_probe": null, "flag": "OK", "sec": 26.1}
+{"epoch": 4, "cls": 3.0225, "dom": 0.5973, "d_src": 0.997, "d_tgt": 0.056, "w": 0.022, "w_bare": 0.857, "T": 11.6013, "top1": 0.205, "H": 0.791, "H_cal": 5.424, "val_acc": 0.0066, "ge_probe": 1, "flag": "OK", "sec": 26.2}
+{"epoch": 5, "cls": 2.9167, "dom": 0.7055, "d_src": 0.979, "d_tgt": 0.137, "w": 0.016, "w_bare": 0.876, "T": 11.6013, "top1": 0.606, "H": 0.685, "H_cal": 5.454, "val_acc": 0.007, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.6}
+[COLLAPSE] epoch 5 top1_share=0.606 top1_class=221 H=0.685
+{"epoch": 6, "cls": 2.8372, "dom": 0.6497, "d_src": 0.981, "d_tgt": 0.095, "w": 0.02, "w_bare": 0.873, "T": 11.6013, "top1": 0.373, "H": 0.706, "H_cal": 5.433, "val_acc": 0.008, "ge_probe": 28, "flag": "WARN", "sec": 26.1}
+[WARN] epoch 6 top1_share=0.373 top1_class=173 H=0.706
+{"epoch": 7, "cls": 2.7508, "dom": 0.6926, "d_src": 0.98, "d_tgt": 0.183, "w": 0.019, "w_bare": 0.884, "T": 11.6013, "top1": 0.46, "H": 0.642, "H_cal": 5.442, "val_acc": 0.0068, "ge_probe": null, "flag": "WARN", "sec": 26.1}
+[WARN] epoch 7 top1_share=0.460 top1_class=155 H=0.642
+{"epoch": 8, "cls": 2.6512, "dom": 0.6786, "d_src": 0.978, "d_tgt": 0.174, "w": 0.02, "w_bare": 0.886, "T": 11.6013, "top1": 0.372, "H": 0.632, "H_cal": 5.436, "val_acc": 0.0066, "ge_probe": 29, "flag": "WARN", "sec": 26.1}
+[WARN] epoch 8 top1_share=0.372 top1_class=80 H=0.632
+{"epoch": 9, "cls": 2.5749, "dom": 0.6864, "d_src": 0.978, "d_tgt": 0.095, "w": 0.02, "w_bare": 0.882, "T": 11.6013, "top1": 0.516, "H": 0.655, "H_cal": 5.432, "val_acc": 0.0064, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 9 top1_share=0.516 top1_class=141 H=0.655
+{"epoch": 10, "cls": 2.488, "dom": 0.7473, "d_src": 0.966, "d_tgt": 0.121, "w": 0.018, "w_bare": 0.9, "T": 11.6013, "top1": 0.501, "H": 0.556, "H_cal": 5.445, "val_acc": 0.007, "ge_probe": 12, "flag": "COLLAPSE", "sec": 26.8}
+[COLLAPSE] epoch 10 top1_share=0.501 top1_class=77 H=0.556
+{"epoch": 11, "cls": 2.4057, "dom": 0.7985, "d_src": 0.955, "d_tgt": 0.155, "w": 0.019, "w_bare": 0.895, "T": 11.6013, "top1": 0.536, "H": 0.585, "H_cal": 5.439, "val_acc": 0.0054, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 11 top1_share=0.536 top1_class=146 H=0.585
+{"epoch": 12, "cls": 2.3347, "dom": 0.816, "d_src": 0.949, "d_tgt": 0.112, "w": 0.017, "w_bare": 0.91, "T": 11.6013, "top1": 0.651, "H": 0.499, "H_cal": 5.451, "val_acc": 0.0048, "ge_probe": 66, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 12 top1_share=0.651 top1_class=232 H=0.499
+{"epoch": 13, "cls": 2.2336, "dom": 0.8479, "d_src": 0.941, "d_tgt": 0.112, "w": 0.018, "w_bare": 0.91, "T": 11.6013, "top1": 0.606, "H": 0.5, "H_cal": 5.444, "val_acc": 0.0072, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 13 top1_share=0.606 top1_class=80 H=0.500
+{"epoch": 14, "cls": 2.1529, "dom": 0.9303, "d_src": 0.934, "d_tgt": 0.102, "w": 0.018, "w_bare": 0.918, "T": 11.6013, "top1": 0.544, "H": 0.455, "H_cal": 5.446, "val_acc": 0.006, "ge_probe": 53, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 14 top1_share=0.544 top1_class=226 H=0.455
+{"epoch": 15, "cls": 2.0763, "dom": 0.944, "d_src": 0.945, "d_tgt": 0.085, "w": 0.017, "w_bare": 0.922, "T": 11.6013, "top1": 0.596, "H": 0.432, "H_cal": 5.449, "val_acc": 0.0072, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.7}
+[COLLAPSE] epoch 15 top1_share=0.596 top1_class=226 H=0.432
+{"epoch": 16, "cls": 1.9828, "dom": 1.0423, "d_src": 0.922, "d_tgt": 0.111, "w": 0.016, "w_bare": 0.93, "T": 11.6013, "top1": 0.682, "H": 0.389, "H_cal": 5.456, "val_acc": 0.0048, "ge_probe": 69, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 16 top1_share=0.682 top1_class=98 H=0.389
+{"epoch": 17, "cls": 1.9274, "dom": 1.1343, "d_src": 0.891, "d_tgt": 0.124, "w": 0.017, "w_bare": 0.928, "T": 11.6013, "top1": 0.64, "H": 0.398, "H_cal": 5.453, "val_acc": 0.0054, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 17 top1_share=0.640 top1_class=98 H=0.398
+{"epoch": 18, "cls": 1.8395, "dom": 1.0936, "d_src": 0.95, "d_tgt": 0.039, "w": 0.017, "w_bare": 0.93, "T": 11.6013, "top1": 0.55, "H": 0.386, "H_cal": 5.45, "val_acc": 0.0046, "ge_probe": 59, "flag": "COLLAPSE", "sec": 26.2}
+[COLLAPSE] epoch 18 top1_share=0.550 top1_class=46 H=0.386
+{"epoch": 19, "cls": 1.7416, "dom": 1.0898, "d_src": 0.964, "d_tgt": 0.042, "w": 0.016, "w_bare": 0.935, "T": 11.6013, "top1": 0.53, "H": 0.362, "H_cal": 5.454, "val_acc": 0.0046, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 19 top1_share=0.530 top1_class=104 H=0.362
+{"epoch": 20, "cls": 1.6972, "dom": 1.0745, "d_src": 0.977, "d_tgt": 0.042, "w": 0.015, "w_bare": 0.942, "T": 11.6013, "top1": 0.721, "H": 0.321, "H_cal": 5.461, "val_acc": 0.0066, "ge_probe": 48, "flag": "COLLAPSE", "sec": 26.8}
+[COLLAPSE] epoch 20 top1_share=0.721 top1_class=188 H=0.321
+{"epoch": 21, "cls": 1.607, "dom": 1.1101, "d_src": 0.979, "d_tgt": 0.038, "w": 0.016, "w_bare": 0.943, "T": 11.6013, "top1": 0.668, "H": 0.315, "H_cal": 5.458, "val_acc": 0.0066, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 21 top1_share=0.668 top1_class=2 H=0.315
+{"epoch": 22, "cls": 1.5477, "dom": 1.117, "d_src": 0.979, "d_tgt": 0.024, "w": 0.018, "w_bare": 0.936, "T": 11.6013, "top1": 0.589, "H": 0.354, "H_cal": 5.446, "val_acc": 0.007, "ge_probe": 90, "flag": "COLLAPSE", "sec": 26.2}
+[COLLAPSE] epoch 22 top1_share=0.589 top1_class=188 H=0.354
+{"epoch": 23, "cls": 1.4732, "dom": 1.1051, "d_src": 0.993, "d_tgt": 0.007, "w": 0.016, "w_bare": 0.946, "T": 11.6013, "top1": 0.712, "H": 0.301, "H_cal": 5.456, "val_acc": 0.0056, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 23 top1_share=0.712 top1_class=104 H=0.301
+{"epoch": 24, "cls": 1.3893, "dom": 1.1238, "d_src": 0.993, "d_tgt": 0.009, "w": 0.016, "w_bare": 0.949, "T": 11.6013, "top1": 0.703, "H": 0.285, "H_cal": 5.458, "val_acc": 0.0044, "ge_probe": 35, "flag": "COLLAPSE", "sec": 26.2}
+[COLLAPSE] epoch 24 top1_share=0.703 top1_class=120 H=0.285
+{"epoch": 25, "cls": 1.3701, "dom": 1.0763, "d_src": 0.994, "d_tgt": 0.043, "w": 0.017, "w_bare": 0.946, "T": 11.6013, "top1": 0.405, "H": 0.297, "H_cal": 5.453, "val_acc": 0.0062, "ge_probe": null, "flag": "WARN", "sec": 26.8}
+[WARN] epoch 25 top1_share=0.405 top1_class=27 H=0.297
+{"epoch": 26, "cls": 1.3075, "dom": 1.1263, "d_src": 0.994, "d_tgt": 0.009, "w": 0.016, "w_bare": 0.954, "T": 11.6013, "top1": 0.733, "H": 0.253, "H_cal": 5.457, "val_acc": 0.007, "ge_probe": 14, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 26 top1_share=0.733 top1_class=86 H=0.253
+{"epoch": 27, "cls": 1.2416, "dom": 1.0851, "d_src": 0.997, "d_tgt": 0.005, "w": 0.018, "w_bare": 0.946, "T": 11.6013, "top1": 0.419, "H": 0.297, "H_cal": 5.448, "val_acc": 0.0076, "ge_probe": null, "flag": "WARN", "sec": 26.1}
+[WARN] epoch 27 top1_share=0.419 top1_class=136 H=0.297
+{"epoch": 28, "cls": 1.1819, "dom": 1.0749, "d_src": 0.999, "d_tgt": 0.003, "w": 0.017, "w_bare": 0.95, "T": 11.6013, "top1": 0.621, "H": 0.275, "H_cal": 5.451, "val_acc": 0.0066, "ge_probe": 94, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 28 top1_share=0.621 top1_class=192 H=0.275
+{"epoch": 29, "cls": 1.1162, "dom": 1.0774, "d_src": 0.998, "d_tgt": 0.004, "w": 0.016, "w_bare": 0.955, "T": 11.6013, "top1": 0.735, "H": 0.248, "H_cal": 5.458, "val_acc": 0.006, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 29 top1_share=0.735 top1_class=161 H=0.248
+{"epoch": 30, "cls": 1.064, "dom": 1.0542, "d_src": 0.998, "d_tgt": 0.008, "w": 0.016, "w_bare": 0.955, "T": 11.6013, "top1": 0.726, "H": 0.248, "H_cal": 5.456, "val_acc": 0.006, "ge_probe": 26, "flag": "COLLAPSE", "sec": 26.7}
+[COLLAPSE] epoch 30 top1_share=0.726 top1_class=77 H=0.248
+{"epoch": 31, "cls": 1.0377, "dom": 1.0676, "d_src": 0.997, "d_tgt": 0.034, "w": 0.016, "w_bare": 0.957, "T": 11.6013, "top1": 0.68, "H": 0.238, "H_cal": 5.454, "val_acc": 0.0062, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 31 top1_share=0.680 top1_class=104 H=0.238
+{"epoch": 32, "cls": 0.9849, "dom": 1.0768, "d_src": 0.998, "d_tgt": 0.006, "w": 0.016, "w_bare": 0.958, "T": 11.6013, "top1": 0.436, "H": 0.233, "H_cal": 5.455, "val_acc": 0.0056, "ge_probe": 114, "flag": "WARN", "sec": 26.2}
+[WARN] epoch 32 top1_share=0.436 top1_class=220 H=0.233
+{"epoch": 33, "cls": 0.9608, "dom": 1.0539, "d_src": 0.997, "d_tgt": 0.016, "w": 0.016, "w_bare": 0.96, "T": 11.6013, "top1": 0.707, "H": 0.224, "H_cal": 5.457, "val_acc": 0.0058, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 33 top1_share=0.707 top1_class=212 H=0.224
+{"epoch": 34, "cls": 0.8594, "dom": 1.0459, "d_src": 0.997, "d_tgt": 0.021, "w": 0.017, "w_bare": 0.958, "T": 11.6013, "top1": 0.512, "H": 0.235, "H_cal": 5.449, "val_acc": 0.0058, "ge_probe": 103, "flag": "COLLAPSE", "sec": 26.2}
+[COLLAPSE] epoch 34 top1_share=0.512 top1_class=20 H=0.235
+{"epoch": 35, "cls": 0.9029, "dom": 1.0458, "d_src": 0.997, "d_tgt": 0.008, "w": 0.017, "w_bare": 0.961, "T": 11.6013, "top1": 0.672, "H": 0.214, "H_cal": 5.453, "val_acc": 0.005, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.7}
+[COLLAPSE] epoch 35 top1_share=0.672 top1_class=153 H=0.214
+{"epoch": 36, "cls": 0.8012, "dom": 1.0578, "d_src": 0.996, "d_tgt": 0.04, "w": 0.016, "w_bare": 0.962, "T": 11.6013, "top1": 0.628, "H": 0.21, "H_cal": 5.454, "val_acc": 0.0052, "ge_probe": 85, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 36 top1_share=0.628 top1_class=53 H=0.210
+{"epoch": 37, "cls": 0.7816, "dom": 1.0517, "d_src": 0.992, "d_tgt": 0.064, "w": 0.016, "w_bare": 0.964, "T": 11.6013, "top1": 0.651, "H": 0.201, "H_cal": 5.455, "val_acc": 0.0066, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 37 top1_share=0.651 top1_class=173 H=0.201
+{"epoch": 38, "cls": 0.7932, "dom": 1.019, "d_src": 0.985, "d_tgt": 0.166, "w": 0.017, "w_bare": 0.962, "T": 11.6013, "top1": 0.528, "H": 0.212, "H_cal": 5.453, "val_acc": 0.0062, "ge_probe": 152, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 38 top1_share=0.528 top1_class=104 H=0.212
+{"epoch": 39, "cls": 0.7077, "dom": 1.0489, "d_src": 0.985, "d_tgt": 0.071, "w": 0.016, "w_bare": 0.964, "T": 11.6013, "top1": 0.674, "H": 0.198, "H_cal": 5.454, "val_acc": 0.0064, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 39 top1_share=0.674 top1_class=192 H=0.198
+{"epoch": 40, "cls": 0.7237, "dom": 1.017, "d_src": 0.984, "d_tgt": 0.278, "w": 0.016, "w_bare": 0.966, "T": 11.6013, "top1": 0.703, "H": 0.191, "H_cal": 5.456, "val_acc": 0.005, "ge_probe": 55, "flag": "COLLAPSE", "sec": 26.9}
+[COLLAPSE] epoch 40 top1_share=0.703 top1_class=211 H=0.191
+{"epoch": 41, "cls": 0.7078, "dom": 1.0736, "d_src": 0.977, "d_tgt": 0.136, "w": 0.017, "w_bare": 0.962, "T": 11.6013, "top1": 0.583, "H": 0.208, "H_cal": 5.451, "val_acc": 0.005, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.2}
+[COLLAPSE] epoch 41 top1_share=0.583 top1_class=226 H=0.208
+{"epoch": 42, "cls": 0.5683, "dom": 1.0521, "d_src": 0.984, "d_tgt": 0.054, "w": 0.016, "w_bare": 0.966, "T": 11.6013, "top1": 0.621, "H": 0.187, "H_cal": 5.454, "val_acc": 0.008, "ge_probe": 102, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 42 top1_share=0.621 top1_class=80 H=0.187
+{"epoch": 43, "cls": 0.7047, "dom": 1.0149, "d_src": 0.974, "d_tgt": 0.314, "w": 0.016, "w_bare": 0.968, "T": 11.6013, "top1": 0.716, "H": 0.177, "H_cal": 5.456, "val_acc": 0.0064, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 43 top1_share=0.716 top1_class=14 H=0.177
+{"epoch": 44, "cls": 0.6515, "dom": 1.0361, "d_src": 0.97, "d_tgt": 0.232, "w": 0.016, "w_bare": 0.967, "T": 11.6013, "top1": 0.668, "H": 0.182, "H_cal": 5.456, "val_acc": 0.0062, "ge_probe": 104, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 44 top1_share=0.668 top1_class=242 H=0.182
+{"epoch": 45, "cls": 0.5153, "dom": 1.0573, "d_src": 0.945, "d_tgt": 0.274, "w": 0.015, "w_bare": 0.974, "T": 11.6013, "top1": 0.812, "H": 0.144, "H_cal": 5.462, "val_acc": 0.0056, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.7}
+[COLLAPSE] epoch 45 top1_share=0.812 top1_class=216 H=0.144
+{"epoch": 46, "cls": 0.6559, "dom": 1.0127, "d_src": 0.959, "d_tgt": 0.301, "w": 0.016, "w_bare": 0.973, "T": 11.6013, "top1": 0.753, "H": 0.151, "H_cal": 5.459, "val_acc": 0.0054, "ge_probe": 21, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 46 top1_share=0.753 top1_class=32 H=0.151
+{"epoch": 47, "cls": 0.5045, "dom": 1.0409, "d_src": 0.937, "d_tgt": 0.337, "w": 0.016, "w_bare": 0.97, "T": 11.6013, "top1": 0.623, "H": 0.168, "H_cal": 5.457, "val_acc": 0.005, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 47 top1_share=0.623 top1_class=161 H=0.168
+{"epoch": 48, "cls": 0.5822, "dom": 1.0179, "d_src": 0.943, "d_tgt": 0.336, "w": 0.016, "w_bare": 0.973, "T": 11.6013, "top1": 0.723, "H": 0.15, "H_cal": 5.458, "val_acc": 0.0082, "ge_probe": 23, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 48 top1_share=0.723 top1_class=248 H=0.150
+{"epoch": 49, "cls": 0.5126, "dom": 1.1211, "d_src": 0.89, "d_tgt": 0.228, "w": 0.016, "w_bare": 0.973, "T": 11.6013, "top1": 0.654, "H": 0.152, "H_cal": 5.458, "val_acc": 0.0052, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 49 top1_share=0.654 top1_class=120 H=0.152
+{"epoch": 50, "cls": 0.461, "dom": 1.0489, "d_src": 0.918, "d_tgt": 0.357, "w": 0.015, "w_bare": 0.973, "T": 11.6013, "top1": 0.706, "H": 0.152, "H_cal": 5.46, "val_acc": 0.0058, "ge_probe": 176, "flag": "COLLAPSE", "sec": 26.8}
+[COLLAPSE] epoch 50 top1_share=0.706 top1_class=142 H=0.152
+{"epoch": 51, "cls": 0.6152, "dom": 1.0493, "d_src": 0.932, "d_tgt": 0.287, "w": 0.016, "w_bare": 0.974, "T": 11.6013, "top1": 0.675, "H": 0.147, "H_cal": 5.458, "val_acc": 0.004, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 51 top1_share=0.675 top1_class=98 H=0.147
+{"epoch": 52, "cls": 0.457, "dom": 0.9708, "d_src": 0.923, "d_tgt": 0.438, "w": 0.016, "w_bare": 0.971, "T": 11.6013, "top1": 0.625, "H": 0.162, "H_cal": 5.455, "val_acc": 0.005, "ge_probe": 37, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 52 top1_share=0.625 top1_class=79 H=0.162
+{"epoch": 53, "cls": 0.4412, "dom": 1.049, "d_src": 0.906, "d_tgt": 0.419, "w": 0.016, "w_bare": 0.971, "T": 11.6013, "top1": 0.535, "H": 0.161, "H_cal": 5.455, "val_acc": 0.0068, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 53 top1_share=0.535 top1_class=20 H=0.161
+{"epoch": 54, "cls": 0.583, "dom": 1.0992, "d_src": 0.874, "d_tgt": 0.376, "w": 0.015, "w_bare": 0.975, "T": 11.6013, "top1": 0.76, "H": 0.137, "H_cal": 5.459, "val_acc": 0.004, "ge_probe": 57, "flag": "COLLAPSE", "sec": 26.2}
+[COLLAPSE] epoch 54 top1_share=0.760 top1_class=136 H=0.137
+{"epoch": 55, "cls": 0.425, "dom": 1.0236, "d_src": 0.886, "d_tgt": 0.436, "w": 0.015, "w_bare": 0.976, "T": 11.6013, "top1": 0.672, "H": 0.13, "H_cal": 5.46, "val_acc": 0.0048, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.7}
+[COLLAPSE] epoch 55 top1_share=0.672 top1_class=2 H=0.130
+{"epoch": 56, "cls": 0.4248, "dom": 0.9219, "d_src": 0.927, "d_tgt": 0.538, "w": 0.016, "w_bare": 0.974, "T": 11.6013, "top1": 0.618, "H": 0.141, "H_cal": 5.458, "val_acc": 0.0056, "ge_probe": 12, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 56 top1_share=0.618 top1_class=236 H=0.141
+{"epoch": 57, "cls": 0.4304, "dom": 0.9511, "d_src": 0.931, "d_tgt": 0.425, "w": 0.016, "w_bare": 0.974, "T": 11.6013, "top1": 0.662, "H": 0.145, "H_cal": 5.457, "val_acc": 0.0054, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.0}
+[COLLAPSE] epoch 57 top1_share=0.662 top1_class=197 H=0.145
+{"epoch": 58, "cls": 0.4201, "dom": 0.9605, "d_src": 0.922, "d_tgt": 0.43, "w": 0.016, "w_bare": 0.973, "T": 11.6013, "top1": 0.444, "H": 0.152, "H_cal": 5.457, "val_acc": 0.0052, "ge_probe": 65, "flag": "WARN", "sec": 26.2}
+[WARN] epoch 58 top1_share=0.444 top1_class=104 H=0.152
+{"epoch": 59, "cls": 0.5605, "dom": 0.9224, "d_src": 0.928, "d_tgt": 0.521, "w": 0.016, "w_bare": 0.975, "T": 11.6013, "top1": 0.735, "H": 0.14, "H_cal": 5.459, "val_acc": 0.0054, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.2}
+[COLLAPSE] epoch 59 top1_share=0.735 top1_class=183 H=0.140
+{"epoch": 60, "cls": 0.3858, "dom": 0.9984, "d_src": 0.896, "d_tgt": 0.41, "w": 0.015, "w_bare": 0.977, "T": 11.6013, "top1": 0.68, "H": 0.127, "H_cal": 5.463, "val_acc": 0.008, "ge_probe": 9, "flag": "COLLAPSE", "sec": 26.8}
+[COLLAPSE] epoch 60 top1_share=0.680 top1_class=73 H=0.127
+{"epoch": 61, "cls": 0.4045, "dom": 1.0427, "d_src": 0.865, "d_tgt": 0.405, "w": 0.015, "w_bare": 0.979, "T": 11.6013, "top1": 0.808, "H": 0.115, "H_cal": 5.463, "val_acc": 0.0054, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 61 top1_share=0.808 top1_class=42 H=0.115
+{"epoch": 62, "cls": 0.3815, "dom": 1.25, "d_src": 0.837, "d_tgt": 0.331, "w": 0.015, "w_bare": 0.98, "T": 11.6013, "top1": 0.796, "H": 0.111, "H_cal": 5.464, "val_acc": 0.006, "ge_probe": 7, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 62 top1_share=0.796 top1_class=205 H=0.111
+{"epoch": 63, "cls": 0.3925, "dom": 0.8915, "d_src": 0.837, "d_tgt": 0.65, "w": 0.016, "w_bare": 0.976, "T": 11.6013, "top1": 0.716, "H": 0.135, "H_cal": 5.458, "val_acc": 0.0038, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 63 top1_share=0.716 top1_class=149 H=0.135
+{"epoch": 64, "cls": 0.5139, "dom": 0.9385, "d_src": 0.875, "d_tgt": 0.545, "w": 0.016, "w_bare": 0.975, "T": 11.6013, "top1": 0.649, "H": 0.138, "H_cal": 5.459, "val_acc": 0.0068, "ge_probe": 14, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 64 top1_share=0.649 top1_class=91 H=0.138
+{"epoch": 65, "cls": 0.3639, "dom": 0.9363, "d_src": 0.913, "d_tgt": 0.49, "w": 0.016, "w_bare": 0.975, "T": 11.6013, "top1": 0.704, "H": 0.137, "H_cal": 5.459, "val_acc": 0.0042, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.7}
+[COLLAPSE] epoch 65 top1_share=0.704 top1_class=89 H=0.137
+{"epoch": 66, "cls": 0.3774, "dom": 1.0034, "d_src": 0.879, "d_tgt": 0.473, "w": 0.016, "w_bare": 0.975, "T": 11.6013, "top1": 0.469, "H": 0.138, "H_cal": 5.458, "val_acc": 0.0058, "ge_probe": 28, "flag": "WARN", "sec": 26.1}
+[WARN] epoch 66 top1_share=0.469 top1_class=202 H=0.138
+{"epoch": 67, "cls": 0.369, "dom": 1.0474, "d_src": 0.907, "d_tgt": 0.308, "w": 0.016, "w_bare": 0.976, "T": 11.6013, "top1": 0.701, "H": 0.132, "H_cal": 5.458, "val_acc": 0.0068, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 67 top1_share=0.701 top1_class=104 H=0.132
+{"epoch": 68, "cls": 0.395, "dom": 1.1283, "d_src": 0.845, "d_tgt": 0.378, "w": 0.015, "w_bare": 0.979, "T": 11.6013, "top1": 0.779, "H": 0.116, "H_cal": 5.462, "val_acc": 0.0074, "ge_probe": 34, "flag": "COLLAPSE", "sec": 26.2}
+[COLLAPSE] epoch 68 top1_share=0.779 top1_class=199 H=0.116
+{"epoch": 69, "cls": 0.3619, "dom": 1.0627, "d_src": 0.814, "d_tgt": 0.502, "w": 0.015, "w_bare": 0.978, "T": 11.6013, "top1": 0.733, "H": 0.12, "H_cal": 5.46, "val_acc": 0.0054, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.2}
+[COLLAPSE] epoch 69 top1_share=0.733 top1_class=68 H=0.120
+{"epoch": 70, "cls": 0.3769, "dom": 1.0164, "d_src": 0.865, "d_tgt": 0.465, "w": 0.015, "w_bare": 0.977, "T": 11.6013, "top1": 0.448, "H": 0.125, "H_cal": 5.46, "val_acc": 0.0056, "ge_probe": 3, "flag": "WARN", "sec": 26.8}
+[WARN] epoch 70 top1_share=0.448 top1_class=125 H=0.125
+{"epoch": 71, "cls": 0.3232, "dom": 0.9458, "d_src": 0.872, "d_tgt": 0.606, "w": 0.016, "w_bare": 0.977, "T": 11.6013, "top1": 0.52, "H": 0.126, "H_cal": 5.459, "val_acc": 0.0058, "ge_probe": null, "flag": "COLLAPSE", "sec": 26.2}
+[COLLAPSE] epoch 71 top1_share=0.520 top1_class=95 H=0.126
+{"epoch": 72, "cls": 0.3718, "dom": 0.968, "d_src": 0.888, "d_tgt": 0.499, "w": 0.015, "w_bare": 0.976, "T": 11.6013, "top1": 0.562, "H": 0.134, "H_cal": 5.461, "val_acc": 0.0074, "ge_probe": 23, "flag": "COLLAPSE", "sec": 26.2}
+[COLLAPSE] epoch 72 top1_share=0.562 top1_class=245 H=0.134
+{"epoch": 73, "cls": 0.3719, "dom": 0.9033, "d_src": 0.881, "d_tgt": 0.613, "w": 0.016, "w_bare": 0.975, "T": 11.6013, "top1": 0.468, "H": 0.139, "H_cal": 5.456, "val_acc": 0.0054, "ge_probe": null, "flag": "WARN", "sec": 26.1}
+[WARN] epoch 73 top1_share=0.468 top1_class=69 H=0.139
+{"epoch": 74, "cls": 0.3454, "dom": 1.0382, "d_src": 0.856, "d_tgt": 0.414, "w": 0.016, "w_bare": 0.976, "T": 11.6013, "top1": 0.703, "H": 0.131, "H_cal": 5.458, "val_acc": 0.007, "ge_probe": 74, "flag": "COLLAPSE", "sec": 26.1}
+[COLLAPSE] epoch 74 top1_share=0.703 top1_class=85 H=0.131
+{"epoch": 75, "cls": 0.3737, "dom": 1.0672, "d_src": 0.788, "d_tgt": 0.521, "w": 0.016, "w_bare": 0.976, "T": 11.6013, "top1": 0.587, "H": 0.135, "H_cal": 5.458, "val_acc": 0.0052, "ge_probe": 55, "flag": "COLLAPSE", "sec": 26.8}
+[COLLAPSE] epoch 75 top1_share=0.587 top1_class=128 H=0.135
+{"done": "cdan_sca_calib_desync100_s43", "sec": 1999.9, "T": 11.6013, "attack_acc": 0.0047, "top1": 0.587, "w": 0.0158, "w_bare": 0.9757, "collapse_epochs": 62, "domain_before": {"src_acc": 0.9676, "tgt_acc": 0.1028, "balanced_acc": 0.5352, "epoch": 0}, "domain_after": {"src_acc": 0.7488, "tgt_acc": 0.1254, "balanced_acc": 0.43710000000000004, "epoch": 75}}

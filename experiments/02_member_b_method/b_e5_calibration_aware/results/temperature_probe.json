@@ -1,0 +1,59 @@
+{
+  "note": "source_val \u6e29\u5ea6\u62df\u5408\uff0c\u6a21\u578b\u4e3a B-E1 \u540c seed \u521d\u59cb\u5316\uff08\u8bad\u7ec3\u524d\uff09",
+  "runs": [
+    {
+      "temperature": 10.863937767724131,
+      "nll_before": 7.524864454515802,
+      "nll_after": 5.514468908245764,
+      "ece_before": 0.1783471415000596,
+      "ece_after": 0.0010442380830388764,
+      "accuracy": 0.0058,
+      "n_val": 5000,
+      "grid": {
+        "lo": 0.05,
+        "hi": 20.0,
+        "n_grid": 400,
+        "refine_rounds": 3
+      },
+      "fit_objective": "mean NLL of softmax(logits/T) on source_val",
+      "seed": 42,
+      "init_ckpt": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\outputs\\models\\b_e1\\cnn_s42\\ckpt.pt"
+    },
+    {
+      "temperature": 11.601492967142537,
+      "nll_before": 7.715161833224609,
+      "nll_after": 5.51545497041238,
+      "ece_before": 0.18958697502591942,
+      "ece_after": 0.00036429819699246475,
+      "accuracy": 0.0064,
+      "n_val": 5000,
+      "grid": {
+        "lo": 0.05,
+        "hi": 20.0,
+        "n_grid": 400,
+        "refine_rounds": 3
+      },
+      "fit_objective": "mean NLL of softmax(logits/T) on source_val",
+      "seed": 43,
+      "init_ckpt": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\outputs\\models\\b_e1\\cnn_s43\\ckpt.pt"
+    },
+    {
+      "temperature": 14.451858029109669,
+      "nll_before": 8.527323999097367,
+      "nll_after": 5.5173206196569735,
+      "ece_before": 0.24791385746101743,
+      "ece_after": 0.0011995011920279321,
+      "accuracy": 0.0054,
+      "n_val": 5000,
+      "grid": {
+        "lo": 0.05,
+        "hi": 20.0,
+        "n_grid": 400,
+        "refine_rounds": 3
+      },
+      "fit_objective": "mean NLL of softmax(logits/T) on source_val",
+      "seed": 44,
+      "init_ckpt": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\outputs\\models\\b_e1\\cnn_s44\\ckpt.pt"
+    }
+  ]
+}

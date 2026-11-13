@@ -1,0 +1,111 @@
+{
+  "purpose": "T fitted on source_val is a property of a near-chance split, not of the classifier",
+  "checkpoint": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\outputs\\models\\b_e1\\cnn_s42\\ckpt.pt",
+  "device": "cpu",
+  "fit_on_source_train": {
+    "temperature": 0.8242753934618504,
+    "nll_before": 3.1456543272463096,
+    "nll_after": 3.1002760378289,
+    "ece_before": 0.075347575823248,
+    "ece_after": 0.02009046956445385,
+    "accuracy": 0.2908,
+    "n_val": 5000,
+    "grid": {
+      "lo": 0.05,
+      "hi": 20.0,
+      "n_grid": 400,
+      "refine_rounds": 3
+    },
+    "fit_objective": "mean NLL of softmax(logits/T) on source_val"
+  },
+  "fit_on_source_val": {
+    "temperature": 10.862977270819474,
+    "nll_before": 7.5247703301467945,
+    "nll_after": 5.514464723078918,
+    "ece_before": 0.17854961107650602,
+    "ece_after": 0.0012445326623566491,
+    "accuracy": 0.0056,
+    "n_val": 5000,
+    "grid": {
+      "lo": 0.05,
+      "hi": 20.0,
+      "n_grid": 400,
+      "refine_rounds": 3
+    },
+    "fit_objective": "mean NLL of softmax(logits/T) on source_val"
+  },
+  "rows": [
+    {
+      "split": "source_train_5k",
+      "n": 5000,
+      "accuracy": 0.2908,
+      "nll_T1": 3.1456542015075684,
+      "ece_T1": 0.07534757488071919,
+      "temperature": 1.0,
+      "nll_Tfit": 3.1456542015075684,
+      "ece_Tfit": 0.07534757488071919,
+      "mean_max_prob_T1": 0.2155815213918686,
+      "mean_max_prob_Tfit": 0.2155815213918686
+    },
+    {
+      "split": "source_val_5k",
+      "n": 5000,
+      "accuracy": 0.0056,
+      "nll_T1": 7.524770259857178,
+      "ece_T1": 0.17854960777387022,
+      "temperature": 1.0,
+      "nll_Tfit": 7.524770259857178,
+      "ece_Tfit": 0.17854960777387022,
+      "mean_max_prob_T1": 0.1841496080160141,
+      "mean_max_prob_Tfit": 0.1841496080160141
+    },
+    {
+      "split": "source_train_5k@T_train",
+      "n": 5000,
+      "accuracy": 0.2908,
+      "nll_T1": 3.1456542015075684,
+      "ece_T1": 0.07534757488071919,
+      "temperature": 0.8242753934618504,
+      "nll_Tfit": 3.100276231765747,
+      "ece_Tfit": 0.020090467943251127,
+      "mean_max_prob_T1": 0.2155815213918686,
+      "mean_max_prob_Tfit": 0.28898724913597107
+    },
+    {
+      "split": "source_val_5k@T_val",
+      "n": 5000,
+      "accuracy": 0.0056,
+      "nll_T1": 7.524770259857178,
+      "ece_T1": 0.17854960777387022,
+      "temperature": 10.862977270819474,
+      "nll_Tfit": 5.514464855194092,
+      "ece_Tfit": 0.0012439687602221966,
+      "mean_max_prob_T1": 0.1841496080160141,
+      "mean_max_prob_Tfit": 0.006843968760222197
+    },
+    {
+      "split": "source_train_5k@T_val",
+      "n": 5000,
+      "accuracy": 0.2908,
+      "nll_T1": 3.1456542015075684,
+      "ece_T1": 0.07534757488071919,
+      "temperature": 10.862977270819474,
+      "nll_Tfit": 5.099362373352051,
+      "ece_Tfit": 0.2837758468642831,
+      "mean_max_prob_T1": 0.2155815213918686,
+      "mean_max_prob_Tfit": 0.007024153135716915
+    },
+    {
+      "split": "source_val_5k@T_train",
+      "n": 5000,
+      "accuracy": 0.0056,
+      "nll_T1": 7.524770259857178,
+      "ece_T1": 0.17854960777387022,
+      "temperature": 0.8242753934618504,
+      "nll_Tfit": 8.382623672485352,
+      "ece_Tfit": 0.24708655548393726,
+      "mean_max_prob_T1": 0.1841496080160141,
+      "mean_max_prob_Tfit": 0.2526865601539612
+    }
+  ]
+}
