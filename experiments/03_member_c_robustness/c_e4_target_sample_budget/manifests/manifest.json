@@ -1,38 +1,13 @@
 {
   "experiment": "C-E4",
   "title": "target adaptation sample budget sensitivity (50/500/5000/45000)",
-  "generated_utc": "2026-11-20T12:33:32+00:00",
+  "generated_utc": "2026-11-20T12:38:41+00:00",
   "host": "LAPTOP-BEAG97LG",
   "python": "3.12.16",
-  "git_commit": "b95dcc54b99160ea42828906a6b790157b3b00a2",
+  "git_commit": "2bc4a4b69da79ba91d2e0410ec4d56e9205c541b",
   "git_branch": "main",
   "root": "experiments/03_member_c_robustness/c_e4_target_sample_budget",
   "files": [
-    {
-      "path": "%SystemDrive%/ProgramData/Microsoft/Windows/Caches/cversions.2.db",
-      "bytes": 16384,
-      "sha256": "d70dc057090c5acb16beb0fa960a62c2e7b3dfd79ebfe442941b1eba2369535d"
-    },
-    {
-      "path": "%SystemDrive%/ProgramData/Microsoft/Windows/Caches/{4EE39DAD-9606-42C0-A5DE-1AB8A4098E77}.2.ver0x0000000000000001.db",
-      "bytes": 1240,
-      "sha256": "900fd7e7269a6d503a9519961a1a8e7753425164e1a04c63af928b5d6f4e030f"
-    },
-    {
-      "path": "%SystemDrive%/ProgramData/Microsoft/Windows/Caches/{6AF0698E-D558-4F6E-9B3C-3716689AF493}.2.ver0x0000000000000001.db",
-      "bytes": 309520,
-      "sha256": "1f5789fef9d6a85324130326ee836af67808d66592900d509dd6cf3d0b882fce"
-    },
-    {
-      "path": "%SystemDrive%/ProgramData/Microsoft/Windows/Caches/{DDF571F2-BE98-426D-8288-1A9A39C3FDA2}.2.ver0x0000000000000001.db",
-      "bytes": 662488,
-      "sha256": "888f7bd78e2bfaa3f0b460caf28ff0ababd7b4c7b84d21db432b3837524c4375"
-    },
-    {
-      "path": "%SystemDrive%/ProgramData/Microsoft/Windows/Caches/{EA8D8B8A-65EF-47A3-94D4-C2AF9FBC639B}.2.ver0x0000000000000001.db",
-      "bytes": 840,
-      "sha256": "331c6e2e5f3e4cf7c2d69c2eafb0e8e0323a0b6c64451af1391c633a9cf6640c"
-    },
     {
       "path": "configs/target_subsets.json",
       "bytes": 425766,
@@ -575,18 +550,18 @@
     },
     {
       "path": "logs/finalize_backup.log",
-      "bytes": 55472,
-      "sha256": "1b04d0ced52d5c5d9f7ae88eedda3cfbd4460de537f0e5108c6c4acf16775b5f"
+      "bytes": 55928,
+      "sha256": "b926f630af7f09ce1569e8b2b429c9d742140902f13b552aa5b656eb3479a6e6"
     },
     {
       "path": "logs/finalize_chain.log",
-      "bytes": 862,
-      "sha256": "5a5686e0628fe1a4f951f4fd03f273df4cd7af51943651cb192e3b6be3912385"
+      "bytes": 940,
+      "sha256": "2214db541625928ca03da4aee98ba9743ac8ec876d28e24df1065fa4fcfa67bc"
     },
     {
       "path": "logs/FINALIZE_DONE.txt",
       "bytes": 19,
-      "sha256": "2f2823f00dcb9a7d9a89894895fb3a2ce17236e265553b2dc50e571308a91f25"
+      "sha256": "57bf402994283b4a1b00b6c6fc4b5ee623c94b30a43e29d880f3bcb270cdf21a"
     },
     {
       "path": "logs/PAUSED.txt",
@@ -615,13 +590,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 19103,
-      "sha256": "812b992cd3c3d93498dab1741455d534196b4c4e54bf36eab5704fb2092ab378"
+      "bytes": 24426,
+      "sha256": "2c190ef87a35e68b63fd14dae0215500902af4d5f8d8dfd5ae0562251179e45e"
     },
     {
       "path": "reports/c_e4_report.md",
-      "bytes": 19052,
-      "sha256": "03d4e0f1ab3e46abd097fbc536be3b726036d9282630859d1b9ee07478283bae"
+      "bytes": 24878,
+      "sha256": "64ff6db611c7ed370ca7ea7388fd5a738376be7f552004052db1408f5cf5ba92"
     },
     {
       "path": "results/cdan_sca_desync100_b5000_s42/diag_target_adapt.npz",
@@ -3189,8 +3164,8 @@
       "sha256": "4d8d126ac9da4ef3ace4e8da4f5ae9bec2a2fc691f1515fd6f48d54614f1455f"
     }
   ],
-  "n_files": 636,
-  "total_bytes": 648342221,
+  "n_files": 631,
+  "total_bytes": 647363432,
   "archived_models": [
     {
       "group": "c_e4",
