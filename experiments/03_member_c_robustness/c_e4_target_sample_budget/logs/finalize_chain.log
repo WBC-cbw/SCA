@@ -1,0 +1,20 @@
+2026/11/18 8:15:47  chain started; waiting QUEUE_D50_DONE
+2026/11/18 16:50:51  d50 done -> finalize (d50 only)
+2026/11/18 16:51:15  finalize rc=0
+2026/11/18 16:51:15  starting d100 queue
+2026/11/18 21:08:17  chain started; waiting QUEUE_D50_DONE
+2026/11/18 21:08:17  d50 done -> finalize (d50 only)
+2026/11/18 21:08:49  finalize rc=0
+2026/11/18 21:08:49  starting d100 queue
+2026/11/19 15:56:26  chain started; waiting QUEUE_D50_DONE
+2026/11/19 15:56:26  d50 done -> finalize (d50 only)
+2026/11/19 15:57:08  finalize rc=0
+2026/11/19 15:57:08  starting d100 queue
+2026/11/20 14:48:32  chain started; waiting QUEUE_D50_DONE
+2026/11/20 14:48:32  d50 done -> finalize (d50 only)
+2026/11/20 14:51:06  finalize rc=0
+2026/11/20 14:51:06  starting d100 queue
+2026/11/20 20:31:25  d100 queue rc=0
+2026/11/20 20:31:25  d100 done -> finalize (all shifts)
+2026/11/20 20:33:32  finalize(all) rc=0
+2026/11/20 20:33:32  chain finished

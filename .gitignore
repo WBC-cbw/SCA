@@ -56,3 +56,6 @@ docs/mine
 __pycache__/
 *.pyc
 .mplconfig/
+
+# 批处理变量误展开产生的目录（C-E4 运行期发现）
+%SystemDrive%/

@@ -1,0 +1,118 @@
+{
+  "run": "cdpa_desync100_b50_s44",
+  "method": "cdpa",
+  "shift": "desync100",
+  "seed": 44,
+  "budget": 50,
+  "epochs_planned": 75,
+  "lr": 1e-05,
+  "optimizer": "RMSprop",
+  "batch_size": 200,
+  "normalize": "none（原始 int8 幅度）",
+  "epochs_batches_per_epoch": 225,
+  "target_samples_per_epoch": 45000,
+  "target_batch_cycles_per_epoch": 900,
+  "target_batch_note": "目标域每 epoch 仍取 ceil(45000/200)=225 个 batch；子集小于该量时按独立随机置换循环采样",
+  "subset_file": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\03_member_c_robustness\\c_e4_target_sample_budget\\configs\\target_subsets.json",
+  "subset_sha256": "0936b2a62d5d84aef5104ff2e3e93c5fc3bfab402be19272faec9c3ae68d49d2",
+  "subset_indices_preview": [
+    1170,
+    1688,
+    2178,
+    3255,
+    5561,
+    6647,
+    9298,
+    9590,
+    9755,
+    10097
+  ],
+  "subset_indices_sha256": "5d8c0d6c1a2bace7f7446d65a98a34366e1948319c6859c5569dbf6338e57846",
+  "n_adapt": 50,
+  "target_pool": 45000,
+  "target_domain_val": 5000,
+  "target_domain_val_note": "Profiling[45000:50000]，只做域判别诊断，不参与训练/评估",
+  "source_train": 45000,
+  "source_val": 5000,
+  "target_attack": 10000,
+  "target_byte": 2,
+  "real_key_byte": 224,
+  "dataset_keys_equal": true,
+  "target_file": "D:/sca_project/ASCAD_data/ASCAD_desync100.h5",
+  "init_ckpt": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\outputs\\models\\b_e1\\cnn_s44\\ckpt.pt",
+  "init_keys_loaded": 16,
+  "n_params_total": 66652544,
+  "device": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "torch": "2.9.1+cu128",
+  "tf32": true,
+  "target_adapt_labels": "只用于训练结束后的 ECE / confident-wrong 诊断，不参与损失或模型选择",
+  "cost_accounting": {
+    "n_attack_at_ge1": "首个 GE=0 的攻击轨迹数",
+    "n_total_at_ge1": "budget + n_attack_at_ge1（适应轨迹是否计入总成本的双口径之一）",
+    "censor": "10000 条内未出现 GE=0 记 None，聚合时截尾 10000（NTGE）/10000+budget（N_total）"
+  },
+  "reference_full_budget": "budget=45000 不重跑，复用 A-E3 CDPA / A-E2 DANN / B-E3 CDAN-SCA full 的 predictions",
+  "lambda_mmd": 0.1,
+  "mmd_layers": [
+    "conv",
+    "fc1",
+    "fc2"
+  ],
+  "mmd_kernel": {
+    "kernel_mul": 2.0,
+    "kernel_num": 5,
+    "bandwidth": "批内平均平方距离 / kernel_mul**(kernel_num//2)（官方实现）"
+  },
+  "loss": "CE(source) + lambda_mmd * sum_layers MMD(source, target)",
+  "resumed_at_start": false,
+  "epochs_done": 75,
+  "train_seconds": 1826.3112230300903,
+  "wall_seconds_total": 1839.7377889156342,
+  "sec_per_epoch_mean": 24.35081630706787,
+  "final_train_cls_loss": 0.38562487776080767,
+  "final_val_acc": 0.0042,
+  "final_attack_acc": 0.0039,
+  "final_monitor": {
+    "n_monitor": 50,
+    "top1_share": 0.04,
+    "top1_class": 140,
+    "top5_classes": [
+      [
+        140,
+        2
+      ],
+      [
+        82,
+        2
+      ],
+      [
+        228,
+        1
+      ],
+      [
+        243,
+        1
+      ],
+      [
+        206,
+        1
+      ]
+    ],
+    "unique_pred_classes": 48,
+    "pred_entropy_mean": 0.7758910655975342,
+    "pred_entropy_p50": 0.712497889995575,
+    "max_conf_mean": 0.7470543384552002,
+    "w_mean": 0.8600782155990601,
+    "w_std": 0.10452160984277725,
+    "w_p10": 0.7276656627655029,
+    "w_p50": 0.87151038646698,
+    "w_p90": 0.974881649017334
+  },
+  "collapse_epochs": 0,
+  "warn_epochs": 0,
+  "max_top1_share": 0.08,
+  "max_memory_allocated_mb": 1718.7,
+  "predictions_file": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\03_member_c_robustness\\c_e4_target_sample_budget\\results\\cdpa_desync100_b50_s44\\predictions_attack.npy",
+  "diag_file": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\03_member_c_robustness\\c_e4_target_sample_budget\\results\\cdpa_desync100_b50_s44\\diag_target_adapt.npz",
+  "ckpt_file": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\outputs\\models\\c_e4\\cdpa_desync100_b50_s44\\ckpt.pt"
+}

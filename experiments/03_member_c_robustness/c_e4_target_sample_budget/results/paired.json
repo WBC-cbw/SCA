@@ -1,0 +1,1024 @@
+{
+  "cdpa_mmd_vs_dann|ntge_first": {
+    "desync100|b50": {
+      "n": 3,
+      "mean_delta": -3133.3333333333335,
+      "wins_a": 2,
+      "ties": 1,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -200
+        },
+        {
+          "seed": 43,
+          "delta": -9200
+        },
+        {
+          "seed": 44,
+          "delta": 0
+        }
+      ]
+    },
+    "desync100|b500": {
+      "n": 3,
+      "mean_delta": -3266.6666666666665,
+      "wins_a": 1,
+      "ties": 2,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -9800
+        },
+        {
+          "seed": 43,
+          "delta": 0
+        },
+        {
+          "seed": 44,
+          "delta": 0
+        }
+      ]
+    },
+    "desync100|b5000": {
+      "n": 3,
+      "mean_delta": 300.0,
+      "wins_a": 1,
+      "ties": 0,
+      "wins_b": 2,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -9100
+        },
+        {
+          "seed": 43,
+          "delta": 500
+        },
+        {
+          "seed": 44,
+          "delta": 9500
+        }
+      ]
+    },
+    "desync100|b45000": {
+      "n": 3,
+      "mean_delta": -4600.0,
+      "wins_a": 2,
+      "ties": 1,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -4600
+        },
+        {
+          "seed": 43,
+          "delta": -9200
+        },
+        {
+          "seed": 44,
+          "delta": 0
+        }
+      ]
+    },
+    "desync50|b50": {
+      "n": 3,
+      "mean_delta": -2000.0,
+      "wins_a": 1,
+      "ties": 2,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": 0
+        },
+        {
+          "seed": 43,
+          "delta": 0
+        },
+        {
+          "seed": 44,
+          "delta": -6000
+        }
+      ]
+    },
+    "desync50|b500": {
+      "n": 3,
+      "mean_delta": -4300.0,
+      "wins_a": 3,
+      "ties": 0,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -5900
+        },
+        {
+          "seed": 43,
+          "delta": -4300
+        },
+        {
+          "seed": 44,
+          "delta": -2700
+        }
+      ]
+    },
+    "desync50|b5000": {
+      "n": 3,
+      "mean_delta": -3466.6666666666665,
+      "wins_a": 3,
+      "ties": 0,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -5600
+        },
+        {
+          "seed": 43,
+          "delta": -4200
+        },
+        {
+          "seed": 44,
+          "delta": -600
+        }
+      ]
+    },
+    "desync50|b45000": {
+      "n": 3,
+      "mean_delta": -3466.6666666666665,
+      "wins_a": 3,
+      "ties": 0,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -1100
+        },
+        {
+          "seed": 43,
+          "delta": -4800
+        },
+        {
+          "seed": 44,
+          "delta": -4500
+        }
+      ]
+    }
+  },
+  "cdpa_mmd_vs_dann|n_total_at_ge1": {
+    "desync100|b50": {
+      "n": 3,
+      "mean_delta": -3133.3333333333335,
+      "wins_a": 2,
+      "ties": 1,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -200
+        },
+        {
+          "seed": 43,
+          "delta": -9200
+        },
+        {
+          "seed": 44,
+          "delta": 0
+        }
+      ]
+    },
+    "desync100|b500": {
+      "n": 3,
+      "mean_delta": -3266.6666666666665,
+      "wins_a": 1,
+      "ties": 2,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -9800
+        },
+        {
+          "seed": 43,
+          "delta": 0
+        },
+        {
+          "seed": 44,
+          "delta": 0
+        }
+      ]
+    },
+    "desync100|b5000": {
+      "n": 3,
+      "mean_delta": 300.0,
+      "wins_a": 1,
+      "ties": 0,
+      "wins_b": 2,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -9100
+        },
+        {
+          "seed": 43,
+          "delta": 500
+        },
+        {
+          "seed": 44,
+          "delta": 9500
+        }
+      ]
+    },
+    "desync100|b45000": {
+      "n": 3,
+      "mean_delta": -4600.0,
+      "wins_a": 2,
+      "ties": 1,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -4600
+        },
+        {
+          "seed": 43,
+          "delta": -9200
+        },
+        {
+          "seed": 44,
+          "delta": 0
+        }
+      ]
+    },
+    "desync50|b50": {
+      "n": 3,
+      "mean_delta": -2000.0,
+      "wins_a": 1,
+      "ties": 2,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": 0
+        },
+        {
+          "seed": 43,
+          "delta": 0
+        },
+        {
+          "seed": 44,
+          "delta": -6000
+        }
+      ]
+    },
+    "desync50|b500": {
+      "n": 3,
+      "mean_delta": -4300.0,
+      "wins_a": 3,
+      "ties": 0,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -5900
+        },
+        {
+          "seed": 43,
+          "delta": -4300
+        },
+        {
+          "seed": 44,
+          "delta": -2700
+        }
+      ]
+    },
+    "desync50|b5000": {
+      "n": 3,
+      "mean_delta": -3466.6666666666665,
+      "wins_a": 3,
+      "ties": 0,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -5600
+        },
+        {
+          "seed": 43,
+          "delta": -4200
+        },
+        {
+          "seed": 44,
+          "delta": -600
+        }
+      ]
+    },
+    "desync50|b45000": {
+      "n": 3,
+      "mean_delta": -3466.6666666666665,
+      "wins_a": 3,
+      "ties": 0,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -1100
+        },
+        {
+          "seed": 43,
+          "delta": -4800
+        },
+        {
+          "seed": 44,
+          "delta": -4500
+        }
+      ]
+    }
+  },
+  "cdpa_mmd_vs_cdan_sca|ntge_first": {
+    "desync100|b50": {
+      "n": 3,
+      "mean_delta": -5500.0,
+      "wins_a": 2,
+      "ties": 1,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -7300
+        },
+        {
+          "seed": 43,
+          "delta": -9200
+        },
+        {
+          "seed": 44,
+          "delta": 0
+        }
+      ]
+    },
+    "desync100|b500": {
+      "n": 3,
+      "mean_delta": -633.3333333333334,
+      "wins_a": 1,
+      "ties": 1,
+      "wins_b": 1,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -3800
+        },
+        {
+          "seed": 43,
+          "delta": 0
+        },
+        {
+          "seed": 44,
+          "delta": 1900
+        }
+      ]
+    },
+    "desync100|b5000": {
+      "n": 3,
+      "mean_delta": -3133.3333333333335,
+      "wins_a": 1,
+      "ties": 1,
+      "wins_b": 1,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -9600
+        },
+        {
+          "seed": 43,
+          "delta": 200
+        },
+        {
+          "seed": 44,
+          "delta": 0
+        }
+      ]
+    },
+    "desync100|b45000": {
+      "n": 3,
+      "mean_delta": -2300.0,
+      "wins_a": 2,
+      "ties": 1,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -6700
+        },
+        {
+          "seed": 43,
+          "delta": -200
+        },
+        {
+          "seed": 44,
+          "delta": 0
+        }
+      ]
+    },
+    "desync50|b50": {
+      "n": 3,
+      "mean_delta": -2000.0,
+      "wins_a": 1,
+      "ties": 2,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": 0
+        },
+        {
+          "seed": 43,
+          "delta": 0
+        },
+        {
+          "seed": 44,
+          "delta": -6000
+        }
+      ]
+    },
+    "desync50|b500": {
+      "n": 3,
+      "mean_delta": -3233.3333333333335,
+      "wins_a": 2,
+      "ties": 0,
+      "wins_b": 1,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -5900
+        },
+        {
+          "seed": 43,
+          "delta": -4300
+        },
+        {
+          "seed": 44,
+          "delta": 500
+        }
+      ]
+    },
+    "desync50|b5000": {
+      "n": 3,
+      "mean_delta": -2400.0,
+      "wins_a": 2,
+      "ties": 0,
+      "wins_b": 1,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -3600
+        },
+        {
+          "seed": 43,
+          "delta": -4200
+        },
+        {
+          "seed": 44,
+          "delta": 600
+        }
+      ]
+    },
+    "desync50|b45000": {
+      "n": 3,
+      "mean_delta": -300.0,
+      "wins_a": 2,
+      "ties": 0,
+      "wins_b": 1,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": 5600
+        },
+        {
+          "seed": 43,
+          "delta": -2000
+        },
+        {
+          "seed": 44,
+          "delta": -4500
+        }
+      ]
+    }
+  },
+  "cdpa_mmd_vs_cdan_sca|n_total_at_ge1": {
+    "desync100|b50": {
+      "n": 3,
+      "mean_delta": -5500.0,
+      "wins_a": 2,
+      "ties": 1,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -7300
+        },
+        {
+          "seed": 43,
+          "delta": -9200
+        },
+        {
+          "seed": 44,
+          "delta": 0
+        }
+      ]
+    },
+    "desync100|b500": {
+      "n": 3,
+      "mean_delta": -633.3333333333334,
+      "wins_a": 1,
+      "ties": 1,
+      "wins_b": 1,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -3800
+        },
+        {
+          "seed": 43,
+          "delta": 0
+        },
+        {
+          "seed": 44,
+          "delta": 1900
+        }
+      ]
+    },
+    "desync100|b5000": {
+      "n": 3,
+      "mean_delta": -3133.3333333333335,
+      "wins_a": 1,
+      "ties": 1,
+      "wins_b": 1,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -9600
+        },
+        {
+          "seed": 43,
+          "delta": 200
+        },
+        {
+          "seed": 44,
+          "delta": 0
+        }
+      ]
+    },
+    "desync100|b45000": {
+      "n": 3,
+      "mean_delta": -2300.0,
+      "wins_a": 2,
+      "ties": 1,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -6700
+        },
+        {
+          "seed": 43,
+          "delta": -200
+        },
+        {
+          "seed": 44,
+          "delta": 0
+        }
+      ]
+    },
+    "desync50|b50": {
+      "n": 3,
+      "mean_delta": -2000.0,
+      "wins_a": 1,
+      "ties": 2,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": 0
+        },
+        {
+          "seed": 43,
+          "delta": 0
+        },
+        {
+          "seed": 44,
+          "delta": -6000
+        }
+      ]
+    },
+    "desync50|b500": {
+      "n": 3,
+      "mean_delta": -3233.3333333333335,
+      "wins_a": 2,
+      "ties": 0,
+      "wins_b": 1,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -5900
+        },
+        {
+          "seed": 43,
+          "delta": -4300
+        },
+        {
+          "seed": 44,
+          "delta": 500
+        }
+      ]
+    },
+    "desync50|b5000": {
+      "n": 3,
+      "mean_delta": -2400.0,
+      "wins_a": 2,
+      "ties": 0,
+      "wins_b": 1,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -3600
+        },
+        {
+          "seed": 43,
+          "delta": -4200
+        },
+        {
+          "seed": 44,
+          "delta": 600
+        }
+      ]
+    },
+    "desync50|b45000": {
+      "n": 3,
+      "mean_delta": -300.0,
+      "wins_a": 2,
+      "ties": 0,
+      "wins_b": 1,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": 5600
+        },
+        {
+          "seed": 43,
+          "delta": -2000
+        },
+        {
+          "seed": 44,
+          "delta": -4500
+        }
+      ]
+    }
+  },
+  "cdan_sca_vs_dann|ntge_first": {
+    "desync100|b50": {
+      "n": 3,
+      "mean_delta": 2366.6666666666665,
+      "wins_a": 0,
+      "ties": 2,
+      "wins_b": 1,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": 7100
+        },
+        {
+          "seed": 43,
+          "delta": 0
+        },
+        {
+          "seed": 44,
+          "delta": 0
+        }
+      ]
+    },
+    "desync100|b500": {
+      "n": 3,
+      "mean_delta": -2633.3333333333335,
+      "wins_a": 2,
+      "ties": 1,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -6000
+        },
+        {
+          "seed": 43,
+          "delta": 0
+        },
+        {
+          "seed": 44,
+          "delta": -1900
+        }
+      ]
+    },
+    "desync100|b5000": {
+      "n": 3,
+      "mean_delta": 3433.3333333333335,
+      "wins_a": 0,
+      "ties": 0,
+      "wins_b": 3,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": 500
+        },
+        {
+          "seed": 43,
+          "delta": 300
+        },
+        {
+          "seed": 44,
+          "delta": 9500
+        }
+      ]
+    },
+    "desync100|b45000": {
+      "n": 3,
+      "mean_delta": -2300.0,
+      "wins_a": 1,
+      "ties": 1,
+      "wins_b": 1,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": 2100
+        },
+        {
+          "seed": 43,
+          "delta": -9000
+        },
+        {
+          "seed": 44,
+          "delta": 0
+        }
+      ]
+    },
+    "desync50|b50": {
+      "n": 3,
+      "mean_delta": 0.0,
+      "wins_a": 0,
+      "ties": 3,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": 0
+        },
+        {
+          "seed": 43,
+          "delta": 0
+        },
+        {
+          "seed": 44,
+          "delta": 0
+        }
+      ]
+    },
+    "desync50|b500": {
+      "n": 3,
+      "mean_delta": -1066.6666666666667,
+      "wins_a": 1,
+      "ties": 2,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": 0
+        },
+        {
+          "seed": 43,
+          "delta": 0
+        },
+        {
+          "seed": 44,
+          "delta": -3200
+        }
+      ]
+    },
+    "desync50|b5000": {
+      "n": 3,
+      "mean_delta": -1066.6666666666667,
+      "wins_a": 2,
+      "ties": 1,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -2000
+        },
+        {
+          "seed": 43,
+          "delta": 0
+        },
+        {
+          "seed": 44,
+          "delta": -1200
+        }
+      ]
+    },
+    "desync50|b45000": {
+      "n": 3,
+      "mean_delta": -3166.6666666666665,
+      "wins_a": 2,
+      "ties": 1,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -6700
+        },
+        {
+          "seed": 43,
+          "delta": -2800
+        },
+        {
+          "seed": 44,
+          "delta": 0
+        }
+      ]
+    }
+  },
+  "cdan_sca_vs_dann|n_total_at_ge1": {
+    "desync100|b50": {
+      "n": 3,
+      "mean_delta": 2366.6666666666665,
+      "wins_a": 0,
+      "ties": 2,
+      "wins_b": 1,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": 7100
+        },
+        {
+          "seed": 43,
+          "delta": 0
+        },
+        {
+          "seed": 44,
+          "delta": 0
+        }
+      ]
+    },
+    "desync100|b500": {
+      "n": 3,
+      "mean_delta": -2633.3333333333335,
+      "wins_a": 2,
+      "ties": 1,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -6000
+        },
+        {
+          "seed": 43,
+          "delta": 0
+        },
+        {
+          "seed": 44,
+          "delta": -1900
+        }
+      ]
+    },
+    "desync100|b5000": {
+      "n": 3,
+      "mean_delta": 3433.3333333333335,
+      "wins_a": 0,
+      "ties": 0,
+      "wins_b": 3,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": 500
+        },
+        {
+          "seed": 43,
+          "delta": 300
+        },
+        {
+          "seed": 44,
+          "delta": 9500
+        }
+      ]
+    },
+    "desync100|b45000": {
+      "n": 3,
+      "mean_delta": -2300.0,
+      "wins_a": 1,
+      "ties": 1,
+      "wins_b": 1,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": 2100
+        },
+        {
+          "seed": 43,
+          "delta": -9000
+        },
+        {
+          "seed": 44,
+          "delta": 0
+        }
+      ]
+    },
+    "desync50|b50": {
+      "n": 3,
+      "mean_delta": 0.0,
+      "wins_a": 0,
+      "ties": 3,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": 0
+        },
+        {
+          "seed": 43,
+          "delta": 0
+        },
+        {
+          "seed": 44,
+          "delta": 0
+        }
+      ]
+    },
+    "desync50|b500": {
+      "n": 3,
+      "mean_delta": -1066.6666666666667,
+      "wins_a": 1,
+      "ties": 2,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": 0
+        },
+        {
+          "seed": 43,
+          "delta": 0
+        },
+        {
+          "seed": 44,
+          "delta": -3200
+        }
+      ]
+    },
+    "desync50|b5000": {
+      "n": 3,
+      "mean_delta": -1066.6666666666667,
+      "wins_a": 2,
+      "ties": 1,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -2000
+        },
+        {
+          "seed": 43,
+          "delta": 0
+        },
+        {
+          "seed": 44,
+          "delta": -1200
+        }
+      ]
+    },
+    "desync50|b45000": {
+      "n": 3,
+      "mean_delta": -3166.6666666666665,
+      "wins_a": 2,
+      "ties": 1,
+      "wins_b": 0,
+      "per_seed": [
+        {
+          "seed": 42,
+          "delta": -6700
+        },
+        {
+          "seed": 43,
+          "delta": -2800
+        },
+        {
+          "seed": 44,
+          "delta": 0
+        }
+      ]
+    }
+  },
+  "source_only_vs_cdan_sca|ntge_first": {},
+  "source_only_vs_cdan_sca|n_total_at_ge1": {}
+}

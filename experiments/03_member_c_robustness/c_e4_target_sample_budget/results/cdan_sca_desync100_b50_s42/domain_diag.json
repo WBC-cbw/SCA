@@ -1,0 +1,18 @@
+{
+  "before": {
+    "src_acc": 0.9658,
+    "tgt_acc": 0.278,
+    "balanced_acc": 0.6219,
+    "epoch": 0
+  },
+  "after": {
+    "src_acc": 0.6044,
+    "tgt_acc": 0.6756,
+    "balanced_acc": 0.64,
+    "epoch": 75
+  },
+  "diag_sets": {
+    "source": "fixed Profiling[45000:50000]",
+    "target": "desync Profiling[45000:50000]"
+  }
+}

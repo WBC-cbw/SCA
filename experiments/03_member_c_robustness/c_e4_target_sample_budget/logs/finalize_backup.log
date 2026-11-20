@@ -1,0 +1,629 @@
+
+=== evaluate: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/evaluate_c_e4.py --step 100
+desync50  source_only  b0     s42 NTGE=None   stable=None   GE@10k=32   N_total=None   acc=0.0039
+desync50  cdpa_mmd     b50    s42 NTGE=None   stable=None   GE@10k=2    N_total=None   acc=0.0045
+desync50  dann         b50    s42 NTGE=None   stable=None   GE@10k=7    N_total=None   acc=0.0050
+desync50  cdan_sca     b50    s42 NTGE=None   stable=None   GE@10k=24   N_total=None   acc=0.0053
+desync50  cdpa_mmd     b500   s42 NTGE=4100   stable=7200   GE@10k=0    N_total=4600   acc=0.0037
+desync50  dann         b500   s42 NTGE=None   stable=None   GE@10k=7    N_total=None   acc=0.0046
+desync50  cdan_sca     b500   s42 NTGE=None   stable=None   GE@10k=7    N_total=None   acc=0.0041
+desync50  cdpa_mmd     b5000  s42 NTGE=4400   stable=8100   GE@10k=0    N_total=9400   acc=0.0052
+desync50  dann         b5000  s42 NTGE=None   stable=None   GE@10k=2    N_total=None   acc=0.0063
+desync50  cdan_sca     b5000  s42 NTGE=8000   stable=None   GE@10k=1    N_total=13000  acc=0.0042
+desync50  cdpa_mmd     b45000 s42 NTGE=6400   stable=8000   GE@10k=0    N_total=51400  acc=0.0046
+desync50  dann         b45000 s42 NTGE=7500   stable=7500   GE@10k=0    N_total=52500  acc=0.0050
+desync50  cdan_sca     b45000 s42 NTGE=800    stable=2000   GE@10k=0    N_total=45800  acc=0.0035
+desync50  source_only  b0     s43 NTGE=None   stable=None   GE@10k=10   N_total=None   acc=0.0045
+desync50  cdpa_mmd     b50    s43 NTGE=None   stable=None   GE@10k=4    N_total=None   acc=0.0051
+desync50  dann         b50    s43 NTGE=None   stable=None   GE@10k=26   N_total=None   acc=0.0047
+desync50  cdan_sca     b50    s43 NTGE=None   stable=None   GE@10k=15   N_total=None   acc=0.0054
+desync50  cdpa_mmd     b500   s43 NTGE=5700   stable=None   GE@10k=2    N_total=6200   acc=0.0039
+desync50  dann         b500   s43 NTGE=None   stable=None   GE@10k=3    N_total=None   acc=0.0038
+desync50  cdan_sca     b500   s43 NTGE=None   stable=None   GE@10k=8    N_total=None   acc=0.0055
+desync50  cdpa_mmd     b5000  s43 NTGE=5800   stable=9200   GE@10k=0    N_total=10800  acc=0.0040
+desync50  dann         b5000  s43 NTGE=None   stable=None   GE@10k=18   N_total=None   acc=0.0041
+desync50  cdan_sca     b5000  s43 NTGE=None   stable=None   GE@10k=4    N_total=None   acc=0.0054
+desync50  cdpa_mmd     b45000 s43 NTGE=5200   stable=5500   GE@10k=0    N_total=50200  acc=0.0046
+desync50  dann         b45000 s43 NTGE=None   stable=None   GE@10k=10   N_total=None   acc=0.0055
+desync50  cdan_sca     b45000 s43 NTGE=7200   stable=None   GE@10k=3    N_total=52200  acc=0.0049
+desync50  source_only  b0     s44 NTGE=None   stable=None   GE@10k=26   N_total=None   acc=0.0035
+desync50  cdpa_mmd     b50    s44 NTGE=4000   stable=5200   GE@10k=0    N_total=4050   acc=0.0035
+desync50  dann         b50    s44 NTGE=None   stable=None   GE@10k=20   N_total=None   acc=0.0035
+desync50  cdan_sca     b50    s44 NTGE=None   stable=None   GE@10k=2    N_total=None   acc=0.0056
+desync50  cdpa_mmd     b500   s44 NTGE=4400   stable=4800   GE@10k=0    N_total=4900   acc=0.0037
+desync50  dann         b500   s44 NTGE=7100   stable=None   GE@10k=9    N_total=7600   acc=0.0046
+desync50  cdan_sca     b500   s44 NTGE=3900   stable=None   GE@10k=3    N_total=4400   acc=0.0058
+desync50  cdpa_mmd     b5000  s44 NTGE=5300   stable=5300   GE@10k=0    N_total=10300  acc=0.0035
+desync50  dann         b5000  s44 NTGE=5900   stable=9800   GE@10k=0    N_total=10900  acc=0.0053
+desync50  cdan_sca     b5000  s44 NTGE=4700   stable=9800   GE@10k=0    N_total=9700   acc=0.0045
+desync50  cdpa_mmd     b45000 s44 NTGE=5500   stable=5500   GE@10k=0    N_total=50500  acc=0.0037
+desync50  dann         b45000 s44 NTGE=None   stable=None   GE@10k=2    N_total=None   acc=0.0047
+desync50  cdan_sca     b45000 s44 NTGE=None   stable=None   GE@10k=20   N_total=None   acc=0.0041
+desync100 source_only  b0     s42 NTGE=800    stable=None   GE@10k=15   N_total=800    acc=0.0041
+[skip] cdpa_mmd     b50    s42: no predictions
+[skip] dann         b50    s42: no predictions
+[skip] cdan_sca     b50    s42: no predictions
+[skip] cdpa_mmd     b500   s42: no predictions
+[skip] dann         b500   s42: no predictions
+[skip] cdan_sca     b500   s42: no predictions
+[skip] cdpa_mmd     b5000  s42: no predictions
+[skip] dann         b5000  s42: no predictions
+[skip] cdan_sca     b5000  s42: no predictions
+desync100 cdpa_mmd     b45000 s42 NTGE=300    stable=7700   GE@10k=0    N_total=45300  acc=0.0034
+desync100 dann         b45000 s42 NTGE=4900   stable=None   GE@10k=7    N_total=49900  acc=0.0047
+desync100 cdan_sca     b45000 s42 NTGE=7000   stable=None   GE@10k=6    N_total=52000  acc=0.0048
+desync100 source_only  b0     s43 NTGE=300    stable=None   GE@10k=19   N_total=300    acc=0.0052
+[skip] cdpa_mmd     b50    s43: no predictions
+[skip] dann         b50    s43: no predictions
+[skip] cdan_sca     b50    s43: no predictions
+[skip] cdpa_mmd     b500   s43: no predictions
+[skip] dann         b500   s43: no predictions
+[skip] cdan_sca     b500   s43: no predictions
+[skip] cdpa_mmd     b5000  s43: no predictions
+[skip] dann         b5000  s43: no predictions
+[skip] cdan_sca     b5000  s43: no predictions
+desync100 cdpa_mmd     b45000 s43 NTGE=800    stable=None   GE@10k=9    N_total=45800  acc=0.0043
+desync100 dann         b45000 s43 NTGE=None   stable=None   GE@10k=8    N_total=None   acc=0.0040
+desync100 cdan_sca     b45000 s43 NTGE=1000   stable=None   GE@10k=5    N_total=46000  acc=0.0041
+desync100 source_only  b0     s44 NTGE=None   stable=None   GE@10k=35   N_total=None   acc=0.0047
+[skip] cdpa_mmd     b50    s44: no predictions
+[skip] dann         b50    s44: no predictions
+[skip] cdan_sca     b50    s44: no predictions
+[skip] cdpa_mmd     b500   s44: no predictions
+[skip] dann         b500   s44: no predictions
+[skip] cdan_sca     b500   s44: no predictions
+[skip] cdpa_mmd     b5000  s44: no predictions
+[skip] dann         b5000  s44: no predictions
+[skip] cdan_sca     b5000  s44: no predictions
+desync100 cdpa_mmd     b45000 s44 NTGE=None   stable=None   GE@10k=3    N_total=None   acc=0.0043
+desync100 dann         b45000 s44 NTGE=None   stable=None   GE@10k=18   N_total=None   acc=0.0038
+desync100 cdan_sca     b45000 s44 NTGE=None   stable=None   GE@10k=15   N_total=None   acc=0.0042
+wrote 51 evaluations -> D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\03_member_c_robustness\c_e4_target_sample_budget\results\eval
+=== evaluate rc=0 (13.8s)
+
+=== aggregate: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/aggregate_c_e4.py
+{
+"cells": 17,
+"rows": 51
+}
+== desync100
+  cdpa_mmd [{'budget': 45000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 3700.0, 'n_total_ge1_mean': 48700.0}]
+  dann [{'budget': 45000, 'stable_rate': 0.0, 'ntge_first_mean': 8300.0, 'n_total_ge1_mean': 53300.0}]
+  cdan_sca [{'budget': 45000, 'stable_rate': 0.0, 'ntge_first_mean': 6000.0, 'n_total_ge1_mean': 51000.0}]
+== desync50
+  cdpa_mmd [{'budget': 50, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 8000.0, 'n_total_ge1_mean': 8050.0}, {'budget': 500, 'stable_rate': 0.6666666666666666, 'ntge_first_mean': 4733.333333333333, 'n_total_ge1_mean': 5233.333333333333}, {'budget': 5000, 'stable_rate': 1.0, 'ntge_first_mean': 5166.666666666667, 'n_total_ge1_mean': 10166.666666666666}, {'budget': 45000, 'stable_rate': 1.0, 'ntge_first_mean': 5700.0, 'n_total_ge1_mean': 50700.0}]
+  dann [{'budget': 50, 'stable_rate': 0.0, 'ntge_first_mean': 10000.0, 'n_total_ge1_mean': 10050.0}, {'budget': 500, 'stable_rate': 0.0, 'ntge_first_mean': 9033.333333333334, 'n_total_ge1_mean': 9533.333333333334}, {'budget': 5000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 8633.333333333334, 'n_total_ge1_mean': 13633.333333333334}, {'budget': 45000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 9166.666666666666, 'n_total_ge1_mean': 54166.666666666664}]
+  cdan_sca [{'budget': 50, 'stable_rate': 0.0, 'ntge_first_mean': 10000.0, 'n_total_ge1_mean': 10050.0}, {'budget': 500, 'stable_rate': 0.0, 'ntge_first_mean': 7966.666666666667, 'n_total_ge1_mean': 8466.666666666666}, {'budget': 5000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 7566.666666666667, 'n_total_ge1_mean': 12566.666666666666}, {'budget': 45000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 6000.0, 'n_total_ge1_mean': 51000.0}]
+=== aggregate rc=0 (1.0s)
+
+=== tables: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/make_tables.py
+wrote D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\03_member_c_robustness\c_e4_target_sample_budget\results\tables.md 160 lines
+=== tables rc=0 (0.1s)
+
+=== permutation: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/permutation_c_e4.py
+cdan_sca_desync50_b5000_s42: original 8000  perm 4080¡À3082 [1000, 10000]
+dann_desync50_b500_s44: original 7100  perm 7580¡À3938 [700, 10000]
+cdan_sca_desync50_b500_s44: original 3900  perm 6800¡À3919 [200, 10000]
+dann_desync50_b5000_s44: original 5900  perm 5370¡À3912 [400, 9700]
+cdan_sca_desync50_b5000_s44: original 4700  perm 4350¡À2923 [400, 8300]
+wrote results/permutation.json
+=== permutation rc=0 (1.7s)
+
+=== plot: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/plot_c_e4.py
+figures -> D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\03_member_c_robustness\c_e4_target_sample_budget\figures
+=== plot rc=0 (7.3s)
+
+FINALIZE_DONE
+
+=== evaluate: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/evaluate_c_e4.py --step 100
+desync50  source_only  b0     s42 NTGE=None   stable=None   GE@10k=32   N_total=None   acc=0.0039
+desync50  cdpa_mmd     b50    s42 NTGE=None   stable=None   GE@10k=2    N_total=None   acc=0.0045
+desync50  dann         b50    s42 NTGE=None   stable=None   GE@10k=7    N_total=None   acc=0.0050
+desync50  cdan_sca     b50    s42 NTGE=None   stable=None   GE@10k=24   N_total=None   acc=0.0053
+desync50  cdpa_mmd     b500   s42 NTGE=4100   stable=7200   GE@10k=0    N_total=4600   acc=0.0037
+desync50  dann         b500   s42 NTGE=None   stable=None   GE@10k=7    N_total=None   acc=0.0046
+desync50  cdan_sca     b500   s42 NTGE=None   stable=None   GE@10k=7    N_total=None   acc=0.0041
+desync50  cdpa_mmd     b5000  s42 NTGE=4400   stable=8100   GE@10k=0    N_total=9400   acc=0.0052
+desync50  dann         b5000  s42 NTGE=None   stable=None   GE@10k=2    N_total=None   acc=0.0063
+desync50  cdan_sca     b5000  s42 NTGE=8000   stable=None   GE@10k=1    N_total=13000  acc=0.0042
+desync50  cdpa_mmd     b45000 s42 NTGE=6400   stable=8000   GE@10k=0    N_total=51400  acc=0.0046
+desync50  dann         b45000 s42 NTGE=7500   stable=7500   GE@10k=0    N_total=52500  acc=0.0050
+desync50  cdan_sca     b45000 s42 NTGE=800    stable=2000   GE@10k=0    N_total=45800  acc=0.0035
+desync50  source_only  b0     s43 NTGE=None   stable=None   GE@10k=10   N_total=None   acc=0.0045
+desync50  cdpa_mmd     b50    s43 NTGE=None   stable=None   GE@10k=4    N_total=None   acc=0.0051
+desync50  dann         b50    s43 NTGE=None   stable=None   GE@10k=26   N_total=None   acc=0.0047
+desync50  cdan_sca     b50    s43 NTGE=None   stable=None   GE@10k=15   N_total=None   acc=0.0054
+desync50  cdpa_mmd     b500   s43 NTGE=5700   stable=None   GE@10k=2    N_total=6200   acc=0.0039
+desync50  dann         b500   s43 NTGE=None   stable=None   GE@10k=3    N_total=None   acc=0.0038
+desync50  cdan_sca     b500   s43 NTGE=None   stable=None   GE@10k=8    N_total=None   acc=0.0055
+desync50  cdpa_mmd     b5000  s43 NTGE=5800   stable=9200   GE@10k=0    N_total=10800  acc=0.0040
+desync50  dann         b5000  s43 NTGE=None   stable=None   GE@10k=18   N_total=None   acc=0.0041
+desync50  cdan_sca     b5000  s43 NTGE=None   stable=None   GE@10k=4    N_total=None   acc=0.0054
+desync50  cdpa_mmd     b45000 s43 NTGE=5200   stable=5500   GE@10k=0    N_total=50200  acc=0.0046
+desync50  dann         b45000 s43 NTGE=None   stable=None   GE@10k=10   N_total=None   acc=0.0055
+desync50  cdan_sca     b45000 s43 NTGE=7200   stable=None   GE@10k=3    N_total=52200  acc=0.0049
+desync50  source_only  b0     s44 NTGE=None   stable=None   GE@10k=26   N_total=None   acc=0.0035
+desync50  cdpa_mmd     b50    s44 NTGE=4000   stable=5200   GE@10k=0    N_total=4050   acc=0.0035
+desync50  dann         b50    s44 NTGE=None   stable=None   GE@10k=20   N_total=None   acc=0.0035
+desync50  cdan_sca     b50    s44 NTGE=None   stable=None   GE@10k=2    N_total=None   acc=0.0056
+desync50  cdpa_mmd     b500   s44 NTGE=4400   stable=4800   GE@10k=0    N_total=4900   acc=0.0037
+desync50  dann         b500   s44 NTGE=7100   stable=None   GE@10k=9    N_total=7600   acc=0.0046
+desync50  cdan_sca     b500   s44 NTGE=3900   stable=None   GE@10k=3    N_total=4400   acc=0.0058
+desync50  cdpa_mmd     b5000  s44 NTGE=5300   stable=5300   GE@10k=0    N_total=10300  acc=0.0035
+desync50  dann         b5000  s44 NTGE=5900   stable=9800   GE@10k=0    N_total=10900  acc=0.0053
+desync50  cdan_sca     b5000  s44 NTGE=4700   stable=9800   GE@10k=0    N_total=9700   acc=0.0045
+desync50  cdpa_mmd     b45000 s44 NTGE=5500   stable=5500   GE@10k=0    N_total=50500  acc=0.0037
+desync50  dann         b45000 s44 NTGE=None   stable=None   GE@10k=2    N_total=None   acc=0.0047
+desync50  cdan_sca     b45000 s44 NTGE=None   stable=None   GE@10k=20   N_total=None   acc=0.0041
+desync100 source_only  b0     s42 NTGE=800    stable=None   GE@10k=15   N_total=800    acc=0.0041
+desync100 cdpa_mmd     b50    s42 NTGE=700    stable=None   GE@10k=11   N_total=750    acc=0.0041
+[skip] dann         b50    s42: no predictions
+[skip] cdan_sca     b50    s42: no predictions
+[skip] cdpa_mmd     b500   s42: no predictions
+[skip] dann         b500   s42: no predictions
+[skip] cdan_sca     b500   s42: no predictions
+[skip] cdpa_mmd     b5000  s42: no predictions
+[skip] dann         b5000  s42: no predictions
+[skip] cdan_sca     b5000  s42: no predictions
+desync100 cdpa_mmd     b45000 s42 NTGE=300    stable=7700   GE@10k=0    N_total=45300  acc=0.0034
+desync100 dann         b45000 s42 NTGE=4900   stable=None   GE@10k=7    N_total=49900  acc=0.0047
+desync100 cdan_sca     b45000 s42 NTGE=7000   stable=None   GE@10k=6    N_total=52000  acc=0.0048
+desync100 source_only  b0     s43 NTGE=300    stable=None   GE@10k=19   N_total=300    acc=0.0052
+[skip] cdpa_mmd     b50    s43: no predictions
+[skip] dann         b50    s43: no predictions
+[skip] cdan_sca     b50    s43: no predictions
+[skip] cdpa_mmd     b500   s43: no predictions
+[skip] dann         b500   s43: no predictions
+[skip] cdan_sca     b500   s43: no predictions
+[skip] cdpa_mmd     b5000  s43: no predictions
+[skip] dann         b5000  s43: no predictions
+[skip] cdan_sca     b5000  s43: no predictions
+desync100 cdpa_mmd     b45000 s43 NTGE=800    stable=None   GE@10k=9    N_total=45800  acc=0.0043
+desync100 dann         b45000 s43 NTGE=None   stable=None   GE@10k=8    N_total=None   acc=0.0040
+desync100 cdan_sca     b45000 s43 NTGE=1000   stable=None   GE@10k=5    N_total=46000  acc=0.0041
+desync100 source_only  b0     s44 NTGE=None   stable=None   GE@10k=35   N_total=None   acc=0.0047
+[skip] cdpa_mmd     b50    s44: no predictions
+[skip] dann         b50    s44: no predictions
+[skip] cdan_sca     b50    s44: no predictions
+[skip] cdpa_mmd     b500   s44: no predictions
+[skip] dann         b500   s44: no predictions
+[skip] cdan_sca     b500   s44: no predictions
+[skip] cdpa_mmd     b5000  s44: no predictions
+[skip] dann         b5000  s44: no predictions
+[skip] cdan_sca     b5000  s44: no predictions
+desync100 cdpa_mmd     b45000 s44 NTGE=None   stable=None   GE@10k=3    N_total=None   acc=0.0043
+desync100 dann         b45000 s44 NTGE=None   stable=None   GE@10k=18   N_total=None   acc=0.0038
+desync100 cdan_sca     b45000 s44 NTGE=None   stable=None   GE@10k=15   N_total=None   acc=0.0042
+wrote 52 evaluations -> D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\03_member_c_robustness\c_e4_target_sample_budget\results\eval
+=== evaluate rc=0 (11.3s)
+
+=== aggregate: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/aggregate_c_e4.py
+{
+"cells": 17,
+"rows": 52
+}
+== desync100
+  cdpa_mmd [{'budget': 45000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 3700.0, 'n_total_ge1_mean': 48700.0}]
+  dann [{'budget': 45000, 'stable_rate': 0.0, 'ntge_first_mean': 8300.0, 'n_total_ge1_mean': 53300.0}]
+  cdan_sca [{'budget': 45000, 'stable_rate': 0.0, 'ntge_first_mean': 6000.0, 'n_total_ge1_mean': 51000.0}]
+== desync50
+  cdpa_mmd [{'budget': 50, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 8000.0, 'n_total_ge1_mean': 8050.0}, {'budget': 500, 'stable_rate': 0.6666666666666666, 'ntge_first_mean': 4733.333333333333, 'n_total_ge1_mean': 5233.333333333333}, {'budget': 5000, 'stable_rate': 1.0, 'ntge_first_mean': 5166.666666666667, 'n_total_ge1_mean': 10166.666666666666}, {'budget': 45000, 'stable_rate': 1.0, 'ntge_first_mean': 5700.0, 'n_total_ge1_mean': 50700.0}]
+  dann [{'budget': 50, 'stable_rate': 0.0, 'ntge_first_mean': 10000.0, 'n_total_ge1_mean': 10050.0}, {'budget': 500, 'stable_rate': 0.0, 'ntge_first_mean': 9033.333333333334, 'n_total_ge1_mean': 9533.333333333334}, {'budget': 5000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 8633.333333333334, 'n_total_ge1_mean': 13633.333333333334}, {'budget': 45000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 9166.666666666666, 'n_total_ge1_mean': 54166.666666666664}]
+  cdan_sca [{'budget': 50, 'stable_rate': 0.0, 'ntge_first_mean': 10000.0, 'n_total_ge1_mean': 10050.0}, {'budget': 500, 'stable_rate': 0.0, 'ntge_first_mean': 7966.666666666667, 'n_total_ge1_mean': 8466.666666666666}, {'budget': 5000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 7566.666666666667, 'n_total_ge1_mean': 12566.666666666666}, {'budget': 45000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 6000.0, 'n_total_ge1_mean': 51000.0}]
+=== aggregate rc=0 (7.1s)
+
+=== tables: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/make_tables.py
+wrote D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\03_member_c_robustness\c_e4_target_sample_budget\results\tables.md 162 lines
+=== tables rc=0 (0.1s)
+
+=== permutation: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/permutation_c_e4.py
+cdan_sca_desync50_b5000_s42: original 8000  perm 4080¡À3082 [1000, 10000]
+dann_desync50_b500_s44: original 7100  perm 7580¡À3938 [700, 10000]
+cdan_sca_desync50_b500_s44: original 3900  perm 6800¡À3919 [200, 10000]
+dann_desync50_b5000_s44: original 5900  perm 5370¡À3912 [400, 9700]
+cdan_sca_desync50_b5000_s44: original 4700  perm 4350¡À2923 [400, 8300]
+wrote results/permutation.json
+=== permutation rc=0 (1.9s)
+
+=== plot: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/plot_c_e4.py
+figures -> D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\03_member_c_robustness\c_e4_target_sample_budget\figures
+=== plot rc=0 (10.7s)
+
+FINALIZE_DONE
+
+=== evaluate: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/evaluate_c_e4.py --step 100
+desync50  source_only  b0     s42 NTGE=None   stable=None   GE@10k=32   N_total=None   acc=0.0039
+desync50  cdpa_mmd     b50    s42 NTGE=None   stable=None   GE@10k=2    N_total=None   acc=0.0045
+desync50  dann         b50    s42 NTGE=None   stable=None   GE@10k=7    N_total=None   acc=0.0050
+desync50  cdan_sca     b50    s42 NTGE=None   stable=None   GE@10k=24   N_total=None   acc=0.0053
+desync50  cdpa_mmd     b500   s42 NTGE=4100   stable=7200   GE@10k=0    N_total=4600   acc=0.0037
+desync50  dann         b500   s42 NTGE=None   stable=None   GE@10k=7    N_total=None   acc=0.0046
+desync50  cdan_sca     b500   s42 NTGE=None   stable=None   GE@10k=7    N_total=None   acc=0.0041
+desync50  cdpa_mmd     b5000  s42 NTGE=4400   stable=8100   GE@10k=0    N_total=9400   acc=0.0052
+desync50  dann         b5000  s42 NTGE=None   stable=None   GE@10k=2    N_total=None   acc=0.0063
+desync50  cdan_sca     b5000  s42 NTGE=8000   stable=None   GE@10k=1    N_total=13000  acc=0.0042
+desync50  cdpa_mmd     b45000 s42 NTGE=6400   stable=8000   GE@10k=0    N_total=51400  acc=0.0046
+desync50  dann         b45000 s42 NTGE=7500   stable=7500   GE@10k=0    N_total=52500  acc=0.0050
+desync50  cdan_sca     b45000 s42 NTGE=800    stable=2000   GE@10k=0    N_total=45800  acc=0.0035
+desync50  source_only  b0     s43 NTGE=None   stable=None   GE@10k=10   N_total=None   acc=0.0045
+desync50  cdpa_mmd     b50    s43 NTGE=None   stable=None   GE@10k=4    N_total=None   acc=0.0051
+desync50  dann         b50    s43 NTGE=None   stable=None   GE@10k=26   N_total=None   acc=0.0047
+desync50  cdan_sca     b50    s43 NTGE=None   stable=None   GE@10k=15   N_total=None   acc=0.0054
+desync50  cdpa_mmd     b500   s43 NTGE=5700   stable=None   GE@10k=2    N_total=6200   acc=0.0039
+desync50  dann         b500   s43 NTGE=None   stable=None   GE@10k=3    N_total=None   acc=0.0038
+desync50  cdan_sca     b500   s43 NTGE=None   stable=None   GE@10k=8    N_total=None   acc=0.0055
+desync50  cdpa_mmd     b5000  s43 NTGE=5800   stable=9200   GE@10k=0    N_total=10800  acc=0.0040
+desync50  dann         b5000  s43 NTGE=None   stable=None   GE@10k=18   N_total=None   acc=0.0041
+desync50  cdan_sca     b5000  s43 NTGE=None   stable=None   GE@10k=4    N_total=None   acc=0.0054
+desync50  cdpa_mmd     b45000 s43 NTGE=5200   stable=5500   GE@10k=0    N_total=50200  acc=0.0046
+desync50  dann         b45000 s43 NTGE=None   stable=None   GE@10k=10   N_total=None   acc=0.0055
+desync50  cdan_sca     b45000 s43 NTGE=7200   stable=None   GE@10k=3    N_total=52200  acc=0.0049
+desync50  source_only  b0     s44 NTGE=None   stable=None   GE@10k=26   N_total=None   acc=0.0035
+desync50  cdpa_mmd     b50    s44 NTGE=4000   stable=5200   GE@10k=0    N_total=4050   acc=0.0035
+desync50  dann         b50    s44 NTGE=None   stable=None   GE@10k=20   N_total=None   acc=0.0035
+desync50  cdan_sca     b50    s44 NTGE=None   stable=None   GE@10k=2    N_total=None   acc=0.0056
+desync50  cdpa_mmd     b500   s44 NTGE=4400   stable=4800   GE@10k=0    N_total=4900   acc=0.0037
+desync50  dann         b500   s44 NTGE=7100   stable=None   GE@10k=9    N_total=7600   acc=0.0046
+desync50  cdan_sca     b500   s44 NTGE=3900   stable=None   GE@10k=3    N_total=4400   acc=0.0058
+desync50  cdpa_mmd     b5000  s44 NTGE=5300   stable=5300   GE@10k=0    N_total=10300  acc=0.0035
+desync50  dann         b5000  s44 NTGE=5900   stable=9800   GE@10k=0    N_total=10900  acc=0.0053
+desync50  cdan_sca     b5000  s44 NTGE=4700   stable=9800   GE@10k=0    N_total=9700   acc=0.0045
+desync50  cdpa_mmd     b45000 s44 NTGE=5500   stable=5500   GE@10k=0    N_total=50500  acc=0.0037
+desync50  dann         b45000 s44 NTGE=None   stable=None   GE@10k=2    N_total=None   acc=0.0047
+desync50  cdan_sca     b45000 s44 NTGE=None   stable=None   GE@10k=20   N_total=None   acc=0.0041
+desync100 source_only  b0     s42 NTGE=800    stable=None   GE@10k=15   N_total=800    acc=0.0041
+desync100 cdpa_mmd     b50    s42 NTGE=700    stable=None   GE@10k=11   N_total=750    acc=0.0041
+[skip] dann         b50    s42: no predictions
+[skip] cdan_sca     b50    s42: no predictions
+[skip] cdpa_mmd     b500   s42: no predictions
+[skip] dann         b500   s42: no predictions
+[skip] cdan_sca     b500   s42: no predictions
+[skip] cdpa_mmd     b5000  s42: no predictions
+[skip] dann         b5000  s42: no predictions
+[skip] cdan_sca     b5000  s42: no predictions
+desync100 cdpa_mmd     b45000 s42 NTGE=300    stable=7700   GE@10k=0    N_total=45300  acc=0.0034
+desync100 dann         b45000 s42 NTGE=4900   stable=None   GE@10k=7    N_total=49900  acc=0.0047
+desync100 cdan_sca     b45000 s42 NTGE=7000   stable=None   GE@10k=6    N_total=52000  acc=0.0048
+desync100 source_only  b0     s43 NTGE=300    stable=None   GE@10k=19   N_total=300    acc=0.0052
+[skip] cdpa_mmd     b50    s43: no predictions
+[skip] dann         b50    s43: no predictions
+[skip] cdan_sca     b50    s43: no predictions
+[skip] cdpa_mmd     b500   s43: no predictions
+[skip] dann         b500   s43: no predictions
+[skip] cdan_sca     b500   s43: no predictions
+[skip] cdpa_mmd     b5000  s43: no predictions
+[skip] dann         b5000  s43: no predictions
+[skip] cdan_sca     b5000  s43: no predictions
+desync100 cdpa_mmd     b45000 s43 NTGE=800    stable=None   GE@10k=9    N_total=45800  acc=0.0043
+desync100 dann         b45000 s43 NTGE=None   stable=None   GE@10k=8    N_total=None   acc=0.0040
+desync100 cdan_sca     b45000 s43 NTGE=1000   stable=None   GE@10k=5    N_total=46000  acc=0.0041
+desync100 source_only  b0     s44 NTGE=None   stable=None   GE@10k=35   N_total=None   acc=0.0047
+[skip] cdpa_mmd     b50    s44: no predictions
+[skip] dann         b50    s44: no predictions
+[skip] cdan_sca     b50    s44: no predictions
+[skip] cdpa_mmd     b500   s44: no predictions
+[skip] dann         b500   s44: no predictions
+[skip] cdan_sca     b500   s44: no predictions
+[skip] cdpa_mmd     b5000  s44: no predictions
+[skip] dann         b5000  s44: no predictions
+[skip] cdan_sca     b5000  s44: no predictions
+desync100 cdpa_mmd     b45000 s44 NTGE=None   stable=None   GE@10k=3    N_total=None   acc=0.0043
+desync100 dann         b45000 s44 NTGE=None   stable=None   GE@10k=18   N_total=None   acc=0.0038
+desync100 cdan_sca     b45000 s44 NTGE=None   stable=None   GE@10k=15   N_total=None   acc=0.0042
+wrote 52 evaluations -> D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\03_member_c_robustness\c_e4_target_sample_budget\results\eval
+=== evaluate rc=0 (23.3s)
+
+=== aggregate: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/aggregate_c_e4.py
+{
+"cells": 17,
+"rows": 52
+}
+== desync100
+  cdpa_mmd [{'budget': 45000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 3700.0, 'n_total_ge1_mean': 48700.0}]
+  dann [{'budget': 45000, 'stable_rate': 0.0, 'ntge_first_mean': 8300.0, 'n_total_ge1_mean': 53300.0}]
+  cdan_sca [{'budget': 45000, 'stable_rate': 0.0, 'ntge_first_mean': 6000.0, 'n_total_ge1_mean': 51000.0}]
+== desync50
+  cdpa_mmd [{'budget': 50, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 8000.0, 'n_total_ge1_mean': 8050.0}, {'budget': 500, 'stable_rate': 0.6666666666666666, 'ntge_first_mean': 4733.333333333333, 'n_total_ge1_mean': 5233.333333333333}, {'budget': 5000, 'stable_rate': 1.0, 'ntge_first_mean': 5166.666666666667, 'n_total_ge1_mean': 10166.666666666666}, {'budget': 45000, 'stable_rate': 1.0, 'ntge_first_mean': 5700.0, 'n_total_ge1_mean': 50700.0}]
+  dann [{'budget': 50, 'stable_rate': 0.0, 'ntge_first_mean': 10000.0, 'n_total_ge1_mean': 10050.0}, {'budget': 500, 'stable_rate': 0.0, 'ntge_first_mean': 9033.333333333334, 'n_total_ge1_mean': 9533.333333333334}, {'budget': 5000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 8633.333333333334, 'n_total_ge1_mean': 13633.333333333334}, {'budget': 45000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 9166.666666666666, 'n_total_ge1_mean': 54166.666666666664}]
+  cdan_sca [{'budget': 50, 'stable_rate': 0.0, 'ntge_first_mean': 10000.0, 'n_total_ge1_mean': 10050.0}, {'budget': 500, 'stable_rate': 0.0, 'ntge_first_mean': 7966.666666666667, 'n_total_ge1_mean': 8466.666666666666}, {'budget': 5000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 7566.666666666667, 'n_total_ge1_mean': 12566.666666666666}, {'budget': 45000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 6000.0, 'n_total_ge1_mean': 51000.0}]
+=== aggregate rc=0 (5.3s)
+
+=== tables: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/make_tables.py
+wrote D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\03_member_c_robustness\c_e4_target_sample_budget\results\tables.md 162 lines
+=== tables rc=0 (0.2s)
+
+=== permutation: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/permutation_c_e4.py
+cdan_sca_desync50_b5000_s42: original 8000  perm 4080¡À3082 [1000, 10000]
+dann_desync50_b500_s44: original 7100  perm 7580¡À3938 [700, 10000]
+cdan_sca_desync50_b500_s44: original 3900  perm 6800¡À3919 [200, 10000]
+dann_desync50_b5000_s44: original 5900  perm 5370¡À3912 [400, 9700]
+cdan_sca_desync50_b5000_s44: original 4700  perm 4350¡À2923 [400, 8300]
+wrote results/permutation.json
+=== permutation rc=0 (1.8s)
+
+=== plot: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/plot_c_e4.py
+figures -> D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\03_member_c_robustness\c_e4_target_sample_budget\figures
+=== plot rc=0 (9.3s)
+
+FINALIZE_DONE
+
+=== evaluate: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/evaluate_c_e4.py --step 100
+desync50  source_only  b0     s42 NTGE=None   stable=None   GE@10k=32   N_total=None   acc=0.0039
+desync50  cdpa_mmd     b50    s42 NTGE=None   stable=None   GE@10k=2    N_total=None   acc=0.0045
+desync50  dann         b50    s42 NTGE=None   stable=None   GE@10k=7    N_total=None   acc=0.0050
+desync50  cdan_sca     b50    s42 NTGE=None   stable=None   GE@10k=24   N_total=None   acc=0.0053
+desync50  cdpa_mmd     b500   s42 NTGE=4100   stable=7200   GE@10k=0    N_total=4600   acc=0.0037
+desync50  dann         b500   s42 NTGE=None   stable=None   GE@10k=7    N_total=None   acc=0.0046
+desync50  cdan_sca     b500   s42 NTGE=None   stable=None   GE@10k=7    N_total=None   acc=0.0041
+desync50  cdpa_mmd     b5000  s42 NTGE=4400   stable=8100   GE@10k=0    N_total=9400   acc=0.0052
+desync50  dann         b5000  s42 NTGE=None   stable=None   GE@10k=2    N_total=None   acc=0.0063
+desync50  cdan_sca     b5000  s42 NTGE=8000   stable=None   GE@10k=1    N_total=13000  acc=0.0042
+desync50  cdpa_mmd     b45000 s42 NTGE=6400   stable=8000   GE@10k=0    N_total=51400  acc=0.0046
+desync50  dann         b45000 s42 NTGE=7500   stable=7500   GE@10k=0    N_total=52500  acc=0.0050
+desync50  cdan_sca     b45000 s42 NTGE=800    stable=2000   GE@10k=0    N_total=45800  acc=0.0035
+desync50  source_only  b0     s43 NTGE=None   stable=None   GE@10k=10   N_total=None   acc=0.0045
+desync50  cdpa_mmd     b50    s43 NTGE=None   stable=None   GE@10k=4    N_total=None   acc=0.0051
+desync50  dann         b50    s43 NTGE=None   stable=None   GE@10k=26   N_total=None   acc=0.0047
+desync50  cdan_sca     b50    s43 NTGE=None   stable=None   GE@10k=15   N_total=None   acc=0.0054
+desync50  cdpa_mmd     b500   s43 NTGE=5700   stable=None   GE@10k=2    N_total=6200   acc=0.0039
+desync50  dann         b500   s43 NTGE=None   stable=None   GE@10k=3    N_total=None   acc=0.0038
+desync50  cdan_sca     b500   s43 NTGE=None   stable=None   GE@10k=8    N_total=None   acc=0.0055
+desync50  cdpa_mmd     b5000  s43 NTGE=5800   stable=9200   GE@10k=0    N_total=10800  acc=0.0040
+desync50  dann         b5000  s43 NTGE=None   stable=None   GE@10k=18   N_total=None   acc=0.0041
+desync50  cdan_sca     b5000  s43 NTGE=None   stable=None   GE@10k=4    N_total=None   acc=0.0054
+desync50  cdpa_mmd     b45000 s43 NTGE=5200   stable=5500   GE@10k=0    N_total=50200  acc=0.0046
+desync50  dann         b45000 s43 NTGE=None   stable=None   GE@10k=10   N_total=None   acc=0.0055
+desync50  cdan_sca     b45000 s43 NTGE=7200   stable=None   GE@10k=3    N_total=52200  acc=0.0049
+desync50  source_only  b0     s44 NTGE=None   stable=None   GE@10k=26   N_total=None   acc=0.0035
+desync50  cdpa_mmd     b50    s44 NTGE=4000   stable=5200   GE@10k=0    N_total=4050   acc=0.0035
+desync50  dann         b50    s44 NTGE=None   stable=None   GE@10k=20   N_total=None   acc=0.0035
+desync50  cdan_sca     b50    s44 NTGE=None   stable=None   GE@10k=2    N_total=None   acc=0.0056
+desync50  cdpa_mmd     b500   s44 NTGE=4400   stable=4800   GE@10k=0    N_total=4900   acc=0.0037
+desync50  dann         b500   s44 NTGE=7100   stable=None   GE@10k=9    N_total=7600   acc=0.0046
+desync50  cdan_sca     b500   s44 NTGE=3900   stable=None   GE@10k=3    N_total=4400   acc=0.0058
+desync50  cdpa_mmd     b5000  s44 NTGE=5300   stable=5300   GE@10k=0    N_total=10300  acc=0.0035
+desync50  dann         b5000  s44 NTGE=5900   stable=9800   GE@10k=0    N_total=10900  acc=0.0053
+desync50  cdan_sca     b5000  s44 NTGE=4700   stable=9800   GE@10k=0    N_total=9700   acc=0.0045
+desync50  cdpa_mmd     b45000 s44 NTGE=5500   stable=5500   GE@10k=0    N_total=50500  acc=0.0037
+desync50  dann         b45000 s44 NTGE=None   stable=None   GE@10k=2    N_total=None   acc=0.0047
+desync50  cdan_sca     b45000 s44 NTGE=None   stable=None   GE@10k=20   N_total=None   acc=0.0041
+desync100 source_only  b0     s42 NTGE=800    stable=None   GE@10k=15   N_total=800    acc=0.0041
+desync100 cdpa_mmd     b50    s42 NTGE=700    stable=None   GE@10k=11   N_total=750    acc=0.0041
+desync100 dann         b50    s42 NTGE=900    stable=None   GE@10k=3    N_total=950    acc=0.0044
+desync100 cdan_sca     b50    s42 NTGE=8000   stable=8000   GE@10k=0    N_total=8050   acc=0.0059
+desync100 cdpa_mmd     b500   s42 NTGE=200    stable=None   GE@10k=2    N_total=700    acc=0.0040
+desync100 dann         b500   s42 NTGE=None   stable=None   GE@10k=12   N_total=None   acc=0.0040
+desync100 cdan_sca     b500   s42 NTGE=4000   stable=None   GE@10k=1    N_total=4500   acc=0.0044
+[skip] cdpa_mmd     b5000  s42: no predictions
+[skip] dann         b5000  s42: no predictions
+[skip] cdan_sca     b5000  s42: no predictions
+desync100 cdpa_mmd     b45000 s42 NTGE=300    stable=7700   GE@10k=0    N_total=45300  acc=0.0034
+desync100 dann         b45000 s42 NTGE=4900   stable=None   GE@10k=7    N_total=49900  acc=0.0047
+desync100 cdan_sca     b45000 s42 NTGE=7000   stable=None   GE@10k=6    N_total=52000  acc=0.0048
+desync100 source_only  b0     s43 NTGE=300    stable=None   GE@10k=19   N_total=300    acc=0.0052
+desync100 cdpa_mmd     b50    s43 NTGE=800    stable=None   GE@10k=1    N_total=850    acc=0.0049
+desync100 dann         b50    s43 NTGE=None   stable=None   GE@10k=9    N_total=None   acc=0.0050
+desync100 cdan_sca     b50    s43 NTGE=None   stable=None   GE@10k=21   N_total=None   acc=0.0037
+desync100 cdpa_mmd     b500   s43 NTGE=None   stable=None   GE@10k=36   N_total=None   acc=0.0034
+desync100 dann         b500   s43 NTGE=None   stable=None   GE@10k=22   N_total=None   acc=0.0041
+desync100 cdan_sca     b500   s43 NTGE=None   stable=None   GE@10k=12   N_total=None   acc=0.0040
+[skip] cdpa_mmd     b5000  s43: no predictions
+[skip] dann         b5000  s43: no predictions
+[skip] cdan_sca     b5000  s43: no predictions
+desync100 cdpa_mmd     b45000 s43 NTGE=800    stable=None   GE@10k=9    N_total=45800  acc=0.0043
+desync100 dann         b45000 s43 NTGE=None   stable=None   GE@10k=8    N_total=None   acc=0.0040
+desync100 cdan_sca     b45000 s43 NTGE=1000   stable=None   GE@10k=5    N_total=46000  acc=0.0041
+desync100 source_only  b0     s44 NTGE=None   stable=None   GE@10k=35   N_total=None   acc=0.0047
+desync100 cdpa_mmd     b50    s44 NTGE=None   stable=None   GE@10k=19   N_total=None   acc=0.0039
+desync100 dann         b50    s44 NTGE=None   stable=None   GE@10k=37   N_total=None   acc=0.0040
+desync100 cdan_sca     b50    s44 NTGE=None   stable=None   GE@10k=9    N_total=None   acc=0.0034
+[skip] cdpa_mmd     b500   s44: no predictions
+[skip] dann         b500   s44: no predictions
+[skip] cdan_sca     b500   s44: no predictions
+[skip] cdpa_mmd     b5000  s44: no predictions
+[skip] dann         b5000  s44: no predictions
+[skip] cdan_sca     b5000  s44: no predictions
+desync100 cdpa_mmd     b45000 s44 NTGE=None   stable=None   GE@10k=3    N_total=None   acc=0.0043
+desync100 dann         b45000 s44 NTGE=None   stable=None   GE@10k=18   N_total=None   acc=0.0038
+desync100 cdan_sca     b45000 s44 NTGE=None   stable=None   GE@10k=15   N_total=None   acc=0.0042
+wrote 66 evaluations -> D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\03_member_c_robustness\c_e4_target_sample_budget\results\eval
+=== evaluate rc=0 (22.2s)
+
+=== aggregate: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/aggregate_c_e4.py
+{
+"cells": 20,
+"rows": 66
+}
+== desync100
+  cdpa_mmd [{'budget': 50, 'stable_rate': 0.0, 'ntge_first_mean': 3833.3333333333335, 'n_total_ge1_mean': 3883.3333333333335}, {'budget': 45000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 3700.0, 'n_total_ge1_mean': 48700.0}]
+  dann [{'budget': 50, 'stable_rate': 0.0, 'ntge_first_mean': 6966.666666666667, 'n_total_ge1_mean': 7016.666666666667}, {'budget': 45000, 'stable_rate': 0.0, 'ntge_first_mean': 8300.0, 'n_total_ge1_mean': 53300.0}]
+  cdan_sca [{'budget': 50, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 9333.333333333334, 'n_total_ge1_mean': 9383.333333333334}, {'budget': 45000, 'stable_rate': 0.0, 'ntge_first_mean': 6000.0, 'n_total_ge1_mean': 51000.0}]
+== desync50
+  cdpa_mmd [{'budget': 50, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 8000.0, 'n_total_ge1_mean': 8050.0}, {'budget': 500, 'stable_rate': 0.6666666666666666, 'ntge_first_mean': 4733.333333333333, 'n_total_ge1_mean': 5233.333333333333}, {'budget': 5000, 'stable_rate': 1.0, 'ntge_first_mean': 5166.666666666667, 'n_total_ge1_mean': 10166.666666666666}, {'budget': 45000, 'stable_rate': 1.0, 'ntge_first_mean': 5700.0, 'n_total_ge1_mean': 50700.0}]
+  dann [{'budget': 50, 'stable_rate': 0.0, 'ntge_first_mean': 10000.0, 'n_total_ge1_mean': 10050.0}, {'budget': 500, 'stable_rate': 0.0, 'ntge_first_mean': 9033.333333333334, 'n_total_ge1_mean': 9533.333333333334}, {'budget': 5000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 8633.333333333334, 'n_total_ge1_mean': 13633.333333333334}, {'budget': 45000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 9166.666666666666, 'n_total_ge1_mean': 54166.666666666664}]
+  cdan_sca [{'budget': 50, 'stable_rate': 0.0, 'ntge_first_mean': 10000.0, 'n_total_ge1_mean': 10050.0}, {'budget': 500, 'stable_rate': 0.0, 'ntge_first_mean': 7966.666666666667, 'n_total_ge1_mean': 8466.666666666666}, {'budget': 5000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 7566.666666666667, 'n_total_ge1_mean': 12566.666666666666}, {'budget': 45000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 6000.0, 'n_total_ge1_mean': 51000.0}]
+=== aggregate rc=0 (8.5s)
+
+=== tables: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/make_tables.py
+wrote D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\03_member_c_robustness\c_e4_target_sample_budget\results\tables.md 187 lines
+=== tables rc=0 (0.1s)
+
+=== permutation: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/permutation_c_e4.py
+cdpa_mmd_desync50_b500_s42: original 4100  perm 3530¡À2078 [900, 7400]
+cdpa_mmd_desync50_b5000_s42: original 4400  perm 3900¡À3205 [500, 9400]
+cdan_sca_desync50_b5000_s42: original 8000  perm 4080¡À3082 [1000, 10000]
+cdpa_mmd_desync50_b500_s43: original 5700  perm 4300¡À3315 [1100, 10000]
+cdpa_mmd_desync50_b5000_s43: original 5800  perm 2680¡À2379 [100, 7700]
+cdpa_mmd_desync50_b50_s44: original 4000  perm 3560¡À2375 [200, 6600]
+cdpa_mmd_desync50_b500_s44: original 4400  perm 2570¡À1562 [300, 5200]
+dann_desync50_b500_s44: original 7100  perm 7580¡À3938 [700, 10000]
+cdan_sca_desync50_b500_s44: original 3900  perm 6800¡À3919 [200, 10000]
+cdpa_mmd_desync50_b5000_s44: original 5300  perm 1970¡À2049 [300, 5700]
+dann_desync50_b5000_s44: original 5900  perm 5370¡À3912 [400, 9700]
+cdan_sca_desync50_b5000_s44: original 4700  perm 4350¡À2923 [400, 8300]
+cdpa_mmd_desync100_b50_s42: original 700  perm 10000¡À0 [10000, 10000]
+dann_desync100_b50_s42: original 900  perm 8150¡À3912 [100, 10000]
+cdan_sca_desync100_b50_s42: original 8000  perm 7370¡À2776 [1500, 9900]
+cdpa_mmd_desync100_b500_s42: original 200  perm 7340¡À3506 [900, 10000]
+cdan_sca_desync100_b500_s42: original 4000  perm 5790¡À3745 [100, 10000]
+cdpa_mmd_desync100_b50_s43: original 800  perm 6320¡À3435 [1300, 10000]
+wrote results/permutation.json
+=== permutation rc=0 (7.4s)
+
+=== plot: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/plot_c_e4.py
+figures -> D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\03_member_c_robustness\c_e4_target_sample_budget\figures
+=== plot rc=0 (11.1s)
+
+=== manifest: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/make_manifest.py
+wrote D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\03_member_c_robustness\c_e4_target_sample_budget\manifests\manifest.json : 526 files / 490.4 MB, 43 models / 23.88 GB, 46 reuse models
+=== manifest rc=0 (104.3s)
+
+=== report: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/make_report.py
+wrote reports/c_e4_report.md (12430 chars, 199 lines)
+=== report rc=0 (0.1s)
+
+FINALIZE_DONE
+
+=== evaluate: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/evaluate_c_e4.py --step 100
+desync50  source_only  b0     s42 NTGE=None   stable=None   GE@10k=32   N_total=None   acc=0.0039
+desync50  cdpa_mmd     b50    s42 NTGE=None   stable=None   GE@10k=2    N_total=None   acc=0.0045
+desync50  dann         b50    s42 NTGE=None   stable=None   GE@10k=7    N_total=None   acc=0.0050
+desync50  cdan_sca     b50    s42 NTGE=None   stable=None   GE@10k=24   N_total=None   acc=0.0053
+desync50  cdpa_mmd     b500   s42 NTGE=4100   stable=7200   GE@10k=0    N_total=4600   acc=0.0037
+desync50  dann         b500   s42 NTGE=None   stable=None   GE@10k=7    N_total=None   acc=0.0046
+desync50  cdan_sca     b500   s42 NTGE=None   stable=None   GE@10k=7    N_total=None   acc=0.0041
+desync50  cdpa_mmd     b5000  s42 NTGE=4400   stable=8100   GE@10k=0    N_total=9400   acc=0.0052
+desync50  dann         b5000  s42 NTGE=None   stable=None   GE@10k=2    N_total=None   acc=0.0063
+desync50  cdan_sca     b5000  s42 NTGE=8000   stable=None   GE@10k=1    N_total=13000  acc=0.0042
+desync50  cdpa_mmd     b45000 s42 NTGE=6400   stable=8000   GE@10k=0    N_total=51400  acc=0.0046
+desync50  dann         b45000 s42 NTGE=7500   stable=7500   GE@10k=0    N_total=52500  acc=0.0050
+desync50  cdan_sca     b45000 s42 NTGE=800    stable=2000   GE@10k=0    N_total=45800  acc=0.0035
+desync50  source_only  b0     s43 NTGE=None   stable=None   GE@10k=10   N_total=None   acc=0.0045
+desync50  cdpa_mmd     b50    s43 NTGE=None   stable=None   GE@10k=4    N_total=None   acc=0.0051
+desync50  dann         b50    s43 NTGE=None   stable=None   GE@10k=26   N_total=None   acc=0.0047
+desync50  cdan_sca     b50    s43 NTGE=None   stable=None   GE@10k=15   N_total=None   acc=0.0054
+desync50  cdpa_mmd     b500   s43 NTGE=5700   stable=None   GE@10k=2    N_total=6200   acc=0.0039
+desync50  dann         b500   s43 NTGE=None   stable=None   GE@10k=3    N_total=None   acc=0.0038
+desync50  cdan_sca     b500   s43 NTGE=None   stable=None   GE@10k=8    N_total=None   acc=0.0055
+desync50  cdpa_mmd     b5000  s43 NTGE=5800   stable=9200   GE@10k=0    N_total=10800  acc=0.0040
+desync50  dann         b5000  s43 NTGE=None   stable=None   GE@10k=18   N_total=None   acc=0.0041
+desync50  cdan_sca     b5000  s43 NTGE=None   stable=None   GE@10k=4    N_total=None   acc=0.0054
+desync50  cdpa_mmd     b45000 s43 NTGE=5200   stable=5500   GE@10k=0    N_total=50200  acc=0.0046
+desync50  dann         b45000 s43 NTGE=None   stable=None   GE@10k=10   N_total=None   acc=0.0055
+desync50  cdan_sca     b45000 s43 NTGE=7200   stable=None   GE@10k=3    N_total=52200  acc=0.0049
+desync50  source_only  b0     s44 NTGE=None   stable=None   GE@10k=26   N_total=None   acc=0.0035
+desync50  cdpa_mmd     b50    s44 NTGE=4000   stable=5200   GE@10k=0    N_total=4050   acc=0.0035
+desync50  dann         b50    s44 NTGE=None   stable=None   GE@10k=20   N_total=None   acc=0.0035
+desync50  cdan_sca     b50    s44 NTGE=None   stable=None   GE@10k=2    N_total=None   acc=0.0056
+desync50  cdpa_mmd     b500   s44 NTGE=4400   stable=4800   GE@10k=0    N_total=4900   acc=0.0037
+desync50  dann         b500   s44 NTGE=7100   stable=None   GE@10k=9    N_total=7600   acc=0.0046
+desync50  cdan_sca     b500   s44 NTGE=3900   stable=None   GE@10k=3    N_total=4400   acc=0.0058
+desync50  cdpa_mmd     b5000  s44 NTGE=5300   stable=5300   GE@10k=0    N_total=10300  acc=0.0035
+desync50  dann         b5000  s44 NTGE=5900   stable=9800   GE@10k=0    N_total=10900  acc=0.0053
+desync50  cdan_sca     b5000  s44 NTGE=4700   stable=9800   GE@10k=0    N_total=9700   acc=0.0045
+desync50  cdpa_mmd     b45000 s44 NTGE=5500   stable=5500   GE@10k=0    N_total=50500  acc=0.0037
+desync50  dann         b45000 s44 NTGE=None   stable=None   GE@10k=2    N_total=None   acc=0.0047
+desync50  cdan_sca     b45000 s44 NTGE=None   stable=None   GE@10k=20   N_total=None   acc=0.0041
+desync100 source_only  b0     s42 NTGE=800    stable=None   GE@10k=15   N_total=800    acc=0.0041
+desync100 cdpa_mmd     b50    s42 NTGE=700    stable=None   GE@10k=11   N_total=750    acc=0.0041
+desync100 dann         b50    s42 NTGE=900    stable=None   GE@10k=3    N_total=950    acc=0.0044
+desync100 cdan_sca     b50    s42 NTGE=8000   stable=8000   GE@10k=0    N_total=8050   acc=0.0059
+desync100 cdpa_mmd     b500   s42 NTGE=200    stable=None   GE@10k=2    N_total=700    acc=0.0040
+desync100 dann         b500   s42 NTGE=None   stable=None   GE@10k=12   N_total=None   acc=0.0040
+desync100 cdan_sca     b500   s42 NTGE=4000   stable=None   GE@10k=1    N_total=4500   acc=0.0044
+desync100 cdpa_mmd     b5000  s42 NTGE=400    stable=7700   GE@10k=0    N_total=5400   acc=0.0039
+desync100 dann         b5000  s42 NTGE=9500   stable=9800   GE@10k=0    N_total=14500  acc=0.0044
+desync100 cdan_sca     b5000  s42 NTGE=None   stable=None   GE@10k=18   N_total=None   acc=0.0050
+desync100 cdpa_mmd     b45000 s42 NTGE=300    stable=7700   GE@10k=0    N_total=45300  acc=0.0034
+desync100 dann         b45000 s42 NTGE=4900   stable=None   GE@10k=7    N_total=49900  acc=0.0047
+desync100 cdan_sca     b45000 s42 NTGE=7000   stable=None   GE@10k=6    N_total=52000  acc=0.0048
+desync100 source_only  b0     s43 NTGE=300    stable=None   GE@10k=19   N_total=300    acc=0.0052
+desync100 cdpa_mmd     b50    s43 NTGE=800    stable=None   GE@10k=1    N_total=850    acc=0.0049
+desync100 dann         b50    s43 NTGE=None   stable=None   GE@10k=9    N_total=None   acc=0.0050
+desync100 cdan_sca     b50    s43 NTGE=None   stable=None   GE@10k=21   N_total=None   acc=0.0037
+desync100 cdpa_mmd     b500   s43 NTGE=None   stable=None   GE@10k=36   N_total=None   acc=0.0034
+desync100 dann         b500   s43 NTGE=None   stable=None   GE@10k=22   N_total=None   acc=0.0041
+desync100 cdan_sca     b500   s43 NTGE=None   stable=None   GE@10k=12   N_total=None   acc=0.0040
+desync100 cdpa_mmd     b5000  s43 NTGE=800    stable=None   GE@10k=9    N_total=5800   acc=0.0045
+desync100 dann         b5000  s43 NTGE=300    stable=None   GE@10k=8    N_total=5300   acc=0.0036
+desync100 cdan_sca     b5000  s43 NTGE=600    stable=None   GE@10k=8    N_total=5600   acc=0.0038
+desync100 cdpa_mmd     b45000 s43 NTGE=800    stable=None   GE@10k=9    N_total=45800  acc=0.0043
+desync100 dann         b45000 s43 NTGE=None   stable=None   GE@10k=8    N_total=None   acc=0.0040
+desync100 cdan_sca     b45000 s43 NTGE=1000   stable=None   GE@10k=5    N_total=46000  acc=0.0041
+desync100 source_only  b0     s44 NTGE=None   stable=None   GE@10k=35   N_total=None   acc=0.0047
+desync100 cdpa_mmd     b50    s44 NTGE=None   stable=None   GE@10k=19   N_total=None   acc=0.0039
+desync100 dann         b50    s44 NTGE=None   stable=None   GE@10k=37   N_total=None   acc=0.0040
+desync100 cdan_sca     b50    s44 NTGE=None   stable=None   GE@10k=9    N_total=None   acc=0.0034
+desync100 cdpa_mmd     b500   s44 NTGE=None   stable=None   GE@10k=6    N_total=None   acc=0.0037
+desync100 dann         b500   s44 NTGE=None   stable=None   GE@10k=37   N_total=None   acc=0.0044
+desync100 cdan_sca     b500   s44 NTGE=8100   stable=None   GE@10k=3    N_total=8600   acc=0.0038
+desync100 cdpa_mmd     b5000  s44 NTGE=None   stable=None   GE@10k=7    N_total=None   acc=0.0045
+desync100 dann         b5000  s44 NTGE=500    stable=None   GE@10k=14   N_total=5500   acc=0.0032
+desync100 cdan_sca     b5000  s44 NTGE=None   stable=None   GE@10k=13   N_total=None   acc=0.0047
+desync100 cdpa_mmd     b45000 s44 NTGE=None   stable=None   GE@10k=3    N_total=None   acc=0.0043
+desync100 dann         b45000 s44 NTGE=None   stable=None   GE@10k=18   N_total=None   acc=0.0038
+desync100 cdan_sca     b45000 s44 NTGE=None   stable=None   GE@10k=15   N_total=None   acc=0.0042
+wrote 78 evaluations -> D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\03_member_c_robustness\c_e4_target_sample_budget\results\eval
+=== evaluate rc=0 (9.0s)
+
+=== aggregate: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/aggregate_c_e4.py
+{
+"cells": 26,
+"rows": 78
+}
+== desync100
+  cdpa_mmd [{'budget': 50, 'stable_rate': 0.0, 'ntge_first_mean': 3833.3333333333335, 'n_total_ge1_mean': 3883.3333333333335}, {'budget': 500, 'stable_rate': 0.0, 'ntge_first_mean': 6733.333333333333, 'n_total_ge1_mean': 7233.333333333333}, {'budget': 5000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 3733.3333333333335, 'n_total_ge1_mean': 8733.333333333334}, {'budget': 45000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 3700.0, 'n_total_ge1_mean': 48700.0}]
+  dann [{'budget': 50, 'stable_rate': 0.0, 'ntge_first_mean': 6966.666666666667, 'n_total_ge1_mean': 7016.666666666667}, {'budget': 500, 'stable_rate': 0.0, 'ntge_first_mean': 10000.0, 'n_total_ge1_mean': 10500.0}, {'budget': 5000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 3433.3333333333335, 'n_total_ge1_mean': 8433.333333333334}, {'budget': 45000, 'stable_rate': 0.0, 'ntge_first_mean': 8300.0, 'n_total_ge1_mean': 53300.0}]
+  cdan_sca [{'budget': 50, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 9333.333333333334, 'n_total_ge1_mean': 9383.333333333334}, {'budget': 500, 'stable_rate': 0.0, 'ntge_first_mean': 7366.666666666667, 'n_total_ge1_mean': 7866.666666666667}, {'budget': 5000, 'stable_rate': 0.0, 'ntge_first_mean': 6866.666666666667, 'n_total_ge1_mean': 11866.666666666666}, {'budget': 45000, 'stable_rate': 0.0, 'ntge_first_mean': 6000.0, 'n_total_ge1_mean': 51000.0}]
+== desync50
+  cdpa_mmd [{'budget': 50, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 8000.0, 'n_total_ge1_mean': 8050.0}, {'budget': 500, 'stable_rate': 0.6666666666666666, 'ntge_first_mean': 4733.333333333333, 'n_total_ge1_mean': 5233.333333333333}, {'budget': 5000, 'stable_rate': 1.0, 'ntge_first_mean': 5166.666666666667, 'n_total_ge1_mean': 10166.666666666666}, {'budget': 45000, 'stable_rate': 1.0, 'ntge_first_mean': 5700.0, 'n_total_ge1_mean': 50700.0}]
+  dann [{'budget': 50, 'stable_rate': 0.0, 'ntge_first_mean': 10000.0, 'n_total_ge1_mean': 10050.0}, {'budget': 500, 'stable_rate': 0.0, 'ntge_first_mean': 9033.333333333334, 'n_total_ge1_mean': 9533.333333333334}, {'budget': 5000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 8633.333333333334, 'n_total_ge1_mean': 13633.333333333334}, {'budget': 45000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 9166.666666666666, 'n_total_ge1_mean': 54166.666666666664}]
+  cdan_sca [{'budget': 50, 'stable_rate': 0.0, 'ntge_first_mean': 10000.0, 'n_total_ge1_mean': 10050.0}, {'budget': 500, 'stable_rate': 0.0, 'ntge_first_mean': 7966.666666666667, 'n_total_ge1_mean': 8466.666666666666}, {'budget': 5000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 7566.666666666667, 'n_total_ge1_mean': 12566.666666666666}, {'budget': 45000, 'stable_rate': 0.3333333333333333, 'ntge_first_mean': 6000.0, 'n_total_ge1_mean': 51000.0}]
+=== aggregate rc=0 (3.9s)
+
+=== tables: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/make_tables.py
+wrote D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\03_member_c_robustness\c_e4_target_sample_budget\results\tables.md 214 lines
+=== tables rc=0 (0.1s)
+
+=== permutation: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/permutation_c_e4.py
+cdpa_mmd_desync50_b500_s42: original 4100  perm 3530¡À2078 [900, 7400]
+cdpa_mmd_desync50_b5000_s42: original 4400  perm 3900¡À3205 [500, 9400]
+cdan_sca_desync50_b5000_s42: original 8000  perm 4080¡À3082 [1000, 10000]
+cdpa_mmd_desync50_b500_s43: original 5700  perm 4300¡À3315 [1100, 10000]
+cdpa_mmd_desync50_b5000_s43: original 5800  perm 2680¡À2379 [100, 7700]
+cdpa_mmd_desync50_b50_s44: original 4000  perm 3560¡À2375 [200, 6600]
+cdpa_mmd_desync50_b500_s44: original 4400  perm 2570¡À1562 [300, 5200]
+dann_desync50_b500_s44: original 7100  perm 7580¡À3938 [700, 10000]
+cdan_sca_desync50_b500_s44: original 3900  perm 6800¡À3919 [200, 10000]
+cdpa_mmd_desync50_b5000_s44: original 5300  perm 1970¡À2049 [300, 5700]
+dann_desync50_b5000_s44: original 5900  perm 5370¡À3912 [400, 9700]
+cdan_sca_desync50_b5000_s44: original 4700  perm 4350¡À2923 [400, 8300]
+cdpa_mmd_desync100_b50_s42: original 700  perm 10000¡À0 [10000, 10000]
+dann_desync100_b50_s42: original 900  perm 8150¡À3912 [100, 10000]
+cdan_sca_desync100_b50_s42: original 8000  perm 7370¡À2776 [1500, 9900]
+cdpa_mmd_desync100_b500_s42: original 200  perm 7340¡À3506 [900, 10000]
+cdan_sca_desync100_b500_s42: original 4000  perm 5790¡À3745 [100, 10000]
+cdpa_mmd_desync100_b5000_s42: original 400  perm 4700¡À2661 [100, 7500]
+dann_desync100_b5000_s42: original 9500  perm 6630¡À2357 [2100, 9000]
+cdpa_mmd_desync100_b50_s43: original 800  perm 6320¡À3435 [1300, 10000]
+cdpa_mmd_desync100_b5000_s43: original 800  perm 9270¡À1648 [5100, 10000]
+dann_desync100_b5000_s43: original 300  perm 8250¡À3268 [1100, 10000]
+cdan_sca_desync100_b5000_s43: original 600  perm 8540¡À2665 [2100, 10000]
+cdan_sca_desync100_b500_s44: original 8100  perm 7550¡À3750 [200, 10000]
+dann_desync100_b5000_s44: original 500  perm 7770¡À3726 [1200, 10000]
+wrote results/permutation.json
+=== permutation rc=0 (7.9s)
+
+=== plot: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/plot_c_e4.py
+figures -> D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\03_member_c_robustness\c_e4_target_sample_budget\figures
+=== plot rc=0 (10.1s)
+
+=== manifest: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/make_manifest.py
+wrote D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\03_member_c_robustness\c_e4_target_sample_budget\manifests\manifest.json : 636 files / 648.3 MB, 54 models / 30.02 GB, 46 reuse models
+=== manifest rc=0 (95.4s)
+
+=== report: D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\venv_exp\Scripts\python.exe scripts/make_report.py
+wrote reports/c_e4_report.md (12799 chars, 209 lines)
+=== report rc=0 (0.1s)
+
+FINALIZE_DONE

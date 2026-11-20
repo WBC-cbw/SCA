@@ -1,0 +1,18 @@
+[resume] cdpa_desync100_b500_s44 from epoch 60
+{"start": {"run": "cdpa_desync100_b500_s44", "method": "cdpa", "budget": 500, "n_adapt": 500, "n_params_total": 66652544, "subset_sha256": "0936b2a62d5d84aef5104ff2e3e93c5fc3bfab402be19272faec9c3ae68d49d2"}}
+{"epoch": 61, "cls": 0.4385, "mmd": 1.447913, "mmd_conv": 1.360296, "top1": 0.024, "H": 0.803, "val_acc": 0.0056, "ge_probe": null, "flag": "OK", "sec": 32.8}
+{"epoch": 62, "cls": 0.4225, "mmd": 1.443468, "mmd_conv": 1.35576, "top1": 0.016, "H": 0.811, "val_acc": 0.0052, "ge_probe": 55, "flag": "OK", "sec": 27.5}
+{"epoch": 63, "cls": 0.4241, "mmd": 1.438678, "mmd_conv": 1.351457, "top1": 0.02, "H": 0.789, "val_acc": 0.0046, "ge_probe": null, "flag": "OK", "sec": 27.4}
+{"epoch": 64, "cls": 0.4207, "mmd": 1.432898, "mmd_conv": 1.346186, "top1": 0.02, "H": 0.808, "val_acc": 0.0046, "ge_probe": 51, "flag": "OK", "sec": 27.6}
+{"epoch": 65, "cls": 0.4272, "mmd": 1.428413, "mmd_conv": 1.342718, "top1": 0.016, "H": 0.781, "val_acc": 0.0052, "ge_probe": null, "flag": "OK", "sec": 28.1}
+{"epoch": 66, "cls": 0.4453, "mmd": 1.425431, "mmd_conv": 1.339061, "top1": 0.016, "H": 0.797, "val_acc": 0.0042, "ge_probe": 48, "flag": "OK", "sec": 26.6}
+{"epoch": 67, "cls": 0.4378, "mmd": 1.420941, "mmd_conv": 1.334515, "top1": 0.018, "H": 0.761, "val_acc": 0.0056, "ge_probe": null, "flag": "OK", "sec": 26.9}
+{"epoch": 68, "cls": 0.3861, "mmd": 1.417981, "mmd_conv": 1.331495, "top1": 0.016, "H": 0.783, "val_acc": 0.0062, "ge_probe": 36, "flag": "OK", "sec": 26.1}
+{"epoch": 69, "cls": 0.4134, "mmd": 1.411585, "mmd_conv": 1.327071, "top1": 0.024, "H": 0.785, "val_acc": 0.0058, "ge_probe": null, "flag": "OK", "sec": 26.5}
+{"epoch": 70, "cls": 0.4105, "mmd": 1.407981, "mmd_conv": 1.322772, "top1": 0.016, "H": 0.808, "val_acc": 0.004, "ge_probe": 41, "flag": "OK", "sec": 26.6}
+{"epoch": 71, "cls": 0.4188, "mmd": 1.404053, "mmd_conv": 1.319261, "top1": 0.018, "H": 0.809, "val_acc": 0.0046, "ge_probe": null, "flag": "OK", "sec": 24.8}
+{"epoch": 72, "cls": 0.5206, "mmd": 1.401648, "mmd_conv": 1.317315, "top1": 0.022, "H": 0.752, "val_acc": 0.0036, "ge_probe": 47, "flag": "OK", "sec": 24.7}
+{"epoch": 73, "cls": 0.3697, "mmd": 1.396583, "mmd_conv": 1.311807, "top1": 0.014, "H": 0.797, "val_acc": 0.0054, "ge_probe": null, "flag": "OK", "sec": 24.8}
+{"epoch": 74, "cls": 0.3744, "mmd": 1.391062, "mmd_conv": 1.307074, "top1": 0.016, "H": 0.783, "val_acc": 0.005, "ge_probe": 36, "flag": "OK", "sec": 24.8}
+{"epoch": 75, "cls": 0.3972, "mmd": 1.387349, "mmd_conv": 1.303105, "top1": 0.014, "H": 0.791, "val_acc": 0.0048, "ge_probe": 67, "flag": "OK", "sec": 25.4}
+{"done": "cdpa_desync100_b500_s44", "sec": 407.7, "attack_acc": 0.0037, "top1": 0.014, "collapse_epochs": 0}

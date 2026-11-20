@@ -1,0 +1,65 @@
+C-E4 暂停记录
+更新时间: 2026/11/18 17:31:33
+暂停原因: 用户要求暂停（2026-11-18 17:31）
+
+一、desync50 第一阶段：已完成 27/27
+  结果: results/summary.json, metrics.csv, table_ntge.csv, table_cost.csv, diagnostics.csv, tables.md
+  图: figures/*desync50*
+  收尾流水线已于 16:51:15 rc=0 完成（FINALIZE_DONE.txt）
+
+二、desync100 第二阶段：1/27 完成
+  已完成: cdpa_desync100_b50_s42 (NTGE/GE 见 results/eval/desync100)
+  被中断: dann_desync100_b50_s42，停在第 18 个 epoch（ckpt 存在，可从断点续训）
+  未开始: 其余 25 个 run
+
+三、已停止的自动化
+  - d100 队列: cmd /c run_queue_d100.bat 已按 PID 结束
+  - 收尾链: wscript watch_finalize_chain.vbs 已结束（任务 CE4_FINW）
+  - 看门狗: CE4_WD 已 disable
+  - 监控页 CE4_Mon 仍在运行: http://127.0.0.1:8779/
+
+四、恢复命令（按顺序）
+  schtasks /change /tn CE4_WD /enable
+  schtasks /run /tn CE4_FINW
+  schtasks /run /tn CE4_Mon
+  说明: CE4_FINW 会重新等待/确认 QUEUE_D50_DONE，重跑一次 d50 收尾（约 30 s），
+        再启动 run_queue_d100.bat；队列会用 predictions_attack.npy 跳过已完成 run，
+        dann b50 s42 从 ckpt 续训。d100 结束后自动跑一次全量 finalize。
+
+五、注意
+  - 后台等待任务 bash-abc940d61b5a4ac7 已取消，不会自行唤醒。
+  - 磁盘 D: 剩余约 120 GB；54 个 run 的 ckpt 各约 0.5-0.6 GB，均在 outputs/models/c_e4/（不入 Git）。
+
+六、恢复记录
+  2026/11/18 21:10:04 已恢复：CE4_FINW(21:08:17) -> d50 finalize rc=0(21:08:49) -> d100 队列重启，dann b50 s42 从 epoch 15 续训；CE4_WD 已 enable，监控已重启。
+
+七、第二次暂停
+  2026/11/18 21:27:10 用户要求暂停（d100 正在跑 dann b50 s42）。
+  已停止: run_queue_d100.bat / train_budget.py（kill_queue.ps1 按 PID）、CE4_FINW（schtasks /end）、CE4_WD（disable）、后台等待作业 bash-f674d7d24371479c。
+  监控 CE4_Mon 保留: http://127.0.0.1:8779/
+
+  恢复命令（按顺序）:
+    schtasks /change /tn CE4_WD /enable
+    schtasks /run /tn CE4_FINW
+    schtasks /run /tn CE4_Mon
+  说明: FINW 会确认 QUEUE_D50_DONE -> 重跑 d50 finalize（约 30 s）-> 启动 run_queue_d100.bat；
+        队列按 predictions_attack.npy 跳过已完成 run，当前 run 从 ckpt（每 5 epoch）续训。
+
+八、第三次暂停（2026/11/19 23:10，用户要求）
+  进度：d100 已完成 15/27 run（budget 50 全部 9 个、budget 500 前 6 个），
+        第 16 个 cdpa_desync100_b500_s44 停在 epoch 60/75；ckpt 533,251,953 B
+        （outputs/models/c_e4/cdpa_desync100_b500_s44/ckpt.pt，最后存档 ep60）。
+  已停止：watch_finalize_chain.vbs（PID 30924）、run_queue_d100.bat（PID 35512）、
+          train_budget.py（PID 44792/49980）——均经 scripts\kill_queue.ps1 按命令行匹配结束。
+          CE4_WD 已 disable；CE4_D50/CE4_FIN2/CE4_Chain 仍为 Disabled。
+  保留：监控 CE4_Mon 仍在运行 http://127.0.0.1:8779/（显示冻结状态）。
+
+  恢复命令（按顺序）：
+    schtasks /change /tn CE4_WD /enable
+    schtasks /run /tn CE4_FINW
+    schtasks /run /tn CE4_Mon
+  说明：FINW -> watch_finalize_chain.vbs -> 确认 QUEUE_D50_DONE -> 重跑 d50 finalize（约 30-60 s）
+        -> 启动 run_queue_d100.bat（删除旧 QUEUE_D100_DONE，幂等跳过已有 predictions 的 15 个 run）
+        -> cdpa b500 s44 从 ckpt 的 ep60 续训 -> 余下 11 个 run
+        -> 结束时跑一次全量 finalize（已含 make_manifest + make_report，不再 --skip）。
+  剩余 12 个 run × 约 31 min ≈ 6.2 h。
