@@ -1,0 +1,21 @@
+[2026/11/24 周二 16:16:39.18] ADV2_DONE seen, finalize start 
+[eval_adv2.py] rc=0 0.9s
+[ok] cdan_sca_adv2_desync50_s42: ntge=None ge10k=19 top1max=0.613 collapse=6
+[ok] cdan_sca_adv2_desync50_s43: ntge=9900 ge10k=1 top1max=0.645 collapse=17
+[ok] cdan_sca_adv2_desync50_s44: ntge=None ge10k=8 top1max=0.622 collapse=15
+[ok] cdan_sca_adv2_desync100_s42: ntge=2600 ge10k=4 top1max=0.731 collapse=16
+[ok] cdan_sca_adv2_desync100_s43: ntge=None ge10k=7 top1max=0.715 collapse=13
+[ok] cdan_sca_adv2_desync100_s44: ntge=5200 ge10k=5 top1max=0.732 collapse=24
+[done] 6 runs -> D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\02_member_b_method\b_e3_cdan_sca\results\eval_adv2
+[aggregate_adv2.py] rc=0 0.3s
+Traceback (most recent call last):
+  File "D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\02_member_b_method\b_e3_cdan_sca\scripts\finalize_adv2.py", line 37, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\02_member_b_method\b_e3_cdan_sca\scripts\finalize_adv2.py", line 28, in main
+    rc = run(s)
+         ^^^^^^
+  File "D:\KimiData\kimi\tasks\2026-10-09\20-25-28-8c596874\sca_repo\experiments\02_member_b_method\b_e3_cdan_sca\scripts\finalize_adv2.py", line 19, in run
+    print(r.stdout.strip()[-2000:], flush=True)
+UnicodeEncodeError: 'gbk' codec can't encode character '\ufffd' in position 19: illegal multibyte sequence
+[2026/11/24 周二 16:16:40.64] finalize rc=1 

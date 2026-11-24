@@ -1,0 +1,99 @@
+{
+  "n_perm": 10,
+  "step": 100,
+  "runs": [
+    {
+      "run": "cdan_sca_adv2_desync50_s42",
+      "shift": "desync50",
+      "method": "cdan_sca_adv2",
+      "seed": 42,
+      "ntge_original": null,
+      "note": "no GE=0 in 10k, permutation skipped"
+    },
+    {
+      "run": "cdan_sca_adv2_desync50_s43",
+      "shift": "desync50",
+      "method": "cdan_sca_adv2",
+      "seed": 43,
+      "ntge_original": 9900,
+      "perm_ntge": [
+        2700,
+        10000,
+        7100,
+        5500,
+        1600,
+        6100,
+        100,
+        9700,
+        8800,
+        3400
+      ],
+      "perm_mean": 5500.0,
+      "perm_std": 3469.229821668717,
+      "perm_min": 100,
+      "perm_max": 10000
+    },
+    {
+      "run": "cdan_sca_adv2_desync50_s44",
+      "shift": "desync50",
+      "method": "cdan_sca_adv2",
+      "seed": 44,
+      "ntge_original": null,
+      "note": "no GE=0 in 10k, permutation skipped"
+    },
+    {
+      "run": "cdan_sca_adv2_desync100_s42",
+      "shift": "desync100",
+      "method": "cdan_sca_adv2",
+      "seed": 42,
+      "ntge_original": 2600,
+      "perm_ntge": [
+        10000,
+        10000,
+        10000,
+        10000,
+        10000,
+        7200,
+        10000,
+        3500,
+        10000,
+        10000
+      ],
+      "perm_mean": 9070.0,
+      "perm_std": 2145.8228155082043,
+      "perm_min": 3500,
+      "perm_max": 10000
+    },
+    {
+      "run": "cdan_sca_adv2_desync100_s43",
+      "shift": "desync100",
+      "method": "cdan_sca_adv2",
+      "seed": 43,
+      "ntge_original": null,
+      "note": "no GE=0 in 10k, permutation skipped"
+    },
+    {
+      "run": "cdan_sca_adv2_desync100_s44",
+      "shift": "desync100",
+      "method": "cdan_sca_adv2",
+      "seed": 44,
+      "ntge_original": 5200,
+      "perm_ntge": [
+        10000,
+        10000,
+        2100,
+        10000,
+        10000,
+        7100,
+        600,
+        10000,
+        10000,
+        10000
+      ],
+      "perm_mean": 7980.0,
+      "perm_std": 3626.6911763877674,
+      "perm_min": 600,
+      "perm_max": 10000
+    }
+  ]
+}

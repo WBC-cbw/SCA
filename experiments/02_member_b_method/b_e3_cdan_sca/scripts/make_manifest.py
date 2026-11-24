@@ -17,6 +17,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parents[1]
 REPO = HERE.parents[2]
 MODELS = REPO / "outputs/models/b_e3"
+ADV2_MODELS = REPO / "outputs/models/b_e3_adv2"
 B1_MANIFEST = REPO / "experiments/02_member_b_method/b_e1_architecture_same_domain/manifests/manifest.json"
 A2 = REPO / "outputs/models/a_e2"
 A3 = REPO / "outputs/models/a_e3"
@@ -25,7 +26,7 @@ DATASETS = {
     "desync50": Path("D:/sca_project/ASCAD_data/ASCAD_desync50.h5"),
     "desync100": Path("D:/sca_project/ASCAD_data/ASCAD_desync100.h5"),
 }
-SKIP_DIRS = {".mplconfig", "__pycache__", "results_smoke"}
+SKIP_DIRS = {".mplconfig", "__pycache__", "results_smoke", "results_smoke_adv2"}
 
 
 def sha256(path, chunk=1 << 20):
@@ -65,6 +66,14 @@ def main():
             ck = run_dir / "ckpt.pt"
             if ck.exists():
                 archived.append({"run": run_dir.name, "path": ck.relative_to(REPO).as_posix(),
+                                 "bytes": ck.stat().st_size, "sha256": sha256(ck)})
+
+    if ADV2_MODELS.exists():
+        for run_dir in sorted(p for p in ADV2_MODELS.iterdir() if p.is_dir()):
+            ck = run_dir / "ckpt.pt"
+            if ck.exists():
+                archived.append({"run": run_dir.name, "group": "adv2",
+                                 "path": ck.relative_to(REPO).as_posix(),
                                  "bytes": ck.stat().st_size, "sha256": sha256(ck)})
 
     reused = []

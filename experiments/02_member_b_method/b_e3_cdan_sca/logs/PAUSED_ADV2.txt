@@ -1,0 +1,14 @@
+===== ADV2 暂停记录 2026-11-23 21:24 =====
+任务: B_E3_ADV2 (schtasks) 已 /end；训练 python 已按 PID 终止（未用 /IM python.exe）。
+进度: 6 个正式 run 中完成 2 个
+  cdan_sca_adv2_desync50_s42  75/75 完成 2373 s  NTGE=null  GE@10k=19  (无 GE=0)
+  cdan_sca_adv2_desync50_s43  75/75 完成 2262 s  NTGE=9900(瞬时) GE@10k=1 (不稳定)
+  cdan_sca_adv2_desync50_s44  3/75 被杀，无 ckpt（每 5 epoch 存，重跑从 0 开始）
+  desync100 s42/s43/s44      未开始
+日志: logs/adv2_status.txt, logs/cdan_sca_adv2_*.log
+断点: outputs/models/b_e3_adv2/<run>/ckpt.pt（每 5 epoch 覆盖，s42/s43 为 75 轮终态）
+恢复: schtasks /run /tn B_E3_ADV2_resume   (或直接运行 scripts\run_adv2_resume.bat)
+      该脚本会跳过已有 predictions_attack.npy 的 run，其余从 ckpt 续训。
+      单 run 约 31.6 s/epoch x 75 ≈ 40 min；剩余 4 个 run 约 2.7 h。
+说明: 前两个 d50 run 的 GE 不优于 B-E3 full（full s42 NTGE=800/稳定 2000）与 CDPA-MMD（5700，3/3 稳定）；
+      即"压制坍塌"并未转化为 key rank 收益，d100 尚未验证。

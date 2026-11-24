@@ -1,0 +1,15 @@
+[2026/11/23 周一 20:03:41.66] start cdan_sca_adv2_desync50_s42 
+[2026/11/23 周一 20:44:08.28] ok cdan_sca_adv2_desync50_s42 
+[2026/11/23 周一 20:44:08.29] start cdan_sca_adv2_desync50_s43 
+[2026/11/23 周一 21:22:37.22] ok cdan_sca_adv2_desync50_s43 
+[2026/11/23 周一 21:22:37.23] start cdan_sca_adv2_desync50_s44 
+[2026/11/24 周二 13:42:43.82] skip cdan_sca_adv2_desync50_s42 
+[2026/11/24 周二 13:42:43.82] skip cdan_sca_adv2_desync50_s43 
+[2026/11/24 周二 13:42:43.82] start cdan_sca_adv2_desync50_s44 
+[2026/11/24 周二 13:42:43.82] ok cdan_sca_adv2_desync50_s44 
+[2026/11/24 周二 14:20:56.74] start cdan_sca_adv2_desync100_s42 
+[2026/11/24 周二 14:20:56.74] ok cdan_sca_adv2_desync100_s42 
+[2026/11/24 周二 14:58:56.95] start cdan_sca_adv2_desync100_s43 
+[2026/11/24 周二 14:58:56.95] ok cdan_sca_adv2_desync100_s43 
+[2026/11/24 周二 15:37:18.92] start cdan_sca_adv2_desync100_s44 
+[2026/11/24 周二 15:37:18.92] ok cdan_sca_adv2_desync100_s44 

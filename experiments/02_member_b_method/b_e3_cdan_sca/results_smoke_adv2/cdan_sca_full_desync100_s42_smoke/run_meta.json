@@ -1,0 +1,108 @@
+{
+  "run": "cdan_sca_full_desync100_s42_smoke",
+  "method": "cdan_sca_full",
+  "mode": "full",
+  "conditional_input": true,
+  "entropy_weighting": true,
+  "entropy_weight_formula": "w(g) = 1 - H(g)/log(256), H in nats; target-domain adversarial loss only; w detached",
+  "shift": "desync100",
+  "seed": 42,
+  "epochs_planned": 12,
+  "lr": 1e-05,
+  "optimizer": "RMSprop",
+  "batch_size": 200,
+  "lambda_adv": 0.1,
+  "lambda_application": "GRL 反转系数作用于条件表示/特征；判别器按（熵加权的目标域）域损失更新",
+  "loss": "L_cls(source) + BCE_src + mean_t[w(g_t) * BCE_tgt]",
+  "proj_dim": 1024,
+  "normalize": "none",
+  "disc_input_norm": "T=(Rf^T f_unit*sqrt(d))⊙(Rg^T g)，proj_dim=1024",
+  "init_ckpt": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\outputs\\models\\b_e1\\cnn_s42\\ckpt.pt",
+  "init_keys_loaded": 16,
+  "n_params_total": 68227457,
+  "n_params_discriminator": 1574913,
+  "n_params_backbone_classifier": 66652544,
+  "source_train": 6000,
+  "source_val": 5000,
+  "target_adapt": 6000,
+  "target_domain_val": 5000,
+  "target_attack": 10000,
+  "target_byte": 2,
+  "real_key_byte": 224,
+  "target_file": "D:/sca_project/ASCAD_data/ASCAD_desync100.h5",
+  "dataset_keys_equal": true,
+  "device": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "torch": "2.9.1+cu128",
+  "tf32": true,
+  "protocol_note": "target_adapt 无标签（desync Profiling 前 45000），末 5000 条仅域判别诊断；target_adapt 的标签仅在训练结束后用于校准诊断，不参与训练与模型选择",
+  "monitor": {
+    "n_target_adapt_subset": 1500,
+    "collapse_warn_top1_share": 0.3,
+    "collapse_hard_top1_share": 0.5,
+    "probe_traces": 500
+  },
+  "diagnostic_labels_use": "target_adapt / target_attack 标签只用于事后 ECE 与 confident-wrong 统计",
+  "epochs_done": 12,
+  "train_seconds": 53.98691511154175,
+  "wall_seconds_total": 60.57279872894287,
+  "sec_per_epoch_mean": 4.498909592628479,
+  "final_train_cls_loss": 1.123183587193489,
+  "final_train_dom_loss": 1.1872105717658996,
+  "final_val_acc": 0.0068,
+  "final_attack_acc": 0.0053,
+  "final_monitor": {
+    "n_monitor": 1500,
+    "top1_share": 0.14066666666666666,
+    "top1_class": 173,
+    "top5_classes": [
+      [
+        173,
+        211
+      ],
+      [
+        234,
+        207
+      ],
+      [
+        167,
+        89
+      ],
+      [
+        149,
+        83
+      ],
+      [
+        25,
+        59
+      ]
+    ],
+    "unique_pred_classes": 175,
+    "pred_entropy_mean": 0.7392551898956299,
+    "pred_entropy_p50": 0.5283221006393433,
+    "max_conf_mean": 0.7661889791488647,
+    "w_mean": 0.8666850328445435,
+    "w_std": 0.14120446145534515,
+    "w_p10": 0.6568413376808167,
+    "w_p50": 0.9047240614891052,
+    "w_p90": 0.9996873736381531
+  },
+  "collapse_epochs": 1,
+  "warn_epochs": 2,
+  "max_top1_share": 0.5626666666666666,
+  "domain_diag_before": {
+    "src_acc": 0.9654,
+    "tgt_acc": 0.2782,
+    "balanced_acc": 0.6218,
+    "epoch": 0
+  },
+  "domain_diag_after": {
+    "src_acc": 0.8546,
+    "tgt_acc": 0.6744,
+    "balanced_acc": 0.7645,
+    "epoch": 12
+  },
+  "max_memory_allocated_mb": 2326.2,
+  "predictions_file": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\02_member_b_method\\b_e3_cdan_sca\\results_smoke_adv2\\cdan_sca_full_desync100_s42_smoke\\predictions_attack.npy",
+  "diag_file": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\sca_repo\\experiments\\02_member_b_method\\b_e3_cdan_sca\\results_smoke_adv2\\cdan_sca_full_desync100_s42_smoke\\diag_target_adapt.npz",
+  "ckpt_file": "D:\\KimiData\\kimi\\tasks\\2026-10-09\\20-25-28-8c596874\\outputs\\models\\smoke_adv2\\cdan_sca_full_desync100_s42_smoke\\ckpt.pt"
+}

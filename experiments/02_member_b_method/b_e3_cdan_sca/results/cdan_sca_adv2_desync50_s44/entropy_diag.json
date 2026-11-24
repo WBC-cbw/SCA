@@ -1,0 +1,16 @@
+{
+  "n": 5000,
+  "accuracy": 0.0804,
+  "mean_max_softmax": 0.9291401505470276,
+  "mean_entropy_nats": 0.20101599395275116,
+  "ece_15": 0.8487402108192444,
+  "frac_conf_ge_0.9": 0.8062,
+  "frac_confwrong_ge_0.9": 0.7472,
+  "frac_confwrong_ge_0.99": 0.6324,
+  "frac_conf_lt_0.1": 0.0,
+  "top1_share": 0.2886,
+  "top1_class": 93,
+  "unique_pred_classes": 245,
+  "subset": "target_adapt[0:5000]",
+  "note": "标签仅用于事后诊断"
+}
